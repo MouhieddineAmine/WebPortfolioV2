@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import url('leaflet/dist/leaflet.css');
-
 
 body {
   background: #041224;
