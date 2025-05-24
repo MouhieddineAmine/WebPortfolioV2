@@ -27,7 +27,7 @@ export default function Map({
     style={{ height: "100%", width: "100%" }}
   >
     <TileLayer
-    url="https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${process.env.STADIA_API_KEY}"
+    url='https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png?api_key=${process.env.STADIA_API_KEY}'
   attribution='&copy; <a href="https://stadiamaps.com/">Stadia Maps</a>'
     />
     <Marker position={center}>
