@@ -24,7 +24,7 @@ export default function Home() {
             delaySpeed={1500}
           />
         </h1>
-         <p className="mt-12 text-gray-400 max-w-[800px]">
+         <p className="mt-12 text-gray-300 max-w-[800px]">
           I&apos;m a Full-Stack Developer passionate about creating robust applications that deliver seamless user experiences.<br/>
           I Enjoy tackling complex challenges through clean, maintainable code and focus on building scalable, reliable solutions across front-end, back-end, and database systems.
         </p>
@@ -46,7 +46,7 @@ export default function Home() {
       </section>
 
       <Map center={[45.5408, -73.6497]} zoom={11} markerText="Un peu près ici / Around here" height="400px" />
-      <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6">I&apos;m open to remote, local, and hybrid opportunities.</p>
+      <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6">I&apos;m open to local, remote, and hybrid opportunities.</p>
     </div>
   );
 }

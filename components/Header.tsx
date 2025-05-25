@@ -1,5 +1,7 @@
 "use client";
 import Link from 'next/link';
+import ThemeToggle from "@/components/ThemeToggle";
+
 
 export default function Header() {
   return (
@@ -12,6 +14,7 @@ export default function Header() {
       <Link href="#about" className="px-6 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
       <Link href="#projects" className="px-6 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
       <Link href="#contact" className="px-6 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
+      <ThemeToggle />
     </nav>
   </div>
 </header>

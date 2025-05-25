@@ -22,7 +22,7 @@ export default function Footer() {
       className="mr-2 accent-[#E6B821]"
       onChange={(e) => setIsVerified(e.target.checked)}
     />
-    <label htmlFor="captcha-check" className="cursor-pointer">I am not a robot – reveal contact</label>
+    <label htmlFor="captcha-check" className="cursor-pointer hover:text-[#E6B821]">I am not a robot – reveal contact</label>
   </div>
 
             <p className="font-bold">
@@ -52,17 +52,17 @@ export default function Footer() {
             <h3 className="text-white text-[20px] font-bold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="hover:underline font-bold">
+                <Link href="/" className="hover:text-[#E6B821] font-bold">
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/resume" className="hover:underline font-bold">
+                <Link href="/resume" className="hover:text-[#E6B821] font-bold">
                   Resume
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="hover:underline font-bold">
+                <Link href="/contact" className="hover:text-[#E6B821] font-bold">
                   Contact Info
                 </Link>
               </li>
@@ -75,24 +75,24 @@ export default function Footer() {
           <div className="text-left">
             <h3 className="text-white text-[20px] font-bold mb-4">Let&apos;s Connect</h3>
             <ul className="space-y-3">
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 hover:text-[#E6B821]">
                 <FaGithub className="text-lg" />
                 <Link
                   href="https://github.com/MouhieddineAmine"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline font-bold"
+                  className="font-bold"
                 >
                   GitHub
                 </Link>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2 hover:text-[#E6B821]">
                 <FaLinkedin className="text-lg" />
                 <Link
                   href="https://www.linkedin.com/in/mouhieddine-amine-0b9837269"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:underline font-bold"
+                  className="font-bold"
                 >
                   LinkedIn
                 </Link>

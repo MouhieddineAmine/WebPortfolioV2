@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+/*
 body {
   background: #041224;
   color: white;
+}
+*/
+body {
+  @apply bg-white text-black;
+}
+
+html.dark body {
+  @apply bg-[#041224] text-white;
 }
 
 .font-signature {
@@ -12,3 +21,4 @@ body {
 .leaflet-control-attribution {
   display: none !important;
 }
+
