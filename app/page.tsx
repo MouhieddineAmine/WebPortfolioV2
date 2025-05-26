@@ -4,6 +4,8 @@ import Link from 'next/link';
 import dynamic from "next/dynamic";
 import { useState } from "react";
 import SplashScreen from "@/components/Splashscreen";
+import TechCarousel from "@/components/TechCarousel";
+
 
 
 const Map = dynamic(() => import("../components/MtlMap"), { ssr: false });
@@ -13,8 +15,7 @@ export default function Home() {
 
   return (
       <>
-      {!splashDone && <SplashScreen onComplete={() => setSplashDone(true)} />}
-      {splashDone && (
+      <SplashScreen onComplete={() => setSplashDone(true)} />
     <div className="max-w-[2000px] mx-auto flex flex-col items-center px-15 mt-20">
       <section id="about" className="mb-20 text-center">
         <h1 className="text-4xl font-semibold text-white">
@@ -44,7 +45,9 @@ export default function Home() {
       Contact Info
       </Link>
       </div>
-
+      <div>
+        <TechCarousel />
+      </div>
       <section className="text-center text-gray-300 max-w-[800px] mb-6">
         <h2 className="text-2xl font-semibold mb-2 text-white">My Location</h2>
         <p>
@@ -55,7 +58,6 @@ export default function Home() {
       <Map center={[45.5408, -73.6497]} zoom={11} markerText="Un peu près ici / Around here" height="400px" />
       <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6">I&apos;m open to local, remote, and hybrid opportunities.</p>
     </div>
-    )}
     </>
   );
 }
