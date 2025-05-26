@@ -47,12 +47,12 @@ export default function Header() {
       Mouhieddine Amine
     </Link>
     <nav className=" flex items-center space-x-0 text-white text-[18px]">
-      <Link href="#about" className="px-5 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
-      <Link href="#projects" className="px-5 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
-      <Link href="#contact" className="px-5 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
-      <span className="text-white text-[16px] font-bold ml-[60px] mr-[20px]">|</span>
+      <Link href="#about" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
+      <Link href="#projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
+      <Link href="#contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
+      <span className="h-[20px] w-[2px] bg-white opacity-50 mx-[60px] inline-block align-middle"></span>
       <button onClick={handleLanguageClick}
-      className="flex items-center gap-2 px-5 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
+      className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
       >
       <FaGlobe />
       Language

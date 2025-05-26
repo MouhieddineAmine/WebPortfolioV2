@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
   const [isVerified, setIsVerified] = useState(false);
   return (
-    <footer id="footer" className="w-full bg-[#010812] text-gray-400 pt-10 mt-20 border-t border-gray-700 z-50">
+    <footer id="footer" className="w-full bg-[#010812] text-gray-400 pt-10 mt-20 border-t border-gray-700 z-40">
       <div className="max-w-[1500px] mx-auto px-10 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
 
         {/* Contact Info */}
@@ -106,11 +106,11 @@ export default function Footer() {
           <div className="flex flex-col items-center w-[180px]">
             <h3 id="language" className="text-white text-[20px] font-bold mb-4">Select Language</h3>
             <ul className="space-y-2 w-full">
-              <li id="btnlanguage-en" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border border-transparent">
+              <li id="btnlanguage-en" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border-2 border-transparent">
                 <Image src="https://img.icons8.com/color/100/great-britain.png" alt="English" className="w-[35px] object-contain" width={1} height={1} sizes='100vw'/>
                 <button className="font-bold w-[70px]">English</button>
               </li>
-              <li id="btnlanguage-fr" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border border-transparent">
+              <li id="btnlanguage-fr" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border-2 border-transparent">
                 <Image src="https://img.icons8.com/color/100/france.png" alt="Français" className="w-[35px] object-contain" width={1} height={1} sizes='100vw'/>
                 <button className="font-bold w-[70px]">Français</button>
               </li>
