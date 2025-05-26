@@ -29,7 +29,7 @@ export default function ThemeToggle() {
         background: "#041224",
         boxShadow: "inset 0 2px 4px rgba(255,255,255,0.05), inset 0 -2px 4px rgba(0,0,0,0.5)",
         border: "1px solid #334155",
-        padding: "2px",
+        padding: "3px",
       }}
     >
       <motion.div

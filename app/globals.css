@@ -1,11 +1,6 @@
 @import "tailwindcss";
 
-/*
-body {
-  background: #041224;
-  color: white;
-}
-*/
+
 body {
   @apply bg-white text-black;
 }
@@ -20,5 +15,31 @@ html.dark body {
 
 .leaflet-control-attribution {
   display: none !important;
+}
+
+@keyframes flashTextYellow {
+  0%, 100% {
+    color: white;
+  }
+  20%, 40%, 60%, 80% {
+    color: #E6B821;
+  }
+}
+
+.flash-text-yellow {
+  animation: flashTextYellow 1.5s ease-in-out 2;
+}
+
+@keyframes flashBorderYellow {
+  0%, 100% {
+    border-color: transparent;
+  }
+  20%, 40%, 60%, 80% {
+    border-color: #E6B821;
+  }
+}
+
+.flash-border-yellow {
+  animation: flashBorderYellow 1.5s ease-in-out 2;
 }
 
