@@ -1,7 +1,25 @@
 "use client";
-import { useEffect, useRef } from "react";
-import { FaJs, FaPython, FaReact, FaNodeJs, FaGitAlt, FaDocker } from "react-icons/fa";
-import { SiTypescript, SiNextdotjs, SiMongodb, SiPostgresql, SiFirebase, SiTailwindcss, SiSass, SiVercel } from "react-icons/si";
+import React from "react";
+import { motion, useAnimation } from "framer-motion";
+import {
+  FaJs,
+  FaPython,
+  FaReact,
+  FaNodeJs,
+  FaGitAlt,
+  FaDocker,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiMongodb,
+  SiPostgresql,
+  SiFirebase,
+  SiTailwindcss,
+  SiSass,
+  SiVercel,
+  SiDotnet,
+} from "react-icons/si";
 
 const techs = [
   { name: "JavaScript", icon: <FaJs className="text-yellow-400" /> },
@@ -18,46 +36,71 @@ const techs = [
   { name: "Tailwind CSS", icon: <SiTailwindcss className="text-cyan-300" /> },
   { name: "Sass", icon: <SiSass className="text-pink-400" /> },
   { name: "Vercel", icon: <SiVercel className="text-white" /> },
+  { name: ".NET", icon: <SiDotnet className="text-blue-500" /> },
+  { name: "Entity Framework", icon: <SiDotnet className="text-purple-300" /> },
 ];
 
+// Width of each item in px (adjust if you change styling)
+const ITEM_WIDTH = 120; // including margin/padding
+
 export default function TechCarousel() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const scroll = scrollRef.current;
-    let scrollAmount = 0;
-
-    const scrollStep = () => {
-      if (scroll) {
-        scroll.scrollLeft = scrollAmount;
-        scrollAmount += 1;
-        if (scrollAmount >= scroll.scrollWidth / 2) {
-          scrollAmount = 0;
-        }
-      }
-    };
-
-    const interval = setInterval(scrollStep, 20);
-    return () => clearInterval(interval);
-  }, []);
+  // duplicate the items 3 times so scrolling looks infinite
+  const duplicatedTechs = [...techs, ...techs, ...techs];
 
   return (
-    <section className="w-full bg-[#111] py-12 text-white overflow-hidden">
-      <h2 className="text-3xl font-semibold text-center mb-8">Tech I Use</h2>
-      <div
-        ref={scrollRef}
-        className="flex w-full gap-12 overflow-x-scroll whitespace-nowrap px-6 scrollbar-hide"
+    <>
+      <style>{`
+        .carousel-container {
+          overflow: hidden;
+          background: #111;
+          padding: 1rem 0;
+          width: 100%;
+          user-select: none;
+        }
+        .carousel-track {
+          display: flex;
+          width: ${duplicatedTechs.length * ITEM_WIDTH}px;
+          /* make sure total width matches item count * item width */
+          animation: scroll 30s linear infinite;
+        }
+        .carousel-item {
+          flex: 0 0 auto;
+          width: ${ITEM_WIDTH - 20}px; /* item width minus margin */
+          margin-right: 20px;
+          color: white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          font-size: 1.1rem;
+        }
+        .carousel-item svg {
+          font-size: 3rem;
+          margin-bottom: 0.4rem;
+        }
+        @keyframes scroll {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-${techs.length * ITEM_WIDTH}px);
+          }
+        }
+      `}</style>
+
+      <section
+        className="carousel-container"
+        aria-label="Technology Carousel"
+        role="list"
       >
-        {[...techs, ...techs].map((tech, idx) => (
-          <div
-            key={idx}
-            className="flex flex-col items-center justify-center min-w-[100px]"
-          >
-            <div className="text-4xl mb-2">{tech.icon}</div>
-            <p className="text-sm text-gray-300">{tech.name}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+        <div className="carousel-track" aria-live="off">
+          {duplicatedTechs.map((tech, i) => (
+            <div className="carousel-item" key={i} role="listitem">
+              {tech.icon}
+              <span>{tech.name}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+    </>
   );
 }
