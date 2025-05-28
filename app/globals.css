@@ -1,12 +1,12 @@
 @import "tailwindcss";
 
 body {
-  @apply bg-white text-black;
+  @apply bg-[#041224] text-white;
   overflow-x: hidden;
 }
 
-html.dark body {
-  @apply bg-[#041224] text-white;
+.light-theme body {
+  @apply bg-white text-black;
 }
 
 .font-signature {
