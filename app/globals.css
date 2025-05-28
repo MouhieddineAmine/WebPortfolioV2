@@ -3,7 +3,18 @@
 body {
   @apply bg-[#041224] text-white;
   overflow-x: hidden;
+  transition-property: opacity, background-color, transform, filter;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.page-transition{
+  opacity: 0;
+  background: #010812;
+  transform: translateY(40px);
+  filter: blur(12px);
+}
+
 
 .light-theme body {
   @apply bg-white text-black;

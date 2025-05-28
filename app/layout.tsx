@@ -19,14 +19,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      
       <body className="min-h-screen flex flex-col relative z-10">
+        
         <StarsCanvas />
+        
         <Header />
         <div className="w-full mx-auto px-6 py-6 flex-grow flex flex-col relative z-50">
           <main className="flex-grow mt-6">{children}</main>
         </div>
         <Footer />
+      
       </body>
+      
     </html>
   );
 }

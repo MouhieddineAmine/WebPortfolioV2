@@ -3,15 +3,13 @@ import { Typewriter } from "react-simple-typewriter";
 import Link from 'next/link';
 import dynamic from "next/dynamic";
 import TechCarousel from "@/components/TechCarousel";
-import PageTransition from "@/components/PageTransition";
-
+import { PageTransition } from "@/components/PageTransition";
 
 const Map = dynamic(() => import("../components/MtlMap"), { ssr: false });
 
 export default function Home() {
   return (
       <>
-      <PageTransition>
     <div className="max-w-[2000px] mx-auto flex flex-col items-center px-15 mt-20">
       <section id="about" className="mb-[70px] text-center">
         <h1 className="text-4xl font-semibold text-white">
@@ -34,12 +32,12 @@ export default function Home() {
         </p>
       </section>
       <div className="flex gap-6 mb-[80px]">
-      <Link href="/resume" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
+      <PageTransition href="/resume" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
       Resume
-      </Link>
-      <Link href="/contact" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
+      </PageTransition>
+      <PageTransition href="/contact" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
       Contact Info
-      </Link>
+      </PageTransition>
       </div>
 
       <div className="text-center text-gray-300 mb-[80px] bg-[#010812]">
@@ -64,7 +62,6 @@ export default function Home() {
       <Map center={[45.5408, -73.6497]} zoom={11} markerText="Un peu près ici / Around here" height="400px" />
       <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6">I&apos;m open to local, remote, and hybrid opportunities.</p>
     </div>
-    </PageTransition>
     </>
   );
 }

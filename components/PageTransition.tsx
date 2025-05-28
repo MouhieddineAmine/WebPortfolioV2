@@ -1,23 +1,42 @@
-// components/PageTransition.tsx
-import { motion } from "framer-motion";
+"use client"
+import React, { ReactNode } from 'react'
+import Link, { LinkProps} from 'next/link'
+import { useRouter } from 'next/navigation'
 
-const variants = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -20 },
-};
+interface PageTransitionProps extends LinkProps{
+    children: ReactNode;
+    href: string;
+    className?: string;
+}
 
-export default function PageTransition({ children }: { children: React.ReactNode }) {
+function sleep(ms:number): Promise<void> {
+    return new Promise((resolve) => requestAnimationFrame(() =>  setTimeout(resolve, ms)));
+}
+
+export const PageTransition = ({
+    children,
+    href,
+    className,
+    ...props
+}: PageTransitionProps) => {
+    const router = useRouter();
+
+    const handleTransition = async (e:React.MouseEvent<HTMLAnchorElement, MouseEvent>) =>{
+        e.preventDefault();
+
+        const body  = document.querySelector("body");
+        body?.classList.add("page-transition");
+        await sleep(500);
+        router.push(href);
+        await sleep(500);
+        body?.classList.remove("page-transition");
+    }
+
+
+
   return (
-    <motion.div
-      initial="initial"
-      animate="animate"
-      exit="exit"
-      variants={variants}
-      transition={{ duration: 0.5, ease: "easeInOut" }}
-      className="min-h-screen"
-    >
-      {children}
-    </motion.div>
-  );
+    <Link onClick={handleTransition} href={href} className={className} {...props}>
+        {children}
+    </Link>
+  )
 }
