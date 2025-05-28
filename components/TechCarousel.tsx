@@ -40,7 +40,7 @@ const techs = [
 ];
 
 // Width of each item in px (adjust if you change styling)
-const ITEM_WIDTH = 120; // including margin/padding
+const ITEM_WIDTH = 200; // including margin/padding
 
 export default function TechCarousel() {
   // duplicate the items 3 times so scrolling looks infinite
@@ -51,7 +51,7 @@ export default function TechCarousel() {
       <style>{`
         .carousel-container {
           overflow: hidden;
-          background: #111;
+          background: transparent;
           padding: 1rem 0;
           width: 100%;
           user-select: none;

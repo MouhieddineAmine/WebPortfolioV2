@@ -16,7 +16,7 @@ export default function Home() {
   return (
       <>
     <div className="max-w-[2000px] mx-auto flex flex-col items-center px-15 mt-20">
-      <section id="about" className="mb-20 text-center">
+      <section id="about" className="mb-[70px] text-center">
         <h1 className="text-4xl font-semibold text-white">
           <Typewriter
             words={[
@@ -36,7 +36,7 @@ export default function Home() {
           I Enjoy tackling complex challenges through clean, maintainable code and focus on building scalable, reliable solutions across front-end, back-end, and database systems.
         </p>
       </section>
-      <div className="flex gap-6 mt-4 mb-[60px]">
+      <div className="flex gap-6 mb-[80px]">
       <Link href="/resume" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
       Resume
       </Link>
@@ -44,9 +44,19 @@ export default function Home() {
       Contact Info
       </Link>
       </div>
-      <div>
+
+      <div className="text-center text-gray-300 mb-[80px] bg-[#010812]">
+        <h2 className="text-2xl font-semibold mb-4 text-white">Technologies I Use</h2>
         <TechCarousel />
+        <p className="text-gray-400 mt-6 text-sm">
+          Interested in a deeper dive into the tools and technologies I work with?{" "}
+          <Link href="/resume" className="underline hover:text-[#E6B821] font-semibold">
+          Explore my full tech stack.
+          </Link>
+        </p>
       </div>
+
+
       <section className="text-center text-gray-300 max-w-[800px] mb-6">
         <h2 className="text-2xl font-semibold mb-2 text-white">My Location</h2>
         <p>
