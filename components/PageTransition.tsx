@@ -26,9 +26,9 @@ export const PageTransition = ({
 
         const body  = document.querySelector("body");
         body?.classList.add("page-transition");
-        await sleep(500);
+        await sleep(350);
         router.push(href);
-        await sleep(500);
+        await sleep(250);
         body?.classList.remove("page-transition");
     }
 
