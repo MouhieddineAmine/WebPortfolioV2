@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin } from 'react-icons/fa';
 export default function Footer() {
   const [isVerified, setIsVerified] = useState(false);
   return (
-    <footer id="footer" className="w-full bg-[#010812] text-gray-400 pt-10 mt-20 border-t border-gray-700 z-40">
+    <footer id="footer" className="w-full bg-[#010812] text-gray-400 pt-10 mt-20 border-t border-gray-700 z-50">
       <div className="max-w-[1500px] mx-auto px-10 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
 
         {/* Contact Info */}

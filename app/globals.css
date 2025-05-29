@@ -1,5 +1,20 @@
 @import "tailwindcss";
 
+.page-load-blur {
+  animation: blurFadeIn 1s ease-in-out forwards;
+}
+
+@keyframes blurFadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(15px);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
 body {
   @apply bg-[#041224] text-white;
   overflow-x: hidden;
@@ -13,7 +28,6 @@ body {
   background:#020D18;
   filter: blur(10px);
 }
-
 
 .light-theme body {
   @apply bg-white text-black;
