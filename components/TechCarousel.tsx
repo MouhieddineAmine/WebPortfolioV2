@@ -39,11 +39,9 @@ const techs = [
   { name: "Entity Framework", icon: <SiDotnet className="text-purple-300" /> },
 ];
 
-// Width of each item in px (adjust if you change styling)
-const ITEM_WIDTH = 200; // including margin/padding
+const ITEM_WIDTH = 200; // px including margin
 
-export default function TechCarousel() {
-  // duplicate the items 3 times so scrolling looks infinite
+export default function TechCarousel({paused}: {paused:boolean}) {
   const duplicatedTechs = [...techs, ...techs, ...techs];
 
   return (
@@ -59,12 +57,13 @@ export default function TechCarousel() {
         .carousel-track {
           display: flex;
           width: ${duplicatedTechs.length * ITEM_WIDTH}px;
-          /* make sure total width matches item count * item width */
           animation: scroll 30s linear infinite;
+          transition: animation-play-state 0.3s ease;
+          animation-play-state: ${paused ? "paused" : "running"};
         }
         .carousel-item {
           flex: 0 0 auto;
-          width: ${ITEM_WIDTH - 20}px; /* item width minus margin */
+          width: ${ITEM_WIDTH - 20}px;
           margin-right: 20px;
           color: white;
           display: flex;
@@ -91,7 +90,7 @@ export default function TechCarousel() {
         aria-label="Technology Carousel"
         role="list"
       >
-        <div className="carousel-track" aria-live="off">
+        <div className="carousel-track"  aria-live="off">
           {duplicatedTechs.map((tech, i) => (
             <div className="carousel-item" key={i} role="listitem">
               {tech.icon}

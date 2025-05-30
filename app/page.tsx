@@ -1,13 +1,16 @@
 "use client";
 import { Typewriter } from "react-simple-typewriter";
-import Link from 'next/link';
 import dynamic from "next/dynamic";
 import TechCarousel from "@/components/TechCarousel";
 import { PageTransition } from "@/components/PageTransition";
+import { useState } from "react";
 
 const Map = dynamic(() => import("../components/MtlMap"), { ssr: false });
 
 export default function Home() {
+
+   const [paused, setPaused] = useState(false);
+
   return (
       <>
     <div className="max-w-[2000px] mx-auto flex flex-col items-center px-15 mt-20">
@@ -31,24 +34,32 @@ export default function Home() {
           I Enjoy tackling complex challenges through clean, maintainable code and focus on building scalable, reliable solutions across front-end, back-end, and database systems.
         </p>
       </section>
-      <div className="flex gap-6 mb-[80px]">
+      <div className="flex gap-6 mb-[120px]">
       <PageTransition href="/resume" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
       Resume
       </PageTransition>
       <PageTransition href="/contact" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
-      Contact Info
+      Contact
       </PageTransition>
       </div>
 
-      <div className="text-center text-gray-300 mb-[80px] bg-[#010812]">
+      <div className="text-center text-gray-300 mb-[100px] bg-[#010812]/40 pt-10 pb-10 hover:bg-[#010812]/100 transition-colors duration-400 ease-in-out"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      >
         <h2 className="text-2xl font-semibold mb-4 text-white">Technologies I Use</h2>
-        <TechCarousel />
+        <TechCarousel paused={paused}/>
         <p className="text-gray-400 mt-6 text-sm">
           Interested in a deeper dive into the tools and technologies I work with?{" "}
-          <Link href="/resume" className="underline hover:text-[#E6B821] font-semibold">
+          <PageTransition href="/resume" className="underline hover:text-[#E6B821] font-semibold">
           Explore my full tech stack.
-          </Link>
+          </PageTransition>
         </p>
+      </div>
+
+      <div className="text-center text-gray-300 mb-[100px]">
+        <h2 className="text-2xl font-semibold mb-4 text-white">Projects</h2>
+
       </div>
 
 
