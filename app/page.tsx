@@ -67,32 +67,43 @@ export default function Home() {
         </p>
 
 
-
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
 
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Project Name</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory Management System</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
+
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Project Name</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
-                    <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Project Name</h3>
+
+          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
+
+          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-white mb-2">Smart Calculator</h3>
+            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            View project
+            </PageTransition>
+          </div>
+
+
+
         </div>
-
 
 
        <p className="mb-10 mt-10 max-w-[800px] mx-auto">
