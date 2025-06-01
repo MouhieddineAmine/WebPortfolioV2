@@ -49,7 +49,7 @@ export default function Home() {
       >
         <h2 className="text-2xl font-semibold mb-4 text-white">Technologies I Use</h2>
         <TechCarousel paused={paused}/>
-        <p className="text-gray-400 mt-6 text-sm">
+        <p className="text-gray-300 mt-6 text-sm">
           Interested in a deeper dive into the tools and technologies I work with?{" "}
           <PageTransition href="/resume" className="underline hover:text-[#E6B821] font-semibold">
           Explore my full tech stack.
@@ -57,9 +57,50 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="text-center text-gray-300 mb-[100px]">
+      <div className="text-center text-gray-300 mb-[60px]">
         <h2 className="text-2xl font-semibold mb-4 text-white">Projects</h2>
+        <p className="mb-10 max-w-[800px] mx-auto">
+          Here&apos;s a quick look at some projects I have worked on. For more,{" "}
+          <PageTransition href="/projects" className="underline hover:text-[#E6B821] font-semibold">
+            check out my full project portfolio.
+          </PageTransition>
+        </p>
 
+
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+
+          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-white mb-2">Project Name</h3>
+            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            View project
+            </PageTransition>
+          </div>
+          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-white mb-2">Project Name</h3>
+            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            View project
+            </PageTransition>
+          </div>
+                    <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="text-xl font-semibold text-white mb-2">Project Name</h3>
+            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            View project
+            </PageTransition>
+          </div>
+        </div>
+
+
+
+       <p className="mb-10 mt-10 max-w-[800px] mx-auto">
+          Want to see more?{" "}
+          <PageTransition href="/projects" className="underline hover:text-[#E6B821] font-semibold">
+            Explore all projects
+          </PageTransition>
+        </p>
       </div>
 
 

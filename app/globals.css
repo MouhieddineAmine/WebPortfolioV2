@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 .page-load-blur {
-  animation: blurFadeIn 0.8s ease-in-out forwards;
+  animation: blurFadeIn 0.5s ease-in-out forwards;
 }
 
 @keyframes blurFadeIn {
