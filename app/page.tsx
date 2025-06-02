@@ -118,7 +118,7 @@ export default function Home() {
       <section className="text-center text-gray-300 max-w-[800px] mb-6">
         <h2 className="text-2xl font-semibold mb-2 text-white">My Location</h2>
         <p>
-          I’m based in the Greater Montreal area. You can find me around here:
+          I&apos;m based in the Greater Montreal area. You can find me around here:
         </p>
       </section>
 
