@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import {
   FaJs,
   FaPython,
@@ -34,7 +35,7 @@ const techs = [
   { name: "JavaScript", icon: <FaJs className="text-yellow-400 w-10 h-10" /> },
   { name: "GitHub", icon: <FaGithub className="text-white w-10 h-10" /> },
   { name: "Python", icon: <FaPython className="text-blue-300 w-10 h-10" /> },
-  { name: "C#",icon: <img src="/c-sharp.svg" alt="C#" className="w-10 h-10"/> },
+  { name: "C#",icon: <Image src="/c-sharp.svg" alt="C#" className="w-10 h-10"/> },
   { name: ".NET", icon: <SiDotnet className="text-blue-500 w-10 h-10" /> },
   { name: "SQLite", icon: <SiSqlite className="text-gray-400 w-10 h-10" /> },
   { name: "Java", icon: <FaJava className="text-orange-500 w-10 h-10" /> },
