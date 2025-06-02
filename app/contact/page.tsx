@@ -8,7 +8,7 @@ export default function ContactPage() {
         <BtnGoBack />
 
         <h1 className="text-4xl font-bold mb-2 mt-6">Get in Touch</h1>
-        <p className="text-gray-400 mb-10">I'm open to new opportunities, collaborations, or any questions you may have.</p>
+        <p className="text-gray-400 mb-10">I&apos;m open to new opportunities, collaborations, or any questions you may have.</p>
 
         <div className="grid md:grid-cols-2 gap-10">
           {/* Contact Info */}
