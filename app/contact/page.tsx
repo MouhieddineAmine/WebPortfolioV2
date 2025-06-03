@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import BtnGoBack from "@/components/BtnGoBack";
 import { useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
@@ -49,7 +49,7 @@ const handleSubmit = (e: React.FormEvent) => {
     body: JSON.stringify(form),
   })
     .then(res => res.json())
-    .then(data => {
+    .then(() => {
       alert("Message sent!");
       setForm({ name: "", email: "", subject: "", message: "" });
     })
