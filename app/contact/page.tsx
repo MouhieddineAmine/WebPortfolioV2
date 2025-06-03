@@ -1,13 +1,68 @@
+"use client"
 import BtnGoBack from "@/components/BtnGoBack";
+import { useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function ContactPage() {
+  const [isRVerified, setIsRVerified] = useState(false);
+  const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
+  const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  setForm({ ...form, [e.target.name]: e.target.value });
+};
+
+  const handleClear = () => {
+    setForm({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    });
+  };
+
+const validate = () => {
+  const newErrors: { [key: string]: string } = {};
+
+  if (!form.name.trim()) newErrors.name = "Name is required.";
+  else if (form.name.length < 2) newErrors.name = "Name must be at least 2 characters.";
+
+  if (!form.email.trim()) newErrors.email = "Email is required.";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) newErrors.email = "Invalid email format.";
+
+  if (!form.subject.trim()) newErrors.subject = "Subject is required.";
+  else if (form.subject.length < 2) newErrors.subject = "Subject must be at least 2 characters.";
+
+  if (!form.message.trim()) newErrors.message = "Message is required.";
+  else if (form.message.length < 10) newErrors.message = "Message must be at least 10 characters.";
+
+  setErrors(newErrors);
+  return Object.keys(newErrors).length === 0;
+};
+const handleSubmit = (e: React.FormEvent) => {
+  e.preventDefault();
+  if (!validate()) return;
+
+  // send form to your API endpoint
+  fetch("/api/contact", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(form),
+  })
+    .then(res => res.json())
+    .then(data => {
+      alert("Message sent!");
+      setForm({ name: "", email: "", subject: "", message: "" });
+    })
+    .catch(() => alert("Something went wrong. Please try again."));
+};
+
+
   return (
-    <div className="min-h-screen bg-[#010812] text-white pt-[30px] pb-[60px] rounded-xl">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
+      <div className="max-w-6xl mx-auto">
         <BtnGoBack />
 
-        <h1 className="text-4xl font-bold mb-2 mt-6">Get in Touch</h1>
+        <h1 className="text-4xl font-bold mb-2 mt-10">Get in Touch</h1>
         <p className="text-gray-400 mb-10">I&apos;m open to new opportunities, collaborations, or any questions you may have.</p>
 
         <div className="grid md:grid-cols-2 gap-10">
@@ -15,18 +70,25 @@ export default function ContactPage() {
           <div className="space-y-6 bg-[#041224] p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-[#E6B821]">Contact Info</h2>
 
+            <div className="mb-10 pt-2 text-sm text-gray-300 font-semibold">
+              <input type="checkbox" id="recaptcha-check" className="mr-2 accent-[#E6B821]"
+              onChange={(f) => setIsRVerified(f.target.checked)}/>
+              <label htmlFor="recaptcha-check" className="cursor-pointer hover:text-[#E6B821]">I am not a robot – reveal contact</label>
+              <hr className="mt-5 border-t border-gray-700" />
+            </div>
+
             <div className="space-y-4 text-sm font-semibold">
               <p className="flex items-center gap-3">
                 <FaEnvelope className="text-[#E6B821]" />
                 <a href="mailto:youremail@example.com" className="hover:underline">
-                  amine.mouhieddine01@gmail.com
+                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>amine.mouhieddine01@gmail.com</span> 
                 </a>
               </p>
 
               <p className="flex items-center gap-3">
                 <FaPhone className="text-[#E6B821]" />
                 <a href="tel:+1234567890" className="hover:underline">
-                  +1 (514) 570-0463
+                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>+1 (514) 570-0463</span>
                 </a>
               </p>
 
@@ -38,7 +100,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  https://www.linkedin.com/in/mouhieddine-amine-0b9837269/
+                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>https://www.linkedin.com/in/mouhieddine-amine-0b9837269/</span>
                 </a>
               </p>
 
@@ -50,7 +112,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  https://github.com/MouhieddineAmine
+                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>https://github.com/MouhieddineAmine</span>
                 </a>
               </p>
 
@@ -62,7 +124,7 @@ export default function ContactPage() {
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  Montréal, Québec
+                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>Montréal, Québec</span>
                 </a>
               </p>
             </div>
@@ -70,69 +132,87 @@ export default function ContactPage() {
 
           {/* Contact Form */}
           <form
-            action="/api/contact"
-            method="POST"
-            className="space-y-6 bg-[#041224] p-6 rounded-xl shadow-lg"
+            onSubmit={handleSubmit}
+            className="space-y-2 bg-[#041224] p-6 rounded-xl shadow-lg"
           >
-            <h2 className="text-2xl font-bold mb-4 text-[#E6B821]">Send a Message</h2>
+            <h2 className="text-2xl font-bold mb-6 text-[#E6B821]">Send a Message</h2>
 
             <div>
-              <label htmlFor="name" className="block text-sm mb-1">
+              <label htmlFor="name" className="block text-[15px] mb-1 ml-1 font-semibold">
                 Name
               </label>
               <input
                 id="name"
                 name="name"
                 type="text"
-                required
-                className="w-full px-4 py-2 rounded-lg bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+                value={form.name}
+                onChange={handleChange}
+                className="w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
+              <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
+                errors.name ? "visible" : "invisible"}`}>{errors.name || " "}</p>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-sm mb-1">
+              <label htmlFor="email" className="block text-[15px] mb-1 ml-1 font-semibold">
                 Email
               </label>
               <input
                 id="email"
                 name="email"
-                type="email"
-                required
-                className="w-full px-4 py-2 rounded-lg bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+                type="text"
+                value={form.email}
+                onChange={handleChange}
+                className="w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
+              <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
+                errors.email ? "visible" : "invisible"}`}>{errors.email || " "}</p>
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-sm mb-1">
+              <label htmlFor="subject" className="block text-[15px] mb-1 ml-1 font-semibold">
                 Subject
               </label>
               <input
               id="subject"
               name="subject"
               type="text"
-              className="w-full px-4 py-2 rounded-lg bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+              value={form.subject}
+              onChange={handleChange}
+              className="w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
+              <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
+                errors.subject ? "visible" : "invisible"}`}>{errors.subject || " "}</p>
             </div>
 
 
             <div>
-              <label htmlFor="message" className="block text-sm mb-1">
+              <label htmlFor="message" className="block text-[15px] mb-1 ml-1 font-semibold">
                 Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                required
+                value={form.message}
+                onChange={handleChange}
                 rows={5}
-                className="w-full px-4 py-2 rounded-lg bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+                className="min-h-[5rem] w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
+              <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
+                errors.message ? "visible" : "invisible"}`}>{errors.message || " "}</p>
             </div>
 
             <button
               type="submit"
-              className="bg-[#E6B821] text-black font-semibold px-6 py-2 rounded-lg hover:bg-[#b38c1a] transition"
+              className="bg-[#E6B821] text-white font-semibold px-6 py-2 rounded hover:bg-[#b38c1a] transition w-full"
             >
               Send Message
+            </button>
+            <button
+            type="button" onClick={handleClear}
+            className="mt-2 w-full bg-gray-700 text-white font-semibold px-6 py-2 rounded hover:bg-gray-800 transition"
+            >
+              Clear Form
             </button>
           </form>
         </div>
