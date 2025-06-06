@@ -22,8 +22,12 @@ export async function POST(request: NextRequest) {
     await sgMail.send(msg);
 
     return NextResponse.json({ message: 'Confirmation email sent.' });
-  } catch (error: any) {
-    console.error('SendGrid error:', error);
-    return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
+  } catch (error: unknown) {
+    if (error instanceof Error) {
+    console.error('SendGrid error:', error.message);
+  } else {
+    console.error('Unexpected error:', error);
+  }
+  return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
   }
 }
