@@ -52,9 +52,13 @@ const handleSubmit = (e: React.FormEvent) => {
   })
     .then(res => res.json())
     .then(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      document.body.style.overflow = "hidden";
+      setTimeout(()=>{
       setShowPopup(true);
       setIsFadingOut(false);
       setForm({ name: "", email: "", subject: "", message: "" });
+      }, 500);
     })
     .catch(() => alert("Something went wrong. Please try again."));
 };
@@ -64,6 +68,7 @@ const handleClosePopup = () => {
   setTimeout(() => {
     setShowPopup(false);
     setIsFadingOut(false);
+    document.body.style.overflow = "auto";
   }, 300);
 };
 
@@ -230,13 +235,13 @@ const handleClosePopup = () => {
       {showPopup && (
   <div className={`fixed inset-0 bg-black/30 backdrop-blur-md flex justify-center items-center z-50
       ${isFadingOut
-        ? "animate-[fadeBackdropOut_0.2s_ease-out_forwards]"
+        ? "animate-[fadeBackdropOut_0.3s_ease-out_forwards]"
         : "animate-[fadeBackdrop_0.3s_ease-out_forwards]"
       }`}>
     <div className={`relative bg-[#041224] w-[500px] px-[80px] py-[60px] rounded-xl shadow-lg text-center text-white border border-gray-700
         ${isFadingOut
           ? "animate-[fadeOutPopup_0.3s_ease-out_forwards]"
-          : "animate-[fadeInPopup_0.4s_ease-out_forwards]"
+          : "animate-[fadeInPopup_0.3s_ease-out_forwards]"
         }`}>
       {/* Close "X" button */}
       <button

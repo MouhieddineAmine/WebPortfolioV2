@@ -35,8 +35,8 @@
   }
 }
 
-@keyframes fadeOutBackdrop {
-  from { opacity: 0.3; }
+@keyframes fadeBackdropOut {
+  from { opacity: 1; }
   to { opacity: 0; }
 }
 
