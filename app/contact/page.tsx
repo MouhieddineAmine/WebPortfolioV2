@@ -7,6 +7,8 @@ export default function ContactPage() {
   const [isRVerified, setIsRVerified] = useState(false);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+  const [showPopup, setShowPopup] = useState(false);
+  const [isFadingOut, setIsFadingOut] = useState(false);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   setForm({ ...form, [e.target.name]: e.target.value });
 };
@@ -43,19 +45,27 @@ const handleSubmit = (e: React.FormEvent) => {
   if (!validate()) return;
 
   // send form to your API endpoint
-  fetch("/api/contact", {
+  fetch("/api/contactbackend", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(form),
   })
     .then(res => res.json())
     .then(() => {
-      alert("Message sent!");
+      setShowPopup(true);
+      setIsFadingOut(false);
       setForm({ name: "", email: "", subject: "", message: "" });
     })
     .catch(() => alert("Something went wrong. Please try again."));
 };
 
+const handleClosePopup = () => {
+  setIsFadingOut(true);
+  setTimeout(() => {
+    setShowPopup(false);
+    setIsFadingOut(false);
+  }, 300);
+};
 
   return (
     <div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
@@ -217,6 +227,57 @@ const handleSubmit = (e: React.FormEvent) => {
           </form>
         </div>
       </div>
+      {showPopup && (
+  <div className={`fixed inset-0 bg-black/30 backdrop-blur-md flex justify-center items-center z-50
+      ${isFadingOut
+        ? "animate-[fadeBackdropOut_0.2s_ease-out_forwards]"
+        : "animate-[fadeBackdrop_0.3s_ease-out_forwards]"
+      }`}>
+    <div className={`relative bg-[#041224] w-[500px] px-[80px] py-[60px] rounded-xl shadow-lg text-center text-white border border-gray-700
+        ${isFadingOut
+          ? "animate-[fadeOutPopup_0.3s_ease-out_forwards]"
+          : "animate-[fadeInPopup_0.4s_ease-out_forwards]"
+        }`}>
+      {/* Close "X" button */}
+      <button
+        onClick={handleClosePopup}
+        className="absolute top-2 right-3 text-gray-300 hover:text-[#E6B821] text-3xl font-bold transition duration-150 cursor-pointer"
+        aria-label="Close"
+      >
+        ×
+      </button>
+
+      {/* Icon */}
+      <div className="flex justify-center mb-5 text-4xl text-green-400">
+        <svg
+          className="w-10 h-10"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth={2}
+          viewBox="0 0 24 24"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+
+      {/* English + French message with visual separation */}
+      <div className="space-y-1 mb-2">
+        <p className="text-lg font-semibold">Message sent successfully!</p>
+        <p className="text-sm text-gray-300">Thanks for reaching out — I’ll get back to you soon.</p>
+        <p className="text-sm text-gray-300 italic">Please check your inbox for confirmation.</p>
+      </div>
+
+      <hr className="border-gray-600 my-4" />
+
+      <div className="space-y-1">
+        <p className="text-lg font-semibold">Message envoyé avec succès&nbsp;!</p>
+        <p className="text-sm text-gray-300">Merci pour votre message — je vous répondrai bientôt.</p>
+        <p className="text-sm text-gray-300 italic">Veuillez vérifier votre boîte de réception pour la confirmation.</p>
+      </div>
+    </div>
+  </div>
+)}
+
     </div>
   );
 }
