@@ -1,7 +1,9 @@
 "use client";
 import BtnGoBack from "@/components/BtnGoBack";
-import { useState } from "react";
+import { SetStateAction, useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
+import ReCAPTCHA from "react-google-recaptcha";
+
 
 export default function ContactPage() {
   const [isRVerified, setIsRVerified] = useState(false);
@@ -40,9 +42,15 @@ const validate = () => {
   setErrors(newErrors);
   return Object.keys(newErrors).length === 0;
 };
+
 const handleSubmit = (e: React.FormEvent) => {
   e.preventDefault();
   if (!validate()) return;
+
+  if (!recaptchaToken) {
+    alert("Please complete the reCAPTCHA.");
+    return;
+  }
 
   // send form to your API endpoint
   fetch("/api/contactbackend", {
@@ -71,6 +79,9 @@ const handleClosePopup = () => {
     document.body.style.overflow = "auto";
   }, 300);
 };
+
+const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+
 
   return (
     <div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
@@ -216,6 +227,11 @@ const handleClosePopup = () => {
               <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
                 errors.message ? "visible" : "invisible"}`}>{errors.message || " "}</p>
             </div>
+
+            <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+            onChange={(token: string | null) => setRecaptchaToken(token)}
+            theme="dark"/>
 
             <button
               type="submit"
