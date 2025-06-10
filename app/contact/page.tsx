@@ -11,6 +11,7 @@ export default function ContactPage() {
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [showPopup, setShowPopup] = useState(false);
   const [isFadingOut, setIsFadingOut] = useState(false);
+  const [recaptchaError, setRecaptchaError] = useState<string | null>(null);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   setForm({ ...form, [e.target.name]: e.target.value });
 };
@@ -48,7 +49,7 @@ const handleSubmit = (e: React.FormEvent) => {
   if (!validate()) return;
 
   if (!recaptchaToken) {
-    alert("Please complete the reCAPTCHA.");
+    setRecaptchaError("Please complete the reCAPTCHA.");
     return;
   }
 
@@ -228,11 +229,6 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
                 errors.message ? "visible" : "invisible"}`}>{errors.message || " "}</p>
             </div>
 
-            <ReCAPTCHA
-            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
-            onChange={(token: string | null) => setRecaptchaToken(token)}
-            theme="dark"/>
-
             <button
               type="submit"
               className="bg-[#E6B821] text-white font-semibold px-6 py-2 rounded hover:bg-[#b38c1a] transition w-full"
@@ -245,6 +241,16 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
             >
               Clear Form
             </button>
+            
+            <div className="w-full flex justify-center mt-[20px]">
+            <ReCAPTCHA
+            sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+            onChange={(token: string | null) => setRecaptchaToken(token)}
+            theme="dark"/>
+            {recaptchaError && (
+              <p className="text-red-500 text-sm mt-2 text-center">{recaptchaError}</p>
+              )}
+            </div>
           </form>
         </div>
       </div>
