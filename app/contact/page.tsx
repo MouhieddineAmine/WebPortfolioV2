@@ -1,6 +1,6 @@
 "use client";
 import BtnGoBack from "@/components/BtnGoBack";
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
 
