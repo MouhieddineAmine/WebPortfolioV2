@@ -242,7 +242,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
               Clear Form
             </button>
             
-            <div className="w-full flex justify-center mt-[20px]">
+            <div className="w-full flex flex-col justify-center mt-[20px]">
             <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             onChange={(token: string | null) => setRecaptchaToken(token)}
