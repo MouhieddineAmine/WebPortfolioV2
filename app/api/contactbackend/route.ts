@@ -40,11 +40,11 @@ export async function POST(request: NextRequest) {
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; padding: 20px;">
       <img src="https://aminemouhieddine.com/emailbanner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
 
-      <p>Hi ${name || 'there'},</p>
+      <p style="color: #333;">Hi ${name || 'there'},</p>
 
-      <p>Thanks for reaching out! I&apos;ve received your message and will get back to you shortly.</p>
+      <p style="color: #333;">Thanks for reaching out! I&apos;ve received your message and will get back to you shortly.</p>
 
-      <p>If you need to send me more details or forgot to include something, feel free to contact me again:</p>
+      <p style="color: #333;">If you need to send me more details or forgot to include something, feel free to contact me again:</p>
 
       <div style="text-align: center; margin: 30px 0;">
         <a href="https://aminemouhieddine.com/contact" style="display: inline-block; background-color: #242424; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
@@ -73,10 +73,10 @@ export async function POST(request: NextRequest) {
   html: `
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
       <img src="https://aminemouhieddine.com/formsubmissionbanner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
-      <p><strong>Name:</strong> ${name || 'N/A'}</p>
-      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
-      <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
-      <p><strong>Message:</strong></p>
+      <p style="color: #333;"><strong>Name:</strong> ${name || 'N/A'}</p>
+      <p style="color: #333;"><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p style="color: #333;"><strong>Subject:</strong> ${subject || 'N/A'}</p>
+      <p style="color: #333;"><strong>Message:</strong></p>
       <blockquote style="background:#f9f9f9; padding:15px; border-left:4px solid #242424;">
         ${message.replace(/\n/g, '<br>')}
       </blockquote>
