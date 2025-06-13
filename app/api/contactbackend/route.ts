@@ -38,7 +38,7 @@ export async function POST(request: NextRequest) {
       text: `Hi ${name || 'there'},\n\nThanks for reaching out! We received your message and will get back to you shortly.\n\nBest,\nWestAtlanticWeb Team`,
       html: `
     <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; padding: 20px;">
-      <img src="/emailbanner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
+      <img src="https://aminemouhieddine.com/emailbanner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
 
       <p>Hi ${name || 'there'},</p>
 
@@ -65,6 +65,26 @@ export async function POST(request: NextRequest) {
 
     await sgMail.send(msg);
 
+    const internalMsg = {
+  to: process.env.NOTIFYME_EMAIL!,
+  from: process.env.FROM_EMAIL!,
+  subject: 'New Contact Form Submission',
+  text: `Name: ${name || 'N/A'}\nEmail: ${email}\nMessage:\n${message}`,
+  html: `
+    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6;">
+      <img src="https://aminemouhieddine.com/formsubmissionbanner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
+      <p><strong>Name:</strong> ${name || 'N/A'}</p>
+      <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Message:</strong></p>
+      <blockquote style="background:#f9f9f9; padding:15px; border-left:4px solid #4f46e5;">
+        ${message.replace(/\n/g, '<br>')}
+      </blockquote>
+    </div>
+  `,
+};
+await sgMail.send(internalMsg);
+
+
     return NextResponse.json({ message: 'Confirmation email sent.' });
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -74,4 +94,5 @@ export async function POST(request: NextRequest) {
   }
   return NextResponse.json({ error: 'Failed to send email.' }, { status: 500 });
   }
+  
 }
