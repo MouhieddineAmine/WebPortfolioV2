@@ -248,7 +248,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
             onChange={(token: string | null) => setRecaptchaToken(token)}
             theme="dark"/>
             {recaptchaError && (
-              <p className={`absolute -bottom-5 text-red-500 text-sm mb-[10px] text-center transition-opacity duration-200 ${
+              <p className={`absolute -bottom-5 text-red-500 text-sm mt-[5px] mb-[10px] text-center transition-opacity duration-200 ${
                 recaptchaError ? "opacity-100" : "opacity-0"}`}>
                   {recaptchaError || " "}
               </p>
