@@ -5,7 +5,7 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, message, recaptchaToken } = await request.json();
+    const { name, email, subject, message, recaptchaToken } = await request.json();
 
     if (!email || !message) {
       return NextResponse.json({ error: 'Email and message are required.' }, { status: 400 });
@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
       <p>If you need to send me more details or forgot to include something, feel free to contact me again:</p>
 
       <div style="text-align: center; margin: 30px 0;">
-        <a href="https://aminemouhieddine.com/contact" style="display: inline-block; background-color: #4f46e5; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+        <a href="https://aminemouhieddine.com/contact" style="display: inline-block; background-color: #242424; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
           Contact Me Again
         </a>
       </div>
@@ -55,9 +55,9 @@ export async function POST(request: NextRequest) {
       <hr style="border: none; border-top: 1px solid #ccc; margin: 40px 0;" />
 
       <footer style="font-size: 14px; color: #777; text-align: center;">
-        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: #4f46e5;">amine.mouhieddine01@gmail.com</a></p>
-        <p>Phone: <a href="tel:+15145700463" style="color: #4f46e5;">+1 (514) 570-0463</a></p>
-        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: #4f46e5;">aminemouhieddine.com</a></p>
+        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: #242424;">amine.mouhieddine01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+15145700463" style="color: #242424;">+1 (514) 570-0463</a></p>
+        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: #242424;">aminemouhieddine.com</a></p>
       </footer>
     </div>
   `,
@@ -75,8 +75,9 @@ export async function POST(request: NextRequest) {
       <img src="https://aminemouhieddine.com/formsubmissionbanner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
       <p><strong>Name:</strong> ${name || 'N/A'}</p>
       <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
+      <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
       <p><strong>Message:</strong></p>
-      <blockquote style="background:#f9f9f9; padding:15px; border-left:4px solid #4f46e5;">
+      <blockquote style="background:#242424; padding:15px; border-left:4px solid #4f46e5;">
         ${message.replace(/\n/g, '<br>')}
       </blockquote>
     </div>
