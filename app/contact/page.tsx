@@ -242,13 +242,13 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
               Clear Form
             </button>
             
-            <div className="w-full flex flex-col items-center mt-[20px] relative">
+            <div className="w-full flex flex-col items-center mt-[20px] mb-[20px] relative">
             <ReCAPTCHA
             sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
             onChange={(token: string | null) => setRecaptchaToken(token)}
             theme="dark"/>
             {recaptchaError && (
-              <p className={`absolute -bottom-5 text-red-500 text-sm text-center transition-opacity duration-200 ${
+              <p className={`absolute -bottom-5 text-red-500 text-sm mb-[10px] text-center transition-opacity duration-200 ${
                 recaptchaError ? "opacity-100" : "opacity-0"}`}>
                   {recaptchaError || " "}
               </p>
