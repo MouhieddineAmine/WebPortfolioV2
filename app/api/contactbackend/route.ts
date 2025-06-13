@@ -36,7 +36,32 @@ export async function POST(request: NextRequest) {
       from: process.env.FROM_EMAIL!,
       subject: 'Thanks for contacting me!',
       text: `Hi ${name || 'there'},\n\nThanks for reaching out! We received your message and will get back to you shortly.\n\nBest,\nWestAtlanticWeb Team`,
-      html: `<p>Hi ${name || 'there'},</p><p>Thanks for reaching out! We received your message and will get back to you shortly.</p>`,
+      html: `
+    <div style="font-family: Arial, sans-serif; color: #333; line-height: 1.6; max-width: 600px; margin: 0 auto; padding: 20px;">
+      <img src="https://yourdomain.com/banner.png" alt="Banner" style="width:100%; max-width:600px; border-radius:8px; margin-bottom: 20px;" />
+
+      <p>Hi ${name || 'there'},</p>
+
+      <p>Thanks for reaching out! I&apos;ve received your message and will get back to you shortly.</p>
+
+      <p>If you need to send me more details or forgot to include something, feel free to contact me again:</p>
+
+      <div style="text-align: center; margin: 30px 0;">
+        <a href="https://aminemouhieddine.com/contact" style="display: inline-block; background-color: #4f46e5; color: #fff; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">
+          Contact Me Again
+        </a>
+      </div>
+
+      <hr style="border: none; border-top: 1px solid #ccc; margin: 40px 0;" />
+
+      <footer style="font-size: 14px; color: #777; text-align: center;">
+        <p>Mouhieddine Amine</p>
+        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: #4f46e5;">aminemouhieddine01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+15145700463" style="color: #4f46e5;">+1 (514) 570-0463</a></p>
+        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: #4f46e5;">aminemouhieddine.com</a></p>
+      </footer>
+    </div>
+  `,
     };
 
     await sgMail.send(msg);
