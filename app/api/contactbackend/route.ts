@@ -55,9 +55,9 @@ export async function POST(request: NextRequest) {
       <hr style="border: none; border-top: 1px solid #ccc; margin: 40px 0;" />
 
       <footer style="font-size: 14px; color: #777; text-align: center;">
-        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: #242424;">amine.mouhieddine01@gmail.com</a></p>
-        <p>Phone: <a href="tel:+15145700463" style="color: #242424;">+1 (514) 570-0463</a></p>
-        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: #242424;">aminemouhieddine.com</a></p>
+        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: ##4f46e5;">amine.mouhieddine01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+15145700463" style="color: ##4f46e5;">+1 (514) 570-0463</a></p>
+        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: ##4f46e5;">aminemouhieddine.com</a></p>
       </footer>
     </div>
   `,
@@ -77,7 +77,7 @@ export async function POST(request: NextRequest) {
       <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
       <p><strong>Subject:</strong> ${subject || 'N/A'}</p>
       <p><strong>Message:</strong></p>
-      <blockquote style="background:#242424; padding:15px; border-left:4px solid #4f46e5;">
+      <blockquote style="background:#f9f9f9; padding:15px; border-left:4px solid #242424;">
         ${message.replace(/\n/g, '<br>')}
       </blockquote>
     </div>
