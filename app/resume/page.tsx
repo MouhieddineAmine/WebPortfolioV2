@@ -6,7 +6,7 @@ export default function ResumePage() {
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
         <h1 className="text-4xl font-bold mb-2 mt-10">My Resume</h1>
-        <p className="text-gray-400 mb-10">Here's a quick look at my experience and education. You can also download or view the PDF version directly.</p>
+        <p className="text-gray-400 mb-10">Here&apos;s a quick look at my experience and education. You can also download or view the PDF version directly.</p>
 
 
 
