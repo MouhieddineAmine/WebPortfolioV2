@@ -13,7 +13,7 @@ export default function ResumePage() {
 
         <div className="w-full h-[80vh]">
           <iframe
-            src="/cv-fr-pdf.pdf"
+            src="/resumeFR.pdf"
             className="w-full h-full border border-gray-700 rounded-md"
             title="My Resume PDF"
           ></iframe>
@@ -21,7 +21,7 @@ export default function ResumePage() {
 
         <div className="mt-6 text-center">
           <a
-            href="/cv-fr.docx"
+            href="/resumeFR.docx"
             download
             className="inline-block px-5 py-2 bg-white text-[#010812] font-semibold rounded hover:bg-gray-200 transition"
           >
