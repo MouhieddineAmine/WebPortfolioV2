@@ -49,7 +49,7 @@ export default function ResumePage() {
         </div>
 
           <p className="text-sm text-gray-400 italic text-center mt-2">
-            If the PDF doesn't display, try disabling automatic PDF downloads in your browser settings or use another browser.
+            If the PDF doesn&apos;t display, try disabling automatic PDF downloads in your browser settings or use another browser.
           </p>
 
         <div className="mt-10 text-center space-x-5">
