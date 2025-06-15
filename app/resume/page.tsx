@@ -13,7 +13,7 @@ export default function ResumePage() {
 
         <div className="w-full h-[80vh]">
           <iframe
-            src="/resumeFR.pdf"
+            src="https://docs.google.com/gview?url=https://aminemouhieddine.com/resumeFR.pdf&embedded=true"
             className="w-full h-full border border-gray-700 rounded-md"
             title="My Resume PDF"
           ></iframe>
