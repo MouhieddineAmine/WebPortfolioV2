@@ -6,6 +6,10 @@
         {
           "key": "Content-Disposition",
           "value": "inline"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/pdf"
         }
       ]
     }
