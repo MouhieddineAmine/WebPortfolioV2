@@ -21,11 +21,18 @@ export default function ResumePage() {
 
         <div className="mt-6 text-center">
           <a
-            href="/resumeFR.docx"
+            href="/resumeFR.pdf"
             download
             className="inline-block px-5 py-2 bg-white text-[#010812] font-semibold rounded hover:bg-gray-200 transition"
           >
             Download Resume (PDF)
+          </a>
+          <a
+            href="/resumeFR.docx"
+            download
+            className="inline-block px-5 py-2 bg-white text-[#010812] font-semibold rounded hover:bg-gray-200 transition"
+          >
+            Download Resume (WORD)
           </a>
         </div>
 
