@@ -122,7 +122,7 @@ export default function ResumePage() {
       Databases
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
-      {["MySQL", "MongoDB", "SQLite", "SQL Server", "Access", "...etc"].map(
+      {["MySQL", "MongoDB", "SQLite", "SQL Server", "Access", "Other APIs", "...etc"].map(
         (db) => (
           <div
             key={db}
