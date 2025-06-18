@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import BtnGoBack from "@/components/BtnGoBack";
+import { FaGraduationCap, FaLanguage, FaBriefcase } from "react-icons/fa";
 
 export default function ResumePage() {
   const [lang, setLang] = useState<"fr" | "en">("en");
@@ -71,7 +72,85 @@ export default function ResumePage() {
 
         <hr className="border-t border-gray-400 mt-[50px] mb-[50px]"/>
 
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-center mb-6">Education</h2>
+            <div className="max-w-xl mx-auto text-center text-gray-300 space-y-2">
+              <p>
+              <strong>Diploma in Computer Programming</strong><br/>
+              Collège La Cité<br/>
+              Graduated 2024
+              </p>
+              <p>
+              <strong>High School Diploma</strong><br/> 
+              Lycée Scientifique Souissi<br/>
+              Graduated 2021
+              </p>
+            </div>
+        </div>
 
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-center mb-6">Languages</h2>
+          <p className="text-center text-gray-300">
+          English (Fluent)<br/>
+          French (Fluent)</p>
+        </div>
+
+        <div className="mt-20">
+          <h2 className="text-3xl font-bold text-center mb-6">Current Employment</h2>
+          <p className="text-center text-gray-300">
+            UPS Class 5 driver
+          </p>
+        </div>
+
+
+<div className="mt-20 max-w-4xl mx-auto space-y-12">
+  {/* Education */}
+  <section>
+    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-3 text-yellow-500">
+      <FaGraduationCap /> Education
+    </h2>
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition shadow-md">
+        <h3 className="text-xl font-semibold mb-2">Diploma in Computer Programming</h3>
+        <p className="text-gray-400 mb-1">Collège La Cité</p>
+        <p className="text-gray-500 italic">Graduated 2024</p>
+      </div>
+      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition shadow-md">
+        <h3 className="text-xl font-semibold mb-2">High School Diploma</h3>
+        <p className="text-gray-400 mb-1">Lycée Scientifique Souissi</p>
+        <p className="text-gray-500 italic">Graduated 2021</p>
+      </div>
+    </div>
+  </section>
+
+  {/* Languages */}
+  <section>
+    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-3 text-yellow-500">
+      <FaLanguage /> Languages
+    </h2>
+    <div className="flex justify-center gap-6 flex-wrap">
+      {["English (Fluent)", "French (Fluent)"].map((lang) => (
+        <span
+          key={lang}
+          className="bg-[#223355] text-yellow-400 px-4 py-2 rounded-full font-semibold shadow-md"
+        >
+          {lang}
+        </span>
+      ))}
+    </div>
+  </section>
+
+  {/* Current Employment */}
+  <section>
+    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-3 text-yellow-500">
+      <FaBriefcase /> Current Employment
+    </h2>
+    <div className="max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center">
+      <p className="text-yellow-400 font-semibold text-lg">UPS Class 5 Driver</p>
+      <p className="text-gray-400 italic mt-1">Since 2022</p>
+    </div>
+  </section>
+</div>
 
 
 
