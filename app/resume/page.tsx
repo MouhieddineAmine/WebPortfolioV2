@@ -69,6 +69,117 @@ export default function ResumePage() {
           </a>
         </div>
 
+        <hr className="border-t border-gray-400 mt-[50px] mb-[50px]"/>
+
+
+
+
+
+
+<div className="mt-20">
+  <h2 className="text-3xl font-bold text-center mb-6">What I Work With</h2>
+
+  <div className="mb-12">
+    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+      Languages & Frameworks
+    </p>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+      {[
+        "C#",
+        "WPF",
+        "Entity Framework",
+        ".NET",
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "Angular.js",
+        "Java",
+        "Kotlin",
+        "Swift",
+        "Python",
+        "HTML",
+        "CSS",
+        "Tailwind CSS",
+        "Node.js",
+        "PHP",
+        "Bootstrap",
+        "jQuery",
+        "...etc"
+      ].map((tech) => (
+        <div
+          key={tech}
+          className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+        >
+          {tech}
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div className="mb-12">
+    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+      Databases
+    </p>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+      {["MySQL", "MongoDB", "SQLite", "SQL Server", "Access", "...etc"].map(
+        (db) => (
+          <div
+            key={db}
+            className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+          >
+            {db}
+          </div>
+        )
+      )}
+    </div>
+  </div>
+
+  <div className="mb-12">
+    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+      Tools & Platforms
+    </p>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+      {[
+        "GitHub",
+        "Vercel",
+        "Postman",
+        "Docker",
+        "VS Code",
+        "Xcode",
+        "Android Studio",
+        "Hostinger",
+        "...etc"
+      ].map((tool) => (
+        <div
+          key={tool}
+          className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+        >
+          {tool}
+        </div>
+      ))}
+    </div>
+    </div>
+
+      <div className="mb-6">
+    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+      Other
+    </p>
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+      {["Wordpress", "OpenAI API", "Google APIs", "...etc"].map(
+        (db) => (
+          <div
+            key={db}
+            className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+          >
+            {db}
+          </div>
+        )
+      )}
+    </div>
+  </div>
+  
+</div>
 
 
 
