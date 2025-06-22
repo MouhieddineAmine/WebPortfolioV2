@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import BtnGoBack from "@/components/BtnGoBack";
-import { FaGraduationCap, FaLanguage, FaBriefcase } from "react-icons/fa";
+import { FaGraduationCap, FaLanguage, FaBriefcase, FaTools, FaUserFriends } from "react-icons/fa";
 
 export default function ResumePage() {
   const [lang, setLang] = useState<"fr" | "en">("en");
@@ -72,97 +72,70 @@ export default function ResumePage() {
 
         <hr className="border-t border-gray-400 mt-[50px] mb-[50px]"/>
 
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-center mb-6">Education</h2>
-            <div className="max-w-xl mx-auto text-center text-gray-300 space-y-2">
-              <p>
-              <strong>Diploma in Computer Programming</strong><br/>
-              Collège La Cité<br/>
-              Graduated 2024
-              </p>
-              <p>
-              <strong>High School Diploma</strong><br/> 
-              Lycée Scientifique Souissi<br/>
-              Graduated 2021
-              </p>
-            </div>
-        </div>
-
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-center mb-6">Languages</h2>
-          <p className="text-center text-gray-300">
-          English (Fluent)<br/>
-          French (Fluent)</p>
-        </div>
-
-        <div className="mt-20">
-          <h2 className="text-3xl font-bold text-center mb-6">Current Employment</h2>
-          <p className="text-center text-gray-300">
-            UPS Class 5 driver
-          </p>
-        </div>
-
-
 <div className="mt-20 max-w-4xl mx-auto space-y-12">
   {/* Education */}
   <section>
-    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-3 text-yellow-500">
+    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
       <FaGraduationCap /> Education
     </h2>
     <div className="grid md:grid-cols-2 gap-8">
-      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition shadow-md">
+      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
         <h3 className="text-xl font-semibold mb-2">Diploma in Computer Programming</h3>
         <p className="text-gray-400 mb-1">Collège La Cité</p>
-        <p className="text-gray-500 italic">Graduated 2024</p>
+        <p className="text-gray-400 italic">Graduated 2024</p>
       </div>
-      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-yellow-500 transition shadow-md">
+      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
         <h3 className="text-xl font-semibold mb-2">High School Diploma</h3>
         <p className="text-gray-400 mb-1">Lycée Scientifique Souissi</p>
-        <p className="text-gray-500 italic">Graduated 2021</p>
+        <p className="text-gray-400 italic">Graduated 2021</p>
       </div>
     </div>
   </section>
 
-  {/* Languages */}
-  <section>
-    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-3 text-yellow-500">
-      <FaLanguage /> Languages
-    </h2>
-    <div className="flex justify-center gap-6 flex-wrap">
-      {["English (Fluent)", "French (Fluent)"].map((lang) => (
-        <span
-          key={lang}
-          className="bg-[#223355] text-yellow-400 px-4 py-2 rounded-full font-semibold shadow-md"
-        >
-          {lang}
-        </span>
-      ))}
-    </div>
-  </section>
+{/* Languages */}
+<section>
+  <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
+    <FaLanguage /> Languages
+  </h2>
+  <div className="grid sm:grid-cols-2 gap-8 max-w-xl mx-auto">
+    {[
+      { label: "English", level: "Fluent" },
+      { label: "French", level: "Fluent" },
+    ].map((lang) => (
+      <div
+        key={lang.label}
+        className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md text-center"
+      >
+        <p className="font-semibold text-lg">{lang.label}</p>
+        <p className="text-gray-400 italic">{lang.level}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
 
   {/* Current Employment */}
   <section>
-    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-3 text-yellow-500">
+    <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
       <FaBriefcase /> Current Employment
     </h2>
-    <div className="max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center">
-      <p className="text-yellow-400 font-semibold text-lg">UPS Class 5 Driver</p>
+    <div className="max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center hover:border-[#E6B821] transition">
+      <p className="font-semibold text-lg">UPS Class 5 Driver</p>
       <p className="text-gray-400 italic mt-1">Since 2022</p>
     </div>
   </section>
 </div>
 
-
-
+<hr className="border-t border-gray-400 mt-[50px] mb-[50px]"/>
 
 <div className="mt-20">
-  <h2 className="text-3xl font-bold text-center mb-6">What I Work With</h2>
+  <h2 className="flex items-center justify-center gap-4 text-3xl text-[#E6B821] font-bold text-center mb-6"><FaTools /> What I Work With</h2>
 
   <div className="mb-12">
     <p className="text-center text-gray-400 mb-6 text-lg font-medium">
       Languages & Frameworks
     </p>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {[
         "C#",
         "WPF",
@@ -188,7 +161,7 @@ export default function ResumePage() {
       ].map((tech) => (
         <div
           key={tech}
-          className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+          className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
         >
           {tech}
         </div>
@@ -200,12 +173,12 @@ export default function ResumePage() {
     <p className="text-center text-gray-400 mb-6 text-lg font-medium">
       Databases
     </p>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
-      {["MySQL", "MongoDB", "SQLite", "SQL Server", "Access", "Other APIs", "...etc"].map(
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
+      {["MySQL", "MongoDB", "SQLite", "SQL Server", "Access", "...etc"].map(
         (db) => (
           <div
             key={db}
-            className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+            className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
           >
             {db}
           </div>
@@ -218,7 +191,7 @@ export default function ResumePage() {
     <p className="text-center text-gray-400 mb-6 text-lg font-medium">
       Tools & Platforms
     </p>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {[
         "GitHub",
         "Vercel",
@@ -232,7 +205,7 @@ export default function ResumePage() {
       ].map((tool) => (
         <div
           key={tool}
-          className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+          className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
         >
           {tool}
         </div>
@@ -244,12 +217,12 @@ export default function ResumePage() {
     <p className="text-center text-gray-400 mb-6 text-lg font-medium">
       Other
     </p>
-    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center">
+    <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {["Wordpress", "OpenAI API", "Google APIs", "...etc"].map(
         (db) => (
           <div
             key={db}
-            className="bg-[#111827] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+            className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
           >
             {db}
           </div>
@@ -260,7 +233,34 @@ export default function ResumePage() {
   
 </div>
 
+<div className="mt-20">
+  <h2 className="flex items-center justify-center gap-4 text-3xl text-[#E6B821] font-bold text-center mb-6">
+    <FaUserFriends /> Soft Skills
+  </h2>
 
+  <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+    Skills and Qualities
+  </p>
+
+<div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
+    {[
+      "Problem Solving",
+      "Team Collaboration",
+      "Adaptability",
+      "Communication",
+      "Time Management",
+      "Attention to Detail",
+      "...etc"
+    ].map((skill) => (
+      <div
+        key={skill}
+        className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+      >
+        {skill}
+      </div>
+    ))}
+  </div>
+</div>
 
     </div>
     </div>
