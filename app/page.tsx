@@ -15,8 +15,8 @@ export default function Home() {
 
   return (
       <>
-    <div className="max-w-[2000px] mx-auto flex flex-col items-center px-15 mt-20">
-      <section id="about" className="mb-[70px] text-center">
+    <div className="max-w-[3500px] mx-auto flex flex-col items-center px-15 mt-20">
+      <section id="about" className="max-w-[2000px] mb-[70px] text-center">
         <h1 className="text-4xl font-semibold text-white">
           <Typewriter
             words={[
@@ -75,8 +75,8 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
 
-            <div className="flex justify-center">
-            <div className="w-full max-w-[400px] max-h-[150px] aspect-video overflow-hidden">
+            <div className="flex justify-center mb-[30px]">
+            <div className="w-full max-w-[550px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
             <Image src="/cannabis/homepage.png" alt="Cannabis Application" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
@@ -91,8 +91,8 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
 
-            <div className="flex justify-center">
-            <div className="w-full max-w-[400px] max-h-[150px] overflow-hidden">
+            <div className="flex justify-center mb-[30px]">
+            <div className="w-full max-w-[550px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
             <Image src="/tradetrack/homepage.png" alt="Tradetrack Application" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
@@ -107,8 +107,8 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
 
-            <div className="flex justify-center">
-            <div className="w-full max-w-[400px] max-h-[150px] aspect-video overflow-hidden">
+            <div className="flex justify-center mb-[30px]">
+            <div className="w-full max-w-[550px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
             <Image src="/portfolio/homepage.png" alt="Portfolio" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
@@ -123,9 +123,9 @@ export default function Home() {
             <h3 className="text-xl font-semibold text-white mb-2">Smart Calculator</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
 
-            <div className="flex justify-center">
-            <div className="w-full max-w-[400px] h-auto overflow-hidden">
-            <Image src="/calculator/homepage.png" alt="Calculator Application" className="w-full h-auto object-contain" width={400} height={400} sizes='100vw'/>
+            <div className="flex justify-center mb-[30px]">
+            <div className="w-full max-w-[120px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
+            <Image src="/calculator/homepage.png" alt="Calculator Application" className="w-full h-auto object-contain" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
 
