@@ -4,6 +4,8 @@ import dynamic from "next/dynamic";
 import TechCarousel from "@/components/TechCarousel";
 import { PageTransition } from "@/components/PageTransition";
 import { useState } from "react";
+import Image from "next/image";
+
 
 const Map = dynamic(() => import("../components/MtlMap"), { ssr: false });
 
@@ -70,8 +72,16 @@ export default function Home() {
         <div className="grid gap-8 md:grid-cols-1 lg:grid-cols-2">
 
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory Management System</h3>
+            <h3 className="text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+
+            <div className="flex justify-center">
+            <div className="w-full max-w-[400px] max-h-[150px] aspect-video overflow-hidden">
+            <Image src="/cannabis/homepage.png" alt="Cannabis Application" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
+            </div>
+            </div>
+
+
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
@@ -80,6 +90,14 @@ export default function Home() {
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+
+            <div className="flex justify-center">
+            <div className="w-full max-w-[400px] max-h-[150px] overflow-hidden">
+            <Image src="/tradetrack/homepage.png" alt="Tradetrack Application" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
+            </div>
+            </div>
+
+
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
@@ -88,6 +106,14 @@ export default function Home() {
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+
+            <div className="flex justify-center">
+            <div className="w-full max-w-[400px] max-h-[150px] aspect-video overflow-hidden">
+            <Image src="/portfolio/homepage.png" alt="Portfolio" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
+            </div>
+            </div>
+
+
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
@@ -96,6 +122,14 @@ export default function Home() {
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Smart Calculator</h3>
             <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+
+            <div className="flex justify-center">
+            <div className="w-full max-w-[400px] h-auto overflow-hidden">
+            <Image src="/calculator/homepage.png" alt="Calculator Application" className="w-full h-auto object-contain" width={400} height={400} sizes='100vw'/>
+            </div>
+            </div>
+
+
             <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
