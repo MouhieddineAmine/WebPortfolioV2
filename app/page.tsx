@@ -73,11 +73,11 @@ export default function Home() {
 
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory</h3>
-            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop application for monitoring cannabis plant health, managing cultivation processes, and tracking inventory across growth cycles.</p>
 
             <div className="flex justify-center mb-[30px]">
-            <div className="w-full max-w-[550px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
-            <Image src="/cannabis/homepage.png" alt="Cannabis Application" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
+            <div className="w-full max-w-[450px] h-[220px] overflow-hidden mx-auto flex items-center justify-center">
+            <Image src="/cannabis/homepage.png" alt="Cannabis Application" className="w-full h-full object-cover" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
 
@@ -89,11 +89,11 @@ export default function Home() {
 
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
-            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop trading companion for logging trade details, planning strategies, writing notes, and visualizing performance analytics in a dashboard.</p>
 
             <div className="flex justify-center mb-[30px]">
-            <div className="w-full max-w-[550px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
-            <Image src="/tradetrack/homepage.png" alt="Tradetrack Application" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
+            <div className="w-full max-w-[450px] h-[220px] overflow-hidden mx-auto flex items-center justify-center">
+            <Image src="/tradetrack/homepage.png" alt="Tradetrack Application" className="w-full h-full object-cover" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
 
@@ -105,11 +105,11 @@ export default function Home() {
 
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
-            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A personal portfolio built with Next.js to showcase my projects, resume, and contact information in a responsive, user-friendly layout.</p>
 
             <div className="flex justify-center mb-[30px]">
-            <div className="w-full max-w-[550px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
-            <Image src="/portfolio/homepage.png" alt="Portfolio" className="w-full h-auto object-cover" width={1} height={1} sizes='100vw'/>
+            <div className="w-full max-w-[450px] h-[220px] overflow-hidden mx-auto flex items-center justify-center">
+            <Image src="/portfolio/homepage.png" alt="Portfolio" className="w-full h-full object-cover" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
 
@@ -121,11 +121,11 @@ export default function Home() {
 
           <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
             <h3 className="text-xl font-semibold text-white mb-2">Smart Calculator</h3>
-            <p className="text-gray-400 text-sm mb-4">Brief description of what the project does.</p>
+            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface.</p>
 
             <div className="flex justify-center mb-[30px]">
-            <div className="w-full max-w-[120px] h-[200px] overflow-hidden mx-auto flex items-center justify-center">
-            <Image src="/calculator/homepage.png" alt="Calculator Application" className="w-full h-auto object-contain" width={1} height={1} sizes='100vw'/>
+            <div className="w-full max-w-[450px] h-[220px] overflow-hidden mx-auto flex items-center justify-center">
+            <Image src="/calculator/homepage.png" alt="Calculator Application" className="w-full h-full object-contain" width={1} height={1} sizes='100vw'/>
             </div>
             </div>
 

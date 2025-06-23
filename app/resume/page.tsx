@@ -121,7 +121,7 @@ export default function ResumePage() {
     </h2>
     <div className="max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center hover:border-[#E6B821] transition">
       <p className="font-semibold text-lg">UPS Class 5 Driver</p>
-      <p className="text-gray-400 italic mt-1">Since 2022</p>
+      <p className="text-gray-400 italic mt-1">Since 2025</p>
     </div>
   </section>
 </div>
