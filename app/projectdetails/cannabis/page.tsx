@@ -1,7 +1,6 @@
 "use client";
 import { useState } from "react";
 import BtnGoBack from "@/components/BtnGoBack";
-import { PageTransition } from "@/components/PageTransition";
 import Image from "next/image";
 
 const images = [
