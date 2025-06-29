@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import BtnGoBack from "@/components/BtnGoBack";
 
 export default function CannabisPage() {
