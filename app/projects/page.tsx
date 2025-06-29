@@ -12,9 +12,31 @@ export default function ProjectsPage() {
         
         <hr className="border-t border-gray-400 mb-10"/>
 
+<div className="flex justify-center items-center gap-3 mb-10 text-gray-400 text-sm">
+  <button
+    disabled
+    className="px-3 py-1 rounded border border-gray-700 bg-[#0a0f1a] text-gray-500 cursor-not-allowed opacity-50"
+  >
+    Previous
+  </button>
 
+  <span className="px-3 py-1 rounded border border-gray-600 bg-[#0a0f1a] text-white font-medium">
+    1
+  </span>
+  <span className="px-3 py-1 rounded border border-gray-700 hover:bg-[#1a1f2a] cursor-not-allowed opacity-50">
+    2
+  </span>
+  <span className="px-3 py-1 rounded border border-gray-700 hover:bg-[#1a1f2a] cursor-not-allowed opacity-50">
+    3
+  </span>
 
-
+  <button
+    disabled
+    className="px-3 py-1 rounded border border-gray-700 bg-[#0a0f1a] text-gray-500 cursor-not-allowed opacity-50"
+  >
+    Next
+  </button>
+</div>
 
 
 <div className="flex flex-col gap-10">
@@ -31,10 +53,10 @@ export default function ProjectsPage() {
       alt="Cannabis Project"
       width={600}
       height={300}
-      className="rounded-md object-cover w-full mb-5 mx-auto"
+      className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projects/cannabis-inventory"
+      href="/projectdetails/cannabis"
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
@@ -54,7 +76,7 @@ export default function ProjectsPage() {
       alt="Trade Planner"
       width={600}
       height={300}
-      className="rounded-md object-cover w-full mb-5 mx-auto"
+      className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
       href="/projects/trade-planner"
@@ -74,7 +96,7 @@ export default function ProjectsPage() {
       alt="Portfolio"
       width={600}
       height={300}
-      className="rounded-md object-cover w-full mb-5 mx-auto"
+      className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
       href="/projects/portfolio"
@@ -92,9 +114,9 @@ export default function ProjectsPage() {
     <Image
       src="/calculator/homepage.png"
       alt="Smart Calculator"
-      width={600}
-      height={300}
-      className="rounded-md object-cover w-full mb-5 mx-auto"
+      width={300}
+      height={400}
+      className="rounded-md object-cover w-[250px] h-full mb-5 mx-auto"
     />
     <PageTransition
       href="/projects/calculator"
