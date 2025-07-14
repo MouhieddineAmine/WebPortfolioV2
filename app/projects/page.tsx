@@ -79,7 +79,7 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projects/trade-planner"
+      href="/projectdetails/tradeplanner"
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
@@ -99,7 +99,7 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projects/portfolio"
+      href="/projectdetails/portfolio"
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
@@ -119,7 +119,7 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[250px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projects/calculator"
+      href="/projectdetails/calculator"
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project

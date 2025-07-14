@@ -75,7 +75,7 @@ export default function CannabisPage() {
   <h2 className="text-2xl font-semibold mb-4 text-white">Tech Breakdown</h2>
   <ul className="text-gray-300 list-disc list-inside space-y-2 pl-2">
     <li><span className="text-white font-medium">C# (.NET WPF)</span> — for the desktop UI</li>
-    <li><span className="text-white font-medium">SQLite</span> — local database</li>
+    <li><span className="text-white font-medium">SQL</span> — database</li>
     <li><span className="text-white font-medium">ZXing.Net</span> — QR code generation</li>
     <li><span className="text-white font-medium">EPPlus</span> — Excel data import</li>
     <li><span className="text-white font-medium">MVVM Pattern</span> — for maintainable architecture</li>
@@ -88,7 +88,7 @@ export default function CannabisPage() {
   <ul className="text-gray-300 list-disc list-inside space-y-2 pl-2">
     <li>Track plant stages, health, and lifecycle</li>
     <li>QR code assignment & scanning for each plant</li>
-    <li>Bulk import from Excel — streamline onboarding</li>
+    <li>Bulk import plants from Excel</li>
     <li>Manage cultivation batches and inventory flow</li>
     <li>Attach notes and set status updates for each unit</li>
   </ul>
