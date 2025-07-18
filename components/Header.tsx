@@ -4,8 +4,10 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { FaGlobe } from 'react-icons/fa';
 import { useCallback } from "react";
 import { PageTransition } from './PageTransition';
+import { useState } from "react";
 
 export default function Header() {
+  const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
  const handleLanguageClick = useCallback(() => {
   const target = document.getElementById("language");
@@ -43,26 +45,65 @@ export default function Header() {
 
   return (
     <header className="w-full py-2 bg-[#E6B821] z-50">
-  <div className="max-w-[2000px] mx-auto flex justify-between items-center px-15">
-    <PageTransition href="/" className="font-signature text-[35px]">
-      Mouhieddine Amine
-    </PageTransition>
-    <nav className=" flex items-center space-x-0 text-white text-[18px]">
-      <Link href="#about" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
-      <Link href="#projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
-      <Link href="#contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
-      <span className="h-[20px] w-[2px] bg-white opacity-50 mx-[60px] inline-block align-middle"></span>
-      <button onClick={handleLanguageClick}
-      className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
-      >
-      <FaGlobe />
-      Language
-      </button>
-      <div className="px-5 py-2">
-      <ThemeToggle />
-      </div>
-      
-    </nav>
+  <div className="max-w-[2000px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12">
+
+
+{/* Hamburger menu button (mobile only) */}
+<button
+  onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
+  className="md:hidden text-white p-2"
+  aria-label="Toggle Menu"
+>
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+  </svg>
+</button>
+
+{/* Logo or name – always visible */}
+<PageTransition href="/" className="font-signature text-[35px]">
+  Mouhieddine Amine
+</PageTransition>
+
+{/* Navigation menu */}
+<nav
+  className={`flex-col md:flex-row md:flex ${
+    isMobileMenuOpen ? 'flex' : 'hidden'
+  } md:items-center text-white text-[16px] sm:text-[17px] md:text-[18px] gap-2 mt-2 md:mt-0`}
+>
+  <Link
+    href="#about"
+    className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
+  >
+    About
+  </Link>
+  <Link
+    href="#projects"
+    className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
+  >
+    Projects
+  </Link>
+  <Link
+    href="#contact"
+    className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
+  >
+    Contact
+  </Link>
+
+  <span className="hidden md:inline-block h-[20px] w-[2px] bg-white opacity-50 mx-[30px]"></span>
+
+  <button
+    onClick={handleLanguageClick}
+    className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
+  >
+    <FaGlobe />
+    Language
+  </button>
+
+  <div className="px-5 py-2 hidden">
+    <ThemeToggle />
+  </div>
+</nav>
+
   </div>
 </header>
 
