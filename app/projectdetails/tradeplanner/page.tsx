@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import BtnGoBack from "@/components/BtnGoBack";
+import BtnGoBackProject from "@/components/BtnGoBackProject";
 import Image from "next/image";
 
 const images = [
@@ -23,7 +23,7 @@ export default function CannabisPage() {
   return (
 <div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
-        <BtnGoBack />
+        <BtnGoBackProject />
         <h1 className="text-4xl font-bold mb-5 mt-10">Trading Journal & Planner</h1>
         <p className="text-gray-400 mb-[20px]">A desktop application built to help traders plan, log, and reflect on their trades more effectively. 
           Users can record detailed entries for each trade, including strategy notes, outcomes, and performance metrics. 

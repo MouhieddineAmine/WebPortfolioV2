@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import BtnGoBack from "@/components/BtnGoBack";
+import BtnGoBackProject from "@/components/BtnGoBackProject";
 import Image from "next/image";
 
 const images = [
@@ -22,7 +22,7 @@ export default function CannabisPage() {
   return (
 <div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
-        <BtnGoBack />
+        <BtnGoBackProject />
         <h1 className="text-4xl font-bold mb-5 mt-10">Developer Portfolio</h1>
         <p className="text-gray-400 mb-[20px]">A clean and responsive personal portfolio built with Next.js to showcase my development work, skills, and experience. 
           It includes dedicated pages for projects, a downloadable resume, contact options, and smooth animations for an engaging user experience. 
@@ -71,10 +71,13 @@ export default function CannabisPage() {
 <section className="bg-[#0f1624] rounded-lg p-6 mt-16 mb-10 shadow-md">
   <h2 className="text-2xl font-semibold mb-4 text-white">Tech Breakdown</h2>
   <ul className="text-gray-300 list-disc list-inside space-y-2 pl-2">
-    <li><span className="text-white font-medium">C# (.NET WPF)</span> — for the desktop UI</li>
-    <li><span className="text-white font-medium">SQLite</span> — lightweight local database</li>
-    <li><span className="text-white font-medium">LiveCharts</span> — for rendering interactive charts and analytics</li>
-    <li><span className="text-white font-medium">MVVM Pattern</span> — for maintainable architecture</li>
+<li><span className="text-white font-medium">Next.js (App Router)</span> — powering the frontend architecture</li>
+    <li><span className="text-white font-medium">Tailwind CSS</span> — for modern and responsive UI design</li>
+    <li><span className="text-white font-medium">Framer Motion</span> — page transitions and micro animations</li>
+    <li><span className="text-white font-medium">SendGrid</span> — handles email delivery from the contact form</li>
+    <li><span className="text-white font-medium">Google reCAPTCHA</span> — protects the contact form from spam</li>
+    <li><span className="text-white font-medium">Leaflet</span> — interactive map integration</li>
+    <li><span className="text-white font-medium">Next.js Serverless Functions</span> — lightweight backend</li>
   </ul>
 </section>
 
@@ -82,11 +85,11 @@ export default function CannabisPage() {
 <section className="bg-[#0f1624] rounded-lg p-6 mb-10 shadow-md">
   <h2 className="text-2xl font-semibold mb-4 text-white">Core Features</h2>
   <ul className="text-gray-300 list-disc list-inside space-y-2 pl-2">
-    <li>Log trades with strategy, entry/exit points, and personal notes</li>
-    <li>Plan future trades and review pending setups</li>
-    <li>Dashboard with charts to track performance, win rate, and equity growth</li>
-    <li>Filter and search trades by date, strategy, or result</li>
-    <li>Clean UI for quick review and easy navigation</li>
+    <li>Interactive and minimal landing page with call-to-actions</li>
+    <li>Project showcase with image galleries and dedicated detail pages</li>
+    <li>Built-in PDF resume viewer and bilingual (EN/FR) support</li>
+    <li>Dynamic contact popup with Google reCAPTCHA protection</li>
+    <li>Smooth animations and mobile-first responsive design</li>
   </ul>
 </section>
 
