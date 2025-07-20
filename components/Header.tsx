@@ -41,7 +41,7 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="w-full py-2 bg-[#E6B821] z-[999] relative">
+    <header className="w-full py-2 bg-[#E6B821] z-[99] relative">
       <div className="max-w-[2000px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12">
         {/* Logo */}
         <PageTransition href="/" className="font-signature text-[32px]">
@@ -51,7 +51,7 @@ export default function Header() {
         {/* Hamburger Button */}
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="lg:hidden text-white p-2 z-50"
+          className="lg:hidden text-white p-2 z-[9999] hover:bg-[#B38C1A] rounded-md transition"
           aria-label="Toggle Menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
@@ -73,41 +73,35 @@ export default function Header() {
             <ThemeToggle />
           </div>
         </nav>
+      </div>
 
-        {/* Overlay (dim background) */}
-        {isMobileMenuOpen && (
-          <div
-            className="fixed inset-0 bg-black bg-opacity-50 z-[9998]"
-            onClick={() => setMobileMenuOpen(false)}
-          />
-        )}
-
-        {/* Slide-in Mobile Menu */}
-        <motion.nav
-          initial={{ x: '100%' }}
-          animate={{ x: isMobileMenuOpen ? 0 : '100%' }}
-          transition={{ type: 'tween', duration: 0.3 }}
-          className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-[#E6B821] text-white flex flex-col gap-4 p-6 z-[9999] shadow-lg lg:hidden"
+      {/* Mobile Nav */}
+      <motion.nav
+        initial={{ x: '100%' }}
+        animate={{ x: isMobileMenuOpen ? 0 : '100%' }}
+        transition={{ type: 'tween', duration: 0.3 }}
+        className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-[#E6B821] text-white flex flex-col p-6 z-[9999] lg:hidden"
+      >
+        {/* Close button */}
+        <button
+          onClick={() => setMobileMenuOpen(false)}
+          className="self-end text-white text-xl px-4 py-2 hover:bg-[#B38C1A] rounded-md transition"
+          aria-label="Close Menu"
         >
-          {/* Close button */}
-          <button
-            onClick={() => setMobileMenuOpen(false)}
-            className="self-end text-white p-2"
-            aria-label="Close Menu"
-          >
-            ✕
-          </button>
+          ✕
+        </button>
 
-          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="font-bold hover:underline">About</Link>
-          <Link href="#projects" onClick={() => setMobileMenuOpen(false)} className="font-bold hover:underline">Projects</Link>
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="font-bold hover:underline">Contact</Link>
+        <div className="flex flex-col gap-4 mt-6 text-lg font-bold">
+          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="hover:underline">About</Link>
+          <Link href="#projects" onClick={() => setMobileMenuOpen(false)} className="hover:underline">Projects</Link>
+          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:underline">Contact</Link>
 
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               handleLanguageClick();
             }}
-            className="flex items-center gap-2 font-bold"
+            className="flex items-center gap-2 hover:underline"
           >
             <FaGlobe />
             Language
@@ -116,8 +110,8 @@ export default function Header() {
           <div className="pt-4">
             <ThemeToggle />
           </div>
-        </motion.nav>
-      </div>
+        </div>
+      </motion.nav>
     </header>
   );
 }
