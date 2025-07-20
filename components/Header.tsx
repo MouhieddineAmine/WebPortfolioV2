@@ -44,8 +44,9 @@ export default function Header() {
     <header className="w-full py-2 bg-[#E6B821] z-[99] relative">
       <div className="max-w-[2000px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12">
         {/* Logo */}
-        <PageTransition href="/" className="font-signature text-[32px]">
-          Mouhieddine Amine
+        <PageTransition href="/" className="block w-[250px] h-auto">
+            <img src="/LogoPortfolio.png"
+            alt="Logo" className="w-full h-auto object-contain"/>
         </PageTransition>
 
         {/* Hamburger Button */}
@@ -80,7 +81,7 @@ export default function Header() {
         initial={{ x: '100%' }}
         animate={{ x: isMobileMenuOpen ? 0 : '100%' }}
         transition={{ type: 'tween', duration: 0.3 }}
-        className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-[#E6B821] text-white flex flex-col p-6 z-[9999] lg:hidden"
+        className="fixed top-0 right-0 h-full w-3/4 max-w-xs bg-[#E6B821] text-white flex flex-col p-6 z-[9999] custom-big-shadow lg:hidden"
       >
         {/* Close button */}
         <button

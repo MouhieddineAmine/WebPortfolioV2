@@ -106,3 +106,7 @@ body {
   -ms-overflow-style: none;     /* IE and Edge */
 }
 
+
+.custom-big-shadow {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
