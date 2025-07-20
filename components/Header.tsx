@@ -51,7 +51,7 @@ export default function Header() {
         </PageTransition>
 
         {/* Hamburger Button */}
-        <div className="flex items-center gap-5 lg:hidden">
+        <div className="flex items-center gap-4 lg:hidden">
           <ThemeToggle />
         <button
           onClick={() => setMobileMenuOpen(true)}
