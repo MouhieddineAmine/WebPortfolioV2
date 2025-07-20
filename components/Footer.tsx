@@ -12,10 +12,10 @@ export default function Footer() {
 
         {/* Contact Info */}
         <div className="flex justify-center text-center sm:text-left sm:items-start">
-          <div className="text-left mx-auto">
-            <h3 className="text-white text-[20px] font-bold mb-4 text-center">Contact</h3>
+          <div className="text-left md:text-left mx-auto">
+            <h3 className="text-white text-[20px] font-bold mb-4 text-center md:text-left">Contact</h3>
 
-              <div className="mb-4 text-sm text-gray-300 font-semibold">
+              <div className="mb-4 text-sm text-gray-300 font-semibold flex justify-center md:justify-start">
     <input
       type="checkbox"
       id="captcha-check"
@@ -25,19 +25,19 @@ export default function Footer() {
     <label htmlFor="captcha-check" className="cursor-pointer hover:text-[#E6B821]">I am not a robot – reveal contact</label>
   </div>
 
-            <p className="font-bold">
+            <p className="font-bold flex justify-center md:justify-start gap-1">
               Email:{' '}
                 <span className={`${isVerified ? '' : 'blur-[2px]'} transition`}>
                 amine.mouhieddine01@gmail.com
                 </span>
             </p>
-            <p className="font-bold">
+            <p className="font-bold flex justify-center md:justify-start gap-1">
               Phone:{' '}
                 <span className={`${isVerified ? '' : 'blur-[2px]'} transition`}>
                 +1 (514) 570-0463
                 </span>
             </p>
-            <p className="font-bold">
+            <p className="font-bold flex justify-center md:justify-start gap-1">
               Location:{' '}
                 <span className={`${isVerified ? '' : 'blur-[2px]'} transition`}>
                 Montréal, Québec
@@ -49,8 +49,8 @@ export default function Footer() {
         {/* Navigation */}
         <div className="flex justify-center text-center sm:text-left sm:items-start">
           <div className="text-lef mx-auto">
-            <h3 className="text-white text-[20px] font-bold mb-4 text-center">Navigation</h3>
-            <ul className="space-y-2">
+            <h3 className="text-white text-[20px] font-bold mb-4 text-center md:text-left">Navigation</h3>
+            <ul className="space-y-2 text-center md:text-left">
               <li>
                 <Link href="/" className="hover:text-[#E6B821] font-bold">
                   Home
@@ -73,9 +73,9 @@ export default function Footer() {
         {/* Socials */}
         <div className="flex justify-center text-center sm:text-left sm:items-start">
           <div className="text-left">
-            <h3 className="text-white text-[20px] font-bold mb-4 text-center">Let&apos;s Connect</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 hover:text-[#E6B821]">
+            <h3 className="text-white text-[20px] font-bold mb-4 text-center md:text-left">Let&apos;s Connect</h3>
+            <ul className="space-y-3 text-center md:text-left">
+              <li className="flex justify-center md:justify-start items-center gap-2 hover:text-[#E6B821]">
                 <FaGithub className="text-lg" />
                 <Link
                   href="https://github.com/MouhieddineAmine"
@@ -86,7 +86,7 @@ export default function Footer() {
                   GitHub
                 </Link>
               </li>
-              <li className="flex items-center gap-2 hover:text-[#E6B821]">
+              <li className="flex justify-center md:justify-start items-center gap-2 hover:text-[#E6B821]">
                 <FaLinkedin className="text-lg" />
                 <Link
                   href="https://www.linkedin.com/in/mouhieddine-amine-0b9837269"
@@ -104,7 +104,7 @@ export default function Footer() {
         {/* Languages */}
         <div className="flex justify-center text-center sm:text-left sm:items-start">
           <div className="flex flex-col items-center w-[180px]">
-            <h3 id="language" className="text-white text-[20px] font-bold mb-4 text-center">Select Language</h3>
+            <h3 id="language" className="text-white text-[20px] font-bold mb-4 text-center md:text-left">Select Language</h3>
             <ul className="space-y-2 w-full">
               <li id="btnlanguage-en" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border-2 border-transparent">
                 <Image src="https://img.icons8.com/color/100/great-britain.png" alt="English" className="w-[35px] object-contain" width={1} height={1} sizes='100vw'/>
