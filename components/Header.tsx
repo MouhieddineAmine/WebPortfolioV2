@@ -6,6 +6,7 @@ import { useCallback, useState } from "react";
 import { PageTransition } from './PageTransition';
 import { motion } from "framer-motion";
 
+
 export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -44,21 +45,24 @@ export default function Header() {
     <header className="w-full py-2 bg-[#E6B821] z-[99] relative">
       <div className="max-w-[2000px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12">
         {/* Logo */}
-        <PageTransition href="/" className="block w-[250px] h-auto">
+        <PageTransition href="/" className="block w-[260px] h-auto">
             <img src="/LogoPortfolio.png"
             alt="Logo" className="w-full h-auto object-contain"/>
         </PageTransition>
 
         {/* Hamburger Button */}
+        <div className="flex items-center gap-5 lg:hidden">
+          <ThemeToggle />
         <button
           onClick={() => setMobileMenuOpen(true)}
-          className="lg:hidden text-white p-2 z-[9999] hover:bg-[#B38C1A] rounded-md transition"
+          className="text-white p-2 z-[9999] hover:bg-[#B38C1A] rounded-md transition"
           aria-label="Toggle Menu"
         >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
+        </div>
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center text-white text-[18px] gap-2">
@@ -93,24 +97,22 @@ export default function Header() {
         </button>
 
         <div className="flex flex-col gap-4 mt-6 text-lg font-bold">
-          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="hover:underline">About</Link>
-          <Link href="#projects" onClick={() => setMobileMenuOpen(false)} className="hover:underline">Projects</Link>
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="hover:underline">Contact</Link>
+          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
+          <Link href="#projects" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
+          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
+
+          <div className="border-t border-white my-2"></div>
 
           <button
             onClick={() => {
               setMobileMenuOpen(false);
               handleLanguageClick();
             }}
-            className="flex items-center gap-2 hover:underline"
+            className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
           >
             <FaGlobe />
             Language
           </button>
-
-          <div className="pt-4">
-            <ThemeToggle />
-          </div>
         </div>
       </motion.nav>
     </header>
