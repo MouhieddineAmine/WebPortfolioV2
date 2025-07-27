@@ -45,19 +45,31 @@ export default function Home() {
       </PageTransition>
       </div>
 
-      <div className="text-center text-gray-300 mb-[100px] bg-[#010812]/40 pt-10 pb-10 px-2 sm:px-6 w-full overflow-x-hidden hover:bg-[#010812]/100 transition-colors duration-400 ease-in-out"
-      onMouseEnter={() => setPaused(true)}
-      onMouseLeave={() => setPaused(false)}
-      >
-        <h2 className="text-2xl font-semibold mb-4 text-white">Technologies I Use</h2>
-        <TechCarousel paused={paused}/>
-        <p className="text-gray-300 mt-6 text-sm">
-          Interested in a deeper dive into the tools and technologies I work with?{" "}
-          <PageTransition href="/resume" className="underline hover:text-[#E6B821] font-semibold">
-          Explore my full tech stack.
-          </PageTransition>
-        </p>
-      </div>
+
+
+<div className="w-screen relative -ml-[50vw] -mr-[50vw] bg-[#010812]/40 mb-[100px] pt-10 pb-10 overflow-x-hidden hover:bg-[#010812]/100 transition-colors duration-400 ease-in-out"
+  onMouseEnter={() => setPaused(true)}
+  onMouseLeave={() => setPaused(false)}
+>
+  <div className="text-center text-gray-300 px-2 sm:px-4">
+    <h2 className="text-2xl font-semibold mb-4 text-white">Technologies I Use</h2>
+  </div>
+
+  <TechCarousel paused={paused} />
+
+  <div className="text-center text-gray-300 mt-6 text-sm px-2 sm:px-4">
+    <p>
+      Interested in a deeper dive into the tools and technologies I work with?{" "}
+      <PageTransition href="/resume" className="underline hover:text-[#E6B821] font-semibold">
+        Explore my full tech stack.
+      </PageTransition>
+    </p>
+  </div>
+</div>
+
+
+
+
 
       <div className="text-center text-gray-300 mb-[60px]">
         <h2 className="text-2xl font-semibold mb-4 text-white">Projects</h2>

@@ -74,12 +74,11 @@ export default function TechCarousel({paused}: {paused:boolean}) {
           background: transparent;
           padding: 1rem 0;
           width: 100%;
-          max-width: 100%;
           user-select: none;
         }
         .carousel-track {
           display: flex;
-          min-width: 100%;
+          width: ${duplicatedTechs.length * ITEM_WIDTH}px;
           animation: scroll 30s linear infinite;
           transition: animation-play-state 0.3s ease;
           animation-play-state: ${paused ? "paused" : "running"};
@@ -109,7 +108,7 @@ export default function TechCarousel({paused}: {paused:boolean}) {
       `}</style>
 
       <section
-        className="carousel-container w-full max-w-full overflow-hidden px-2 sm:px-6"
+        className="carousel-container"
         aria-label="Technology Carousel"
         role="list"
       >
