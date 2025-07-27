@@ -15,9 +15,9 @@ export default function Home() {
 
   return (
       <>
-    <div className="max-w-[3500px] mx-auto flex flex-col items-center px-4 sm:px-6 mt-20">
+    <div className="max-w-[3500px] mx-auto flex flex-col items-center px-2 sm:px-4 mt-20">
       <section id="about" className="max-w-[2000px] mb-[70px] text-center">
-        <h1 className="text-4xl font-semibold text-white">
+        <h1 className="text-4xl font-semibold text-white min-h-[96px] sm:min-h-0">
           <Typewriter
             words={[
               "Hello, I'm Mouhieddine Amine",
@@ -149,7 +149,7 @@ export default function Home() {
       </div>
 
 
-      <section className="text-center text-gray-300 max-w-[800px] mb-6 px-4 sm:px-0">
+      <section className="text-center text-gray-300 max-w-[800px] mb-6 px-2 sm:px-4">
         <h2 className="text-2xl font-semibold mb-2 text-white">My Location</h2>
         <p>
           I&apos;m based in the Greater Montreal area. You can find me around here:
@@ -157,7 +157,7 @@ export default function Home() {
       </section>
 
       <Map center={[45.5408, -73.6497]} zoom={11} markerText="Un peu près ici / Around here" height="400px" />
-      <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6 px-4 sm:px-0">I&apos;m open to local, remote, and hybrid opportunities.</p>
+      <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6 px-2 sm:px-4">I&apos;m open to local, remote, and hybrid opportunities.</p>
     </div>
     </>
   );
