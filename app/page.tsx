@@ -17,7 +17,7 @@ export default function Home() {
       <>
     <div className="max-w-[3500px] mx-auto flex flex-col items-center px-2 sm:px-4 mt-20">
       <section id="about" className="max-w-[2000px] mb-[70px] text-center">
-        <h1 className="text-4xl font-semibold text-white min-h-[100px] sm:min-h-0">
+        <h1 className="text-4xl font-semibold text-white min-h-[105px] sm:min-h-0">
           <Typewriter
             words={[
               "Hello, I'm Mouhieddine Amine",
