@@ -3,6 +3,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { PageTransition } from "@/components/PageTransition";
 
 export default function Footer() {
   const [isVerified, setIsVerified] = useState(false);
@@ -52,19 +53,13 @@ export default function Footer() {
             <h3 className="text-white text-[20px] font-bold mb-4 text-center md:text-left">Navigation</h3>
             <ul className="space-y-2 text-center md:text-left">
               <li>
-                <Link href="/" className="hover:text-[#E6B821] font-bold">
-                  Home
-                </Link>
+                <PageTransition href="/" className="hover:text-[#E6B821] font-bold">Home</PageTransition>
               </li>
               <li>
-                <Link href="/resume" className="hover:text-[#E6B821] font-bold">
-                  Resume
-                </Link>
+                <PageTransition href="/resume" className="hover:text-[#E6B821] font-bold">Resume</PageTransition>
               </li>
               <li>
-                <Link href="/contact" className="hover:text-[#E6B821] font-bold">
-                  Contact Info
-                </Link>
+                <PageTransition href="/contact" className="hover:text-[#E6B821] font-bold">Contact Info</PageTransition>
               </li>
             </ul>
           </div>

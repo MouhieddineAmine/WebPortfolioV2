@@ -82,7 +82,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href="/projectdetails/cannabis" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -98,7 +98,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href="/projectdetails/tradeplanner" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -114,7 +114,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href="/projectdetails/portfolio" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -130,7 +130,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projects/project-name" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href="/projectdetails/calculator" className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>

@@ -66,9 +66,9 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center text-white text-[18px] gap-2">
-          <Link href="#about" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
-          <Link href="#projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
-          <Link href="#contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
+          <PageTransition href="/resume" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Resume</PageTransition>
+          <PageTransition href="/projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</PageTransition>
+          <PageTransition href="/contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</PageTransition>
           <span className="h-[20px] w-[2px] bg-white opacity-50 mx-[30px]"></span>
           <button onClick={handleLanguageClick} className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">
             <FaGlobe />
@@ -97,9 +97,9 @@ export default function Header() {
         </button>
 
         <div className="flex flex-col gap-4 mt-6 text-lg font-bold">
-          <Link href="#about" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">About</Link>
-          <Link href="#projects" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</Link>
-          <Link href="#contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</Link>
+          <PageTransition href="/resume" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Resume</PageTransition>
+          <PageTransition href="/projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</PageTransition>
+          <PageTransition href="/contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</PageTransition>
 
           <div className="border-t border-white my-2"></div>
 
