@@ -74,6 +74,7 @@ export default function TechCarousel({paused}: {paused:boolean}) {
           background: transparent;
           padding: 1rem 0;
           width: 100%;
+          max-width: 100%;
           user-select: none;
         }
         .carousel-track {
@@ -108,7 +109,7 @@ export default function TechCarousel({paused}: {paused:boolean}) {
       `}</style>
 
       <section
-        className="carousel-container"
+        className="carousel-container w-full max-w-full overflow-hidden px-2 sm:px-6"
         aria-label="Technology Carousel"
         role="list"
       >
