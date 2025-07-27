@@ -45,7 +45,7 @@ export default function Home() {
       </PageTransition>
       </div>
 
-      <div className="text-center text-gray-300 mb-[100px] bg-[#010812]/40 pt-10 pb-10 px-2 sm:px-6 overflow-hidden hover:bg-[#010812]/100 transition-colors duration-400 ease-in-out"
+      <div className="text-center text-gray-300 mb-[100px] bg-[#010812]/40 pt-10 pb-10 px-2 sm:px-6 w-full overflow-x-hidden hover:bg-[#010812]/100 transition-colors duration-400 ease-in-out"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
       >
