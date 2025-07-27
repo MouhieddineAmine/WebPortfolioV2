@@ -78,7 +78,7 @@ export default function TechCarousel({paused}: {paused:boolean}) {
         }
         .carousel-track {
           display: flex;
-          width: ${duplicatedTechs.length * ITEM_WIDTH}px;
+          min-width: 100%;
           animation: scroll 30s linear infinite;
           transition: animation-play-state 0.3s ease;
           animation-play-state: ${paused ? "paused" : "running"};
