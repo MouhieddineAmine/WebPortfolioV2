@@ -57,7 +57,7 @@ export default function Home() {
 
   <TechCarousel paused={paused} />
 
-  <div className="text-center text-gray-300 mt-6 text-sm px-2 sm:px-4">
+  <div className="text-center text-gray-300 mt-6 text-sm px-8 sm:px-4">
     <p>
       Interested in a deeper dive into the tools and technologies I work with?{" "}
       <PageTransition href="/resume" className="underline hover:text-[#E6B821] font-semibold">
