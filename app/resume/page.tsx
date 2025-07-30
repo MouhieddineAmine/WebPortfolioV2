@@ -9,7 +9,7 @@ export default function ResumePage() {
   const resumePdf = lang === "fr" ? "/resumeFR.pdf" : "/resumeEN.pdf";
   const resumeDoc = lang === "fr" ? "/resumeFR.docx" : "/resumeFR.docx";
   return (
-    <div className="min-h-screen px-6 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
+    <div className="min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
         <h1 className="text-4xl font-bold mb-2 mt-10">My Resume</h1>
@@ -53,18 +53,18 @@ export default function ResumePage() {
             If the PDF doesn&apos;t display, try disabling automatic PDF downloads in your browser settings or use another browser.
           </p>
 
-        <div className="mt-10 text-center space-x-5">
+        <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-5">
           <a
             href={resumePdf}
             download
-            className="inline-block px-5 py-2 bg-[#E6B821] text-white font-semibold rounded hover:bg-[#B38C1A] transition"
+            className="w-[250px] text-center px-5 py-2 bg-[#E6B821] text-white font-semibold rounded hover:bg-[#B38C1A] transition"
           >
             Download Resume (.PDF)
           </a>
           <a
             href={resumeDoc}
             download
-            className="inline-block px-5 py-2 bg-[#E6B821] text-white font-semibold rounded hover:bg-[#B38C1A] transition"
+            className="w-[250px] text-center px-5 py-2 bg-[#E6B821] text-white font-semibold rounded hover:bg-[#B38C1A] transition"
           >
             Download Resume (.DOCX)
           </a>
