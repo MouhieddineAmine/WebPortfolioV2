@@ -88,14 +88,14 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
 
   return (
-    <div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
+    <div className="min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
 
         <h1 className="text-4xl font-bold mb-2 mt-10">Get in Touch</h1>
         <p className="text-gray-400 mb-10">I&apos;m open to new opportunities, collaborations, or any questions you may have.</p>
 
-        <div className="grid md:grid-cols-2 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Info */}
           <div className="space-y-6 bg-[#041224] p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-[#E6B821]">Contact Info</h2>
