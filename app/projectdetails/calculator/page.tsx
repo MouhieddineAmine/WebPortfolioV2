@@ -11,7 +11,7 @@ export default function CannabisPage() {
       const [index] = useState(0);
 
   return (
-<div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
+<div className="min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBackProject />
         <h1 className="text-4xl font-bold mb-5 mt-10">Smart Calculator</h1>
