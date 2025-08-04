@@ -142,7 +142,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
                   rel="noopener noreferrer"
                   className="hover:underline"
                 >
-                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>https://github.com/MouhieddineAmine</span>
+                  <span className={`${isRVerified ? '' : 'blur-[2px]'} transition break-all`}>https://github.com/MouhieddineAmine</span>
                 </a>
               </p>
 
