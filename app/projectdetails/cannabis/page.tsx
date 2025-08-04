@@ -39,7 +39,7 @@ export default function CannabisPage() {
 
 {/* Image carousel */}
 <div className="max-w-[1100px] mx-auto text-center relative">
-  <div className="relative w-full h-[500px] overflow-hidden rounded-md">
+  <div className="relative w-full h-[180px] sm:h-[300px] md:h-[500px] overflow-hidden rounded-md">
     <Image
       src={images[index]}
       alt={`Screenshot ${index + 1}`}
