@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function ProjectsPage() {
   return (
-<div className="min-h-screen px-12 bg-[#010812] text-white pt-[35px] mx-5 pb-[60px] rounded-xl">
+<div className="min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
         <h1 className="text-4xl font-bold mb-2 mt-10">Projects</h1>
