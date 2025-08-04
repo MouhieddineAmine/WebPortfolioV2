@@ -49,7 +49,7 @@ export default function CannabisPage() {
 {/* Previous Button */}
 <button
   onClick={prev}
-  className="absolute top-1/2 left-12 -translate-y-1/2 bg-[#0a0f1a] bg-opacity-80 hover:bg-[#1a1f2e] text-white text-xl w-10 h-10 flex items-center justify-center rounded-md shadow-md hover:scale-105 transition-all duration-200 ease-in-out"
+  className="absolute top-1/2 left-4 sm:left-8 md:left-15 -translate-y-1/2 bg-[#0a0f1a] bg-opacity-80 hover:bg-[#1a1f2e] text-white text-xl w-10 h-10 flex items-center justify-center rounded-md shadow-md hover:scale-105 transition-all duration-200 ease-in-out"
   aria-label="Previous image"
 >
   &#10094;
@@ -58,7 +58,7 @@ export default function CannabisPage() {
 {/* Next Button */}
 <button
   onClick={next}
-  className="absolute top-1/2 right-12 -translate-y-1/2 bg-[#0a0f1a] bg-opacity-80 hover:bg-[#1a1f2e] text-white text-xl w-10 h-10 flex items-center justify-center rounded-md shadow-md hover:scale-105 transition-all duration-200 ease-in-out"
+  className="absolute top-1/2 right-4 sm:right-8 md:right-15 -translate-y-1/2 bg-[#0a0f1a] bg-opacity-80 hover:bg-[#1a1f2e] text-white text-xl w-10 h-10 flex items-center justify-center rounded-md shadow-md hover:scale-105 transition-all duration-200 ease-in-out"
   aria-label="Next image"
 >
   &#10095;
