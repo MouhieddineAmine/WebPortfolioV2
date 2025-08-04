@@ -135,7 +135,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
               </p>
 
               <p className="flex items-center gap-3">
-                <FaGithub className="text-[#E6B821]" />
+                <FaGithub className="text-[#E6B821] shrink-0" />
                 <a
                   href="https://github.com/MouhieddineAmine"
                   target="_blank"
