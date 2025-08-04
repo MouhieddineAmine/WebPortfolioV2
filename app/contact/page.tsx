@@ -109,21 +109,21 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
             <div className="space-y-4 text-sm font-semibold">
               <p className="flex items-center gap-3">
-                <FaEnvelope className="text-[#E6B821]" />
+                <FaEnvelope className="text-[#E6B821] shrink-0" />
                 <a href="mailto:youremail@example.com" className="hover:underline">
                   <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>amine.mouhieddine01@gmail.com</span> 
                 </a>
               </p>
 
               <p className="flex items-center gap-3">
-                <FaPhone className="text-[#E6B821]" />
+                <FaPhone className="text-[#E6B821] shrink-0" />
                 <a href="tel:+1234567890" className="hover:underline">
                   <span className={`${isRVerified ? '' : 'blur-[2px]'} transition`}>+1 (514) 570-0463</span>
                 </a>
               </p>
 
               <p className="flex items-center gap-3">
-                <FaLinkedin className="text-[#E6B821]" />
+                <FaLinkedin className="text-[#E6B821] shrink-0" />
                 <a
                   href="https://www.linkedin.com/in/mouhieddine-amine-0b9837269/"
                   target="_blank"
@@ -147,7 +147,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
               </p>
 
               <p className="flex items-center gap-3">
-                <FaMapMarkerAlt className="text-[#E6B821]" />
+                <FaMapMarkerAlt className="text-[#E6B821] shrink-0" />
                 <a
                   href="https://www.google.com/maps/place/Montreal,+QC/@45.5587087,-74.041511,10z/data=!3m1!4b1!4m6!3m5!1s0x4cc91a541c64b70d:0x654e3138211fefef!8m2!3d45.5018869!4d-73.5673919!16zL20vMDUycDc?entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
