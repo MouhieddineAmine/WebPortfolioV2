@@ -269,7 +269,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
         ? "animate-[fadeBackdropOut_0.3s_ease-out_forwards]"
         : "animate-[fadeBackdrop_0.3s_ease-out_forwards]"
       }`}>
-    <div className={`relative bg-[#041224] w-[90%] max-w-[500px] px-[80px] py-[60px] rounded-xl shadow-lg text-center text-white border border-gray-700
+    <div className={`relative bg-[#041224] w-[90%] max-w-[500px] px-6 sm:px-[80px] py-[40px] sm:py-[60px] rounded-xl shadow-lg text-center text-white border border-gray-700
         ${isFadingOut
           ? "animate-[fadeOutPopup_0.3s_ease-out_forwards]"
           : "animate-[fadeInPopup_0.3s_ease-out_forwards]"
