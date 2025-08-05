@@ -17,7 +17,7 @@ export default function Home() {
       <>
     <div className="max-w-[3500px] mx-auto flex flex-col items-center px-2 sm:px-4 mt-20">
       <section id="about" className="max-w-[2000px] mb-[70px] text-center">
-        <h1 className="text-4xl font-semibold text-white min-h-[120px] sm:min-h-0">
+        <h1 className="typetext text-4xl font-semibold text-white min-h-[120px] sm:min-h-0">
           <Typewriter
             words={[
               "Hello, I'm Mouhieddine Amine",
@@ -31,7 +31,7 @@ export default function Home() {
             delaySpeed={1500}
           />
         </h1>
-         <p className="mt-12 text-gray-300 max-w-[800px]">
+         <p className="description mt-12 text-gray-300 max-w-[800px]">
           I&apos;m a Full-Stack Developer passionate about creating robust applications that deliver seamless user experiences.<br/>
           I Enjoy tackling complex challenges through clean, maintainable code and focus on building scalable, reliable solutions across front-end, back-end, and database systems.
         </p>
@@ -71,8 +71,8 @@ export default function Home() {
 
 
 
-      <div className="text-center text-gray-300 mb-[60px]">
-        <h2 className="text-2xl font-semibold mb-4 text-white">Projects</h2>
+      <div className="description text-center text-gray-300 mb-[60px]">
+        <h2 className="typetext text-2xl font-semibold mb-4 text-white">Projects</h2>
         <p className="mb-10 max-w-[800px] mx-auto">
           Here&apos;s a quick look at some projects I have worked on. For more,{" "}
           <PageTransition href="/projects" className="underline hover:text-[#E6B821] font-semibold">
@@ -83,9 +83,9 @@ export default function Home() {
 
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2">
 
-          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory</h3>
-            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop application for monitoring cannabis plant health, managing cultivation processes, and tracking inventory across growth cycles.</p>
+          <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="typetext text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop application for monitoring cannabis plant health, managing cultivation processes, and tracking inventory across growth cycles.</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -99,9 +99,9 @@ export default function Home() {
             </PageTransition>
           </div>
 
-          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
-            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop trading companion for logging trade details, planning strategies, writing notes, and visualizing performance analytics in a dashboard.</p>
+          <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="typetext text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop trading companion for logging trade details, planning strategies, writing notes, and visualizing performance analytics in a dashboard.</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -115,9 +115,9 @@ export default function Home() {
             </PageTransition>
           </div>
 
-          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
-            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A personal portfolio built with Next.js to showcase my projects, resume, and contact information in a responsive, user-friendly layout.</p>
+          <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="typetext text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A personal portfolio built with Next.js to showcase my projects, resume, and contact information in a responsive, user-friendly layout.</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -131,9 +131,9 @@ export default function Home() {
             </PageTransition>
           </div>
 
-          <div className="bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="text-xl font-semibold text-white mb-2">Smart Calculator</h3>
-            <p className="text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface.</p>
+          <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
+            <h3 className="typetext text-xl font-semibold text-white mb-2">Smart Calculator</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface.</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -161,15 +161,15 @@ export default function Home() {
       </div>
 
 
-      <section className="text-center text-gray-300 max-w-[800px] mb-6 px-2 sm:px-4">
-        <h2 className="text-2xl font-semibold mb-2 text-white">My Location</h2>
+      <section className="description text-center text-gray-300 max-w-[800px] mb-6 px-2 sm:px-4">
+        <h2 className="typetext text-2xl font-semibold mb-2 text-white">My Location</h2>
         <p>
           I&apos;m based in the Greater Montreal area. You can find me around here:
         </p>
       </section>
 
       <Map center={[45.5408, -73.6497]} zoom={11} markerText="Un peu près ici / Around here" height="400px" />
-      <p className="text-center text-gray-300 max-w-[800px] mt-5 mb-6 px-2 sm:px-4">I&apos;m open to local, remote, and hybrid opportunities.</p>
+      <p className="description text-center text-gray-300 max-w-[800px] mt-5 mb-6 px-2 sm:px-4">I&apos;m open to local, remote, and hybrid opportunities.</p>
     </div>
     </>
   );

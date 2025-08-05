@@ -61,8 +61,40 @@ body {
 }
 
 .light-theme body {
-  @apply bg-white text-black;
+  @apply bg-[#8b9bab] text-[#1c2734];
 }
+
+.light-theme .typetext {
+  color: #041224;
+}
+
+.light-theme .description {
+  color: #172433;
+}
+
+.light-theme .card {
+  background-color: #a8b9cc;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .font-signature {
   font-family: "Snell Roundhand", "Brush Script MT", cursive;
