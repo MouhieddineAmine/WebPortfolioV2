@@ -73,9 +73,26 @@ body {
 }
 
 .light-theme .card {
-  background-color: #a8b9cc;
+  background-color: #9caebe;
 }
 
+.light-theme .detail-bg {
+  background-color: #8092a4;
+}
+
+.light-theme .light-border {
+  border-color: #172433;
+}
+
+.light-theme .light-inputs {
+  background-color: #6b7d90;
+  color: #041224;
+}
+
+.light-theme .light-pagination {
+  background-color: #6b7d90;
+  color: #041224;
+}
 
 
 

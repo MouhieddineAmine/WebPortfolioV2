@@ -9,13 +9,13 @@ export default function ResumePage() {
   const resumePdf = lang === "fr" ? "/resumeFR.pdf" : "/resumeEN.pdf";
   const resumeDoc = lang === "fr" ? "/resumeFR.docx" : "/resumeFR.docx";
   return (
-    <div className="min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
+    <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
-        <h1 className="text-4xl font-bold mb-2 mt-10">My Resume</h1>
-        <p className="text-gray-400 mb-[20px]">Here&apos;s a quick look at my experience and education. You can also download or view the PDF version directly.</p>
+        <h1 className="typetext text-4xl font-bold mb-2 mt-10">My Resume</h1>
+        <p className="description text-gray-400 mb-[20px]">Here&apos;s a quick look at my experience and education. You can also download or view the PDF version directly.</p>
         
-        <hr className="border-t border-gray-400"/>
+        <hr className="light-border border-t border-gray-400"/>
 
         <div className="mt-[50px] mb-6 flex justify-center gap-4">
           <button
@@ -49,7 +49,7 @@ export default function ResumePage() {
           ></iframe>
         </div>
 
-          <p className="text-sm text-gray-400 italic text-center mt-2">
+          <p className="description text-sm text-gray-400 italic text-center mt-2">
             If the PDF doesn&apos;t display, try disabling automatic PDF downloads in your browser settings or use another browser.
           </p>
 
@@ -70,7 +70,7 @@ export default function ResumePage() {
           </a>
         </div>
 
-        <hr className="border-t border-gray-400 mt-[50px] mb-[50px]"/>
+        <hr className="light-border border-t border-gray-400 mt-[50px] mb-[50px]"/>
 
 <div className="mt-20 max-w-4xl mx-auto space-y-12">
   {/* Education */}
@@ -79,15 +79,15 @@ export default function ResumePage() {
       <FaGraduationCap /> Education
     </h2>
     <div className="grid md:grid-cols-2 gap-8">
-      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
+      <div className="detail-bg bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
         <h3 className="text-xl font-semibold mb-2">Diploma in Computer Programming</h3>
-        <p className="text-gray-400 mb-1">Collège La Cité</p>
-        <p className="text-gray-400 italic">Graduated 2024</p>
+        <p className="description text-gray-400 mb-1">Collège La Cité</p>
+        <p className="description text-gray-400 italic">Graduated 2024</p>
       </div>
-      <div className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
+      <div className="detail-bg bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
         <h3 className="text-xl font-semibold mb-2">High School Diploma</h3>
-        <p className="text-gray-400 mb-1">Lycée Scientifique Souissi</p>
-        <p className="text-gray-400 italic">Graduated 2021</p>
+        <p className="description text-gray-400 mb-1">Lycée Scientifique Souissi</p>
+        <p className="description text-gray-400 italic">Graduated 2021</p>
       </div>
     </div>
   </section>
@@ -104,10 +104,10 @@ export default function ResumePage() {
     ].map((lang) => (
       <div
         key={lang.label}
-        className="bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md text-center"
+        className="detail-bg bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md text-center"
       >
         <p className="font-semibold text-lg">{lang.label}</p>
-        <p className="text-gray-400 italic">{lang.level}</p>
+        <p className="description text-gray-400 italic">{lang.level}</p>
       </div>
     ))}
   </div>
@@ -119,20 +119,20 @@ export default function ResumePage() {
     <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
       <FaBriefcase /> Current Employment
     </h2>
-    <div className="max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center hover:border-[#E6B821] transition">
+    <div className="detail-bg max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center hover:border-[#E6B821] transition">
       <p className="font-semibold text-lg">UPS Class 5 Driver</p>
-      <p className="text-gray-400 italic mt-1">Since 2025</p>
+      <p className="description text-gray-400 italic mt-1">Since 2025</p>
     </div>
   </section>
 </div>
 
-<hr className="border-t border-gray-400 mt-[50px] mb-[50px]"/>
+<hr className="light-border border-t border-gray-400 mt-[50px] mb-[50px]"/>
 
 <div className="mt-20">
   <h2 className="flex items-center justify-center gap-4 text-3xl text-[#E6B821] font-bold text-center mb-6"><FaTools /> What I Work With</h2>
 
   <div className="mb-12">
-    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+    <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
       Languages & Frameworks
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
@@ -161,7 +161,7 @@ export default function ResumePage() {
       ].map((tech) => (
         <div
           key={tech}
-          className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+          className="detail-bg bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
         >
           {tech}
         </div>
@@ -170,7 +170,7 @@ export default function ResumePage() {
   </div>
 
   <div className="mb-12">
-    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+    <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
       Databases
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
@@ -178,7 +178,7 @@ export default function ResumePage() {
         (db) => (
           <div
             key={db}
-            className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+            className="detail-bg bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
           >
             {db}
           </div>
@@ -188,7 +188,7 @@ export default function ResumePage() {
   </div>
 
   <div className="mb-12">
-    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+    <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
       Tools & Platforms
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
@@ -205,7 +205,7 @@ export default function ResumePage() {
       ].map((tool) => (
         <div
           key={tool}
-          className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+          className="detail-bg bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
         >
           {tool}
         </div>
@@ -214,7 +214,7 @@ export default function ResumePage() {
     </div>
 
       <div className="mb-6">
-    <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+    <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
       Other
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
@@ -222,7 +222,7 @@ export default function ResumePage() {
         (db) => (
           <div
             key={db}
-            className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+            className="detail-bg bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
           >
             {db}
           </div>
@@ -238,7 +238,7 @@ export default function ResumePage() {
     <FaUserFriends /> Soft Skills
   </h2>
 
-  <p className="text-center text-gray-400 mb-6 text-lg font-medium">
+  <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
     Skills and Qualities
   </p>
 
@@ -254,7 +254,7 @@ export default function ResumePage() {
     ].map((skill) => (
       <div
         key={skill}
-        className="bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
+        className="detail-bg bg-[#112244] border border-gray-700 rounded-lg py-3 px-4 hover:border-[#E6B821] transition"
       >
         {skill}
       </div>

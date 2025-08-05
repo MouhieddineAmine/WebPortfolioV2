@@ -88,26 +88,26 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
 
   return (
-    <div className="min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
+    <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
 
-        <h1 className="text-4xl font-bold mb-2 mt-10">Get in Touch</h1>
-        <p className="text-gray-400 mb-10">I&apos;m open to new opportunities, collaborations, or any questions you may have.</p>
+        <h1 className="typetext text-4xl font-bold mb-2 mt-10">Get in Touch</h1>
+        <p className="description text-gray-400 mb-10">I&apos;m open to new opportunities, collaborations, or any questions you may have.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Info */}
-          <div className="space-y-6 bg-[#041224] p-6 rounded-xl shadow-lg">
+          <div className="detail-bg space-y-6 bg-[#041224] p-6 rounded-xl shadow-lg">
             <h2 className="text-2xl font-bold mb-4 text-[#E6B821]">Contact Info</h2>
 
-            <div className="mb-10 pt-2 text-sm text-gray-300 font-semibold">
+            <div className="description mb-10 pt-2 text-sm text-gray-300 font-semibold">
               <input type="checkbox" id="recaptcha-check" className="mr-2 accent-[#E6B821]"
               onChange={(f) => setIsRVerified(f.target.checked)}/>
               <label htmlFor="recaptcha-check" className="cursor-pointer hover:text-[#E6B821]">I am not a robot – reveal contact</label>
-              <hr className="mt-5 border-t border-gray-700" />
+              <hr className="light-border mt-5 border-t border-gray-700" />
             </div>
 
-            <div className="space-y-4 text-sm font-semibold">
+            <div className="typetext space-y-4 text-sm font-semibold">
               <p className="flex items-center gap-3">
                 <FaEnvelope className="text-[#E6B821] shrink-0" />
                 <a href="mailto:youremail@example.com" className="hover:underline">
@@ -163,12 +163,12 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
           {/* Contact Form */}
           <form
             onSubmit={handleSubmit}
-            className="space-y-2 bg-[#041224] p-6 rounded-xl shadow-lg"
+            className="detail-bg space-y-2 bg-[#041224] p-6 rounded-xl shadow-lg"
           >
             <h2 className="text-2xl font-bold mb-6 text-[#E6B821]">Send a Message</h2>
 
             <div>
-              <label htmlFor="name" className="block text-[15px] mb-1 ml-1 font-semibold">
+              <label htmlFor="name" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
                 Name
               </label>
               <input
@@ -177,14 +177,14 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
                 type="text"
                 value={form.name}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+                className="light-inputs w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
               <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
                 errors.name ? "visible" : "invisible"}`}>{errors.name || " "}</p>
             </div>
 
             <div>
-              <label htmlFor="email" className="block text-[15px] mb-1 ml-1 font-semibold">
+              <label htmlFor="email" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
                 Email
               </label>
               <input
@@ -193,14 +193,14 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
                 type="text"
                 value={form.email}
                 onChange={handleChange}
-                className="w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+                className="light-inputs w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
               <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
                 errors.email ? "visible" : "invisible"}`}>{errors.email || " "}</p>
             </div>
 
             <div>
-              <label htmlFor="subject" className="block text-[15px] mb-1 ml-1 font-semibold">
+              <label htmlFor="subject" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
                 Subject
               </label>
               <input
@@ -209,7 +209,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
               type="text"
               value={form.subject}
               onChange={handleChange}
-              className="w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+              className="light-inputs w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
               <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
                 errors.subject ? "visible" : "invisible"}`}>{errors.subject || " "}</p>
@@ -217,7 +217,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
 
             <div>
-              <label htmlFor="message" className="block text-[15px] mb-1 ml-1 font-semibold">
+              <label htmlFor="message" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
                 Message
               </label>
               <textarea
@@ -226,7 +226,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
                 value={form.message}
                 onChange={handleChange}
                 rows={5}
-                className="min-h-[5rem] w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
+                className="light-inputs min-h-[5rem] w-full px-4 py-2 rounded-md bg-[#010812] border border-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-[#E6B821]"
               />
               <p className={`text-red-500 text-sm mt-1 ml-1 min-h-[1.25rem] ${
                 errors.message ? "visible" : "invisible"}`}>{errors.message || " "}</p>
