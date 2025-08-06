@@ -7,7 +7,7 @@ export default function ResumePage() {
   const [lang, setLang] = useState<"fr" | "en">("en");
 
   const resumePdf = lang === "fr" ? "/resumeFR.pdf" : "/resumeEN.pdf";
-  const resumeDoc = lang === "fr" ? "/resumeFR.docx" : "/resumeFR.docx";
+  const resumeDoc = lang === "fr" ? "/resumeFR.docx" : "/resumeEN.docx";
   return (
     <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
