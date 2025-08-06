@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
-import sgMail from '@sendgrid/mail';
+import { Resend } from 'resend';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY!);
+const resend = new Resend(process.env.RESEND_API_KEY!);
 
 export async function POST(request: NextRequest) {
   try {
@@ -55,15 +55,21 @@ export async function POST(request: NextRequest) {
       <hr style="border: none; border-top: 1px solid #ccc; margin: 40px 0;" />
 
       <footer style="font-size: 14px; color: #777; text-align: center;">
-        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: ##4f46e5;">amine.mouhieddine01@gmail.com</a></p>
-        <p>Phone: <a href="tel:+15145700463" style="color: ##4f46e5;">+1 (514) 570-0463</a></p>
-        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: ##4f46e5;">aminemouhieddine.com</a></p>
+        <p>Email: <a href="mailto:amine.mouhieddine01@gmail.com" style="color: #4f46e5;">amine.mouhieddine01@gmail.com</a></p>
+        <p>Phone: <a href="tel:+15145700463" style="color: #4f46e5;">+1 (514) 570-0463</a></p>
+        <p>Portfolio: <a href="https://aminemouhieddine.com" style="color: #4f46e5;">aminemouhieddine.com</a></p>
       </footer>
     </div>
   `,
     };
 
-    await sgMail.send(msg);
+    await resend.emails.send({
+  from: process.env.FROM_EMAIL!,
+  to: email,
+  subject: msg.subject,
+  html: msg.html,
+  text: msg.text,
+});
 
     const internalMsg = {
   to: process.env.NOTIFYME_EMAIL!,
@@ -83,13 +89,19 @@ export async function POST(request: NextRequest) {
     </div>
   `,
 };
-await sgMail.send(internalMsg);
+await resend.emails.send({
+  from: process.env.FROM_EMAIL!,
+  to: process.env.NOTIFYME_EMAIL!,
+  subject: internalMsg.subject,
+  html: internalMsg.html,
+  text: internalMsg.text,
+});
 
 
     return NextResponse.json({ message: 'Confirmation email sent.' });
   } catch (error: unknown) {
     if (error instanceof Error) {
-    console.error('SendGrid error:', error.message);
+    console.error('Resend error:', error.message);
   } else {
     console.error('Unexpected error:', error);
   }
