@@ -1,17 +1,114 @@
 {
-  "footer": {
+  "header": {
+
+    "resume": "CV",
+    "projects": "Projets",
     "contact": "Contact",
-    "navigation": "Navigation",
-    "connect": "Réseaux",
-    "selectLanguage": "Choisir la langue",
-    "english": "Anglais",
-    "french": "Français",
-    "home": "Accueil",
-    "resume": "ResumeFRRR",
-    "contactInfo": "Coordonnées",
-    "email": "Courriel",
-    "phone": "Téléphone",
-    "location": "Emplacement",
-    "revealText": "Je ne suis pas un robot – afficher les coordonnées"
+    "language": "Langue"
+  },
+
+  "footer": {
+    
+  "contact": "Contact",
+  "navigation": "Navigation",
+  "home": "Accueil",
+  "resume": "Mon CV",
+  "projects": "Projets",
+  "contactInfo": "Me contacter",
+  "letsConnect": "Restons en contact",
+  "selectLanguage": "Choisissez la langue",
+  "iAmNotARobot": "Je ne suis pas un robot – afficher les coordonnées",
+  "email": "Courriel :",
+  "phone": "Téléphone :",
+  "location": "Lieu :"
+},
+
+"home": {
+
+  "descriptionPT1": "Je suis un développeur Full-Stack passionné par la création d'applications robustes offrant une expérience utilisateur fluide.",
+  "descriptionPT2": "J'aime relever des défis complexes grâce à un code propre et maintenable, en me concentrant sur la construction de solutions évolutives et fiables pour le front-end, le back-end et les bases de données.",
+  "resumeButton": "CV",
+  "contactButton": "Contact",
+  "technologiesTitle": "Technologies que j'utilise",
+  "technologiesExplore": "Envie d’en savoir plus sur les outils et technologies que j’utilise ?",
+  "technologiesExploreLink": "Découvrez toute ma stack technique.",
+  "projectsTitle": "Projets",
+  "projectsIntro": "Voici un aperçu rapide de quelques projets sur lesquels j'ai travaillé. Pour en voir plus,",
+  "projectsPortfolioLink": "consultez mon portfolio complet.",
+  "viewProject": "Voir le projet",
+  "projects": {
+    "cannabis": {
+      "title": "Culture et Inventaire de Cannabis",
+      "description": "Une application desktop pour surveiller la santé des plants de cannabis, gérer les processus de culture et suivre l’inventaire tout au long des cycles de croissance."
+    },
+    "tradeplanner": {
+      "title": "Journal et Planificateur de Trading",
+      "description": "Un compagnon desktop pour enregistrer les détails des transactions, planifier des stratégies, prendre des notes et visualiser les performances dans un tableau de bord."
+    },
+    "portfolio": {
+      "title": "Portfolio de Développeur",
+      "description": "Un portfolio personnel construit avec Next.js pour présenter mes projets, mon CV et mes coordonnées dans une interface responsive et conviviale."
+    },
+    "calculator": {
+      "title": "Calculatrice Intelligente",
+      "description": "Une calculatrice desktop inspirée du design épuré de la calculatrice iOS, offrant les opérations de base avec une interface claire et intuitive."
+    }
+  },
+  "moreProjects": "Vous voulez en voir plus ?",
+  "moreProjectsLink": "Explorez tous les projets",
+  "locationTitle": "Ma localisation",
+  "locationDescription": "Je suis basé dans la grande région de Montréal. Vous pouvez me trouver par ici :",
+  "availability": "Je suis ouvert aux opportunités locales, à distance et hybrides."
+},
+
+"resume": {
+  
+  "pageTitle": "Mon CV",
+  "pageDescription": "Voici un aperçu rapide de mon expérience et de ma formation. Vous pouvez également télécharger ou consulter la version PDF directement.",
+  "pdfDisplayNote": "Si le PDF ne s'affiche pas, essayez de désactiver le téléchargement automatique des PDF dans les paramètres de votre navigateur ou utilisez un autre navigateur.",
+  "downloadPDF": "Télécharger le CV (.PDF)",
+  "downloadDOCX": "Télécharger le CV (.DOCX)",
+  "education": {
+    "title": "Formation",
+    "degree1": "Diplôme en programmation informatique",
+    "school1": "Collège La Cité",
+    "graduated1": "Diplômé en 2024",
+    "degree2": "Diplôme d'études secondaires",
+    "school2": "Lycée Scientifique Souissi",
+    "graduated2": "Diplômé en 2021"
+  },
+  "languages": {
+    "title": "Langues",
+    "labelEN": "Anglais",
+    "levelEN": "Courant",
+    "labelFR": "Français",
+    "levelFR": "Courant"
+  },
+  "currentEmployment": {
+    "title": "Emploi actuel",
+    "position": "Chauffeur classe 5 chez UPS",
+    "since": "Depuis 2025"
+  },
+  "whatIWorkWith": {
+    "title": "Ce avec quoi je travaille",
+    "languagesFrameworks": "Langages & Frameworks",
+    "databases": "Bases de données",
+    "toolsPlatforms": "Outils & plateformes",
+    "other": "Autres"
+  },
+  "softSkills": {
+    "title": "Compétences comportementales",
+    "description": "Aptitudes et qualités",
+    "skill1": "Résolution de problèmes",
+    "skill2": "Travail en équipe",
+    "skill3": "Adaptabilité",
+    "skill4": "Communication",
+    "skill5": "Gestion du temps",
+    "skill6": "Attention aux détails",
+    "skill7": "...etc"
   }
+}
+
+
+
 }

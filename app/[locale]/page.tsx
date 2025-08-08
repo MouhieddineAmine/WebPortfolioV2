@@ -6,6 +6,7 @@ import { PageTransition } from "@/components/PageTransition";
 import { useState } from "react";
 import Image from "next/image";
 import { useLocale } from 'next-intl';
+import { useTranslations } from "next-intl";
 
 
 const Map = dynamic(() => import("../../components/MtlMap"), { ssr: false });
@@ -14,6 +15,7 @@ export default function Home() {
 
    const [paused, setPaused] = useState(false);
    const locale = useLocale();
+   const t = useTranslations("home")
 
   return (
       <>
@@ -34,16 +36,15 @@ export default function Home() {
           />
         </h1>
          <p className="description mt-12 text-gray-300 max-w-[800px]">
-          I&apos;m a Full-Stack Developer passionate about creating robust applications that deliver seamless user experiences.<br/>
-          I Enjoy tackling complex challenges through clean, maintainable code and focus on building scalable, reliable solutions across front-end, back-end, and database systems.
+          {t("descriptionPT1")}<br/>{t("descriptionPT2")}
         </p>
       </section>
       <div className="flex flex-col sm:flex-row gap-6 mb-[120px]">
       <PageTransition href={`/${locale}/resume`} className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
-      Resume
+      {t("resumeButton")}
       </PageTransition>
       <PageTransition href={`/${locale}/contact`} className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
-      Contact
+      {t("contactButton")}
       </PageTransition>
       </div>
 
@@ -54,16 +55,16 @@ export default function Home() {
   onMouseLeave={() => setPaused(false)}
 >
   <div className="text-center text-gray-300 px-2 sm:px-4">
-    <h2 className="text-2xl font-semibold mb-4 text-white">Technologies I Use</h2>
+    <h2 className="text-2xl font-semibold mb-4 text-white">{t("technologiesTitle")}</h2>
   </div>
 
   <TechCarousel paused={paused} />
 
   <div className="text-center text-gray-300 mt-6 text-sm px-8 sm:px-4">
     <p>
-      Interested in a deeper dive into the tools and technologies I work with?{" "}
+      {t("technologiesExplore")}{" "}
       <PageTransition href={`/${locale}/resume`} className="underline hover:text-[#E6B821] font-semibold">
-        Explore my full tech stack.
+      {t("technologiesExploreLink")}
       </PageTransition>
     </p>
   </div>
@@ -74,11 +75,11 @@ export default function Home() {
 
 
       <div className="description text-center text-gray-300 mb-[60px]">
-        <h2 className="typetext text-2xl font-semibold mb-4 text-white">Projects</h2>
+        <h2 className="typetext text-2xl font-semibold mb-4 text-white">{t("projectsTitle")}</h2>
         <p className="mb-10 max-w-[800px] mx-auto">
-          Here&apos;s a quick look at some projects I have worked on. For more,{" "}
+          {t("projectsIntro")}{" "}
           <PageTransition href={`/${locale}/projects`} className="underline hover:text-[#E6B821] font-semibold">
-            check out my full project portfolio.
+          {t("projectsPortfolioLink")}
           </PageTransition>
         </p>
 
@@ -86,8 +87,8 @@ export default function Home() {
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2">
 
           <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="typetext text-xl font-semibold text-white mb-2">Cannabis Cultivation & Inventory</h3>
-            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop application for monitoring cannabis plant health, managing cultivation processes, and tracking inventory across growth cycles.</p>
+            <h3 className="typetext text-xl font-semibold text-white mb-2">{t('projects.cannabis.title')}</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">{t('projects.cannabis.description')}</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -97,13 +98,13 @@ export default function Home() {
 
 
             <PageTransition href={`/${locale}/projectdetails/cannabis`} className="text-[#E6B821] font-semibold hover:underline">
-            View project
+            {t("viewProject")}
             </PageTransition>
           </div>
 
           <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="typetext text-xl font-semibold text-white mb-2">Trading Journal & Planner</h3>
-            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop trading companion for logging trade details, planning strategies, writing notes, and visualizing performance analytics in a dashboard.</p>
+            <h3 className="typetext text-xl font-semibold text-white mb-2">{t('projects.tradeplanner.title')}</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">{t('projects.tradeplanner.description')}</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -113,13 +114,13 @@ export default function Home() {
 
 
             <PageTransition href={`/${locale}/projectdetails/tradeplanner`} className="text-[#E6B821] font-semibold hover:underline">
-            View project
+            {t("viewProject")}
             </PageTransition>
           </div>
 
           <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="typetext text-xl font-semibold text-white mb-2">Developer Portfolio</h3>
-            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A personal portfolio built with Next.js to showcase my projects, resume, and contact information in a responsive, user-friendly layout.</p>
+            <h3 className="typetext text-xl font-semibold text-white mb-2">{t('projects.portfolio.title')}</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">{t('projects.portfolio.description')}</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -129,13 +130,13 @@ export default function Home() {
 
 
             <PageTransition href={`/${locale}/projectdetails/portfolio`} className="text-[#E6B821] font-semibold hover:underline">
-            View project
+            {t("viewProject")}
             </PageTransition>
           </div>
 
           <div className="card bg-[#0a0f1a] rounded-xl p-6 shadow-md hover:shadow-lg transition">
-            <h3 className="typetext text-xl font-semibold text-white mb-2">Smart Calculator</h3>
-            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface.</p>
+            <h3 className="typetext text-xl font-semibold text-white mb-2">{t('projects.calculator.title')}</h3>
+            <p className="description text-gray-400 text-sm mb-4 min-h-[100px] flex items-center justify-center text-center">{t('projects.calculator.description')}</p>
 
             <div className="flex justify-center mb-[30px]">
             <div className="w-full max-w-[450px] h-[180px] sm:h-[220px] overflow-hidden mx-auto flex items-center justify-center">
@@ -145,7 +146,7 @@ export default function Home() {
 
 
             <PageTransition href={`/${locale}/projectdetails/calculator`} className="text-[#E6B821] font-semibold hover:underline">
-            View project
+            {t("viewProject")}
             </PageTransition>
           </div>
 
@@ -155,23 +156,23 @@ export default function Home() {
 
 
        <p className="mb-10 mt-10 max-w-[800px] mx-auto">
-          Want to see more?{" "}
+          {t("moreProjects")}{" "}
           <PageTransition href={`/${locale}/projects`} className="underline hover:text-[#E6B821] font-semibold">
-            Explore all projects
+            {t("moreProjectsLink")}
           </PageTransition>
         </p>
       </div>
 
 
       <section className="description text-center text-gray-300 max-w-[800px] mb-6 px-2 sm:px-4">
-        <h2 className="typetext text-2xl font-semibold mb-2 text-white">My Location</h2>
+        <h2 className="typetext text-2xl font-semibold mb-2 text-white">{t("locationTitle")}</h2>
         <p>
-          I&apos;m based in the Greater Montreal area. You can find me around here:
+         {t("locationDescription")}
         </p>
       </section>
 
       <Map center={[45.5408, -73.6497]} zoom={11} markerText="Un peu près ici / Around here" height="400px" />
-      <p className="description text-center text-gray-300 max-w-[800px] mt-5 mb-6 px-2 sm:px-4">I&apos;m open to local, remote, and hybrid opportunities.</p>
+      <p className="description text-center text-gray-300 max-w-[800px] mt-5 mb-6 px-2 sm:px-4">{t("availability")}</p>
     </div>
     </>
   );

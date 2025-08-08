@@ -1,17 +1,113 @@
 {
-  "footer": {
+  "header": {
+
+    "resume": "Resume",
+    "projects": "Projects",
+    "contact": "Contact",
+    "language": "Language"
+  },
+
+
+    "footer": {
+
     "contact": "Contact",
     "navigation": "Navigation",
-    "connect": "Let's Connect",
-    "selectLanguage": "Select Language",
-    "english": "English",
-    "french": "Français",
     "home": "Home",
-    "resume": "ResumeENNN",
+    "resume": "Resume",
+    "projects": "Projects",
     "contactInfo": "Contact Info",
-    "email": "Email",
-    "phone": "Phone",
-    "location": "Location",
-    "revealText": "I am not a robot – reveal contact"
+    "letsConnect": "Let's Connect",
+    "selectLanguage": "Select Language",
+    "iAmNotARobot": "I am not a robot – reveal contact",
+    "email": "Email:",
+    "phone": "Phone:",
+    "location": "Location:"
+    },
+
+    "home": {
+      
+    "descriptionPT1": "I'm a Full-Stack Developer passionate about creating robust applications that deliver seamless user experiences.",
+    "descriptionPT2":"I enjoy tackling complex challenges through clean, maintainable code and focus on building scalable, reliable solutions across front-end, back-end, and database systems.",
+    "resumeButton": "Resume",
+    "contactButton": "Contact",
+    "technologiesTitle": "Technologies I Use",
+    "technologiesExplore": "Interested in a deeper dive into the tools and technologies I work with?",
+    "technologiesExploreLink": "Explore my full tech stack.",
+    "projectsTitle": "Projects",
+    "projectsIntro": "Here's a quick look at some projects I have worked on. For more,",
+    "projectsPortfolioLink": "check out my full project portfolio.",
+    "viewProject": "View project",
+    "projects": {
+      "cannabis": {
+        "title": "Cannabis Cultivation & Inventory",
+        "description": "A desktop application for monitoring cannabis plant health, managing cultivation processes, and tracking inventory across growth cycles."
+      },
+      "tradeplanner": {
+        "title": "Trading Journal & Planner",
+        "description": "A desktop trading companion for logging trade details, planning strategies, writing notes, and visualizing performance analytics in a dashboard."
+      },
+      "portfolio": {
+        "title": "Developer Portfolio",
+        "description": "A personal portfolio built with Next.js to showcase my projects, resume, and contact information in a responsive, user-friendly layout."
+      },
+      "calculator": {
+        "title": "Smart Calculator",
+        "description": "A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface."
+      }
+    },
+    "moreProjects": "Want to see more?",
+    "moreProjectsLink": "Explore all projects",
+    "locationTitle": "My Location",
+    "locationDescription": "I'm based in the Greater Montreal area. You can find me around here:",
+    "availability": "I'm open to local, remote, and hybrid opportunities."
+  },
+
+
+"resume": {
+    "pageTitle": "My Resume",
+    "pageDescription": "Here's a quick look at my experience and education. You can also download or view the PDF version directly.",
+    "pdfDisplayNote": "If the PDF doesn't display, try disabling automatic PDF downloads in your browser settings or use another browser.",
+    "downloadPDF": "Download Resume (.PDF)",
+    "downloadDOCX": "Download Resume (.DOCX)",
+    "education": {
+      "title": "Education",
+      "degree1": "Diploma in Computer Programming",
+      "school1": "Collège La Cité",
+      "graduated1": "Graduated 2024",
+      "degree2": "High School Diploma",
+      "school2": "Lycée Scientifique Souissi",
+      "graduated2": "Graduated 2021"
+        },
+    "languages": {
+      "title": "Languages",
+      "labelEN": "English", 
+      "levelEN": "Fluent",
+      "labelFR": "French", 
+      "levelFR": "Fluent"
+      
+    },
+    "currentEmployment": {
+      "title": "Current Employment",
+      "position": "UPS Class 5 Driver",
+      "since": "Since 2025"
+    },
+    "whatIWorkWith": {
+      "title": "What I Work With",
+      "languagesFrameworks": "Languages & Frameworks",
+      "databases": "Databases",
+      "toolsPlatforms": "Tools & Platforms",
+      "other": "Other"
+    },
+    "softSkills": {
+      "title": "Soft Skills",
+      "description": "Skills and Qualities",
+      "skill1": "Problem Solving",
+  "skill2": "Team Collaboration",
+  "skill3": "Adaptability",
+  "skill4": "Communication",
+  "skill5": "Time Management",
+  "skill6": "Attention to Detail",
+  "skill7": "...etc"
+    }
   }
 }

@@ -2,18 +2,22 @@
 import { useState } from "react";
 import BtnGoBack from "@/components/BtnGoBack";
 import { FaGraduationCap, FaLanguage, FaBriefcase, FaTools, FaUserFriends } from "react-icons/fa";
+import { useTranslations } from "next-intl";
 
 export default function ResumePage() {
   const [lang, setLang] = useState<"fr" | "en">("en");
 
   const resumePdf = lang === "fr" ? "/resumeFR.pdf" : "/resumeEN.pdf";
   const resumeDoc = lang === "fr" ? "/resumeFR.docx" : "/resumeEN.docx";
+
+  const t = useTranslations("resume");
+
   return (
     <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
-        <h1 className="typetext text-4xl font-bold mb-2 mt-10">My Resume</h1>
-        <p className="description text-gray-400 mb-[20px]">Here&apos;s a quick look at my experience and education. You can also download or view the PDF version directly.</p>
+        <h1 className="typetext text-4xl font-bold mb-2 mt-10">{t("pageTitle")}</h1>
+        <p className="description text-gray-400 mb-[20px]">{t("pageDescription")}</p>
         
         <hr className="light-border border-t border-gray-400"/>
 
@@ -50,7 +54,7 @@ export default function ResumePage() {
         </div>
 
           <p className="description text-sm text-gray-400 italic text-center mt-2">
-            If the PDF doesn&apos;t display, try disabling automatic PDF downloads in your browser settings or use another browser.
+            {t("pdfDisplayNote")}
           </p>
 
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-5">
@@ -59,14 +63,14 @@ export default function ResumePage() {
             download
             className="w-[250px] text-center px-5 py-2 bg-[#E6B821] text-white font-semibold rounded hover:bg-[#B38C1A] transition"
           >
-            Download Resume (.PDF)
+            {t("downloadPDF")}
           </a>
           <a
             href={resumeDoc}
             download
             className="w-[250px] text-center px-5 py-2 bg-[#E6B821] text-white font-semibold rounded hover:bg-[#B38C1A] transition"
           >
-            Download Resume (.DOCX)
+            {t("downloadDOCX")}
           </a>
         </div>
 
@@ -76,18 +80,18 @@ export default function ResumePage() {
   {/* Education */}
   <section>
     <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
-      <FaGraduationCap /> Education
+      <FaGraduationCap /> {t("education.title")}
     </h2>
     <div className="grid md:grid-cols-2 gap-8">
       <div className="detail-bg bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
-        <h3 className="text-xl font-semibold mb-2">Diploma in Computer Programming</h3>
-        <p className="description text-gray-400 mb-1">Collège La Cité</p>
-        <p className="description text-gray-400 italic">Graduated 2024</p>
+        <h3 className="text-xl font-semibold mb-2">{t("education.degree1")}</h3>
+        <p className="description text-gray-400 mb-1">{t("education.school1")}</p>
+        <p className="description text-gray-400 italic">{t("education.graduated1")}</p>
       </div>
       <div className="detail-bg bg-[#112244] rounded-lg p-6 border border-gray-700 hover:border-[#E6B821] transition shadow-md">
-        <h3 className="text-xl font-semibold mb-2">High School Diploma</h3>
-        <p className="description text-gray-400 mb-1">Lycée Scientifique Souissi</p>
-        <p className="description text-gray-400 italic">Graduated 2021</p>
+        <h3 className="text-xl font-semibold mb-2">{t("education.degree2")}</h3>
+        <p className="description text-gray-400 mb-1">{t("education.school2")}</p>
+        <p className="description text-gray-400 italic">{t("education.graduated2")}</p>
       </div>
     </div>
   </section>
@@ -95,12 +99,12 @@ export default function ResumePage() {
 {/* Languages */}
 <section>
   <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
-    <FaLanguage /> Languages
+    <FaLanguage /> {t("languages.title")}
   </h2>
   <div className="grid sm:grid-cols-2 gap-8 max-w-xl mx-auto">
     {[
-      { label: "English", level: "Fluent" },
-      { label: "French", level: "Fluent" },
+      { label: t("languages.labelEN"), level: t("languages.levelEN") },
+      { label: t("languages.labelFR"), level: t("languages.levelFR") },
     ].map((lang) => (
       <div
         key={lang.label}
@@ -117,11 +121,11 @@ export default function ResumePage() {
   {/* Current Employment */}
   <section>
     <h2 className="text-3xl font-bold text-center mb-8 flex items-center justify-center gap-4 text-[#E6B821]">
-      <FaBriefcase /> Current Employment
+      <FaBriefcase /> {t("currentEmployment.title")}
     </h2>
     <div className="detail-bg max-w-sm mx-auto bg-[#112244] border border-gray-700 rounded-lg p-6 shadow-md text-center hover:border-[#E6B821] transition">
-      <p className="font-semibold text-lg">UPS Class 5 Driver</p>
-      <p className="description text-gray-400 italic mt-1">Since 2025</p>
+      <p className="font-semibold text-lg">{t("currentEmployment.position")}</p>
+      <p className="description text-gray-400 italic mt-1">{t("currentEmployment.since")}</p>
     </div>
   </section>
 </div>
@@ -129,11 +133,11 @@ export default function ResumePage() {
 <hr className="light-border border-t border-gray-400 mt-[50px] mb-[50px]"/>
 
 <div className="mt-20">
-  <h2 className="flex items-center justify-center gap-4 text-3xl text-[#E6B821] font-bold text-center mb-6"><FaTools /> What I Work With</h2>
+  <h2 className="flex items-center justify-center gap-4 text-3xl text-[#E6B821] font-bold text-center mb-6"><FaTools /> {t("whatIWorkWith.title")}</h2>
 
   <div className="mb-12">
     <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
-      Languages & Frameworks
+      {t("whatIWorkWith.languagesFrameworks")}
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {[
@@ -171,7 +175,7 @@ export default function ResumePage() {
 
   <div className="mb-12">
     <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
-      Databases
+      {t("whatIWorkWith.databases")}
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {["MySQL", "MongoDB", "SQLite", "SQL Server", "Access", "...etc"].map(
@@ -189,7 +193,7 @@ export default function ResumePage() {
 
   <div className="mb-12">
     <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
-      Tools & Platforms
+      {t("whatIWorkWith.toolsPlatforms")}
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {[
@@ -215,7 +219,7 @@ export default function ResumePage() {
 
       <div className="mb-6">
     <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
-      Other
+      {t("whatIWorkWith.other")}
     </p>
     <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
       {["Wordpress", "OpenAI API", "Google APIs", "...etc"].map(
@@ -235,22 +239,22 @@ export default function ResumePage() {
 
 <div className="mt-20">
   <h2 className="flex items-center justify-center gap-4 text-3xl text-[#E6B821] font-bold text-center mb-6">
-    <FaUserFriends /> Soft Skills
+    <FaUserFriends /> {t("softSkills.title")}
   </h2>
 
   <p className="description text-center text-gray-400 mb-6 text-lg font-medium">
-    Skills and Qualities
+    {t("softSkills.description")}
   </p>
 
 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5 text-center font-medium text-[15px]">
     {[
-      "Problem Solving",
-      "Team Collaboration",
-      "Adaptability",
-      "Communication",
-      "Time Management",
-      "Attention to Detail",
-      "...etc"
+      t("softSkills.skill1"),
+      t("softSkills.skill2"),
+      t("softSkills.skill3"),
+      t("softSkills.skill4"),
+      t("softSkills.skill5"),
+      t("softSkills.skill6"),
+      t("softSkills.skill7")
     ].map((skill) => (
       <div
         key={skill}

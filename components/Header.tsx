@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import { PageTransition } from './PageTransition';
 import { motion } from "framer-motion";
 import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 
 export default function Header() {
@@ -42,6 +43,8 @@ export default function Header() {
     }
   }, []);
 
+   const t = useTranslations("header");
+
   return (
     <header className="w-full py-2 bg-[#E6B821] z-[99] relative">
       <div className="max-w-[2000px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12">
@@ -67,13 +70,13 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center text-white text-[18px] gap-2">
-          <PageTransition href={`/${locale}/resume`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Resume</PageTransition>
-          <PageTransition href={`/${locale}/projects`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</PageTransition>
-          <PageTransition href={`/${locale}/contact`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</PageTransition>
+          <PageTransition href={`/${locale}/resume`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">{t("resume")}</PageTransition>
+          <PageTransition href={`/${locale}/projects`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">{t("projects")}</PageTransition>
+          <PageTransition href={`/${locale}/contact`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">{t("contact")}</PageTransition>
           <span className="h-[20px] w-[2px] bg-white opacity-50 mx-[30px]"></span>
           <button onClick={handleLanguageClick} className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">
             <FaGlobe />
-            Language
+            {t("language")}
           </button>
           <div className="px-5 py-2">
             <ThemeToggle />
@@ -98,9 +101,9 @@ export default function Header() {
         </button>
 
         <div className="flex flex-col gap-4 mt-6 text-lg font-bold">
-          <PageTransition href="/resume" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Resume</PageTransition>
-          <PageTransition href="/projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</PageTransition>
-          <PageTransition href="/contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</PageTransition>
+          <PageTransition href={`/${locale}/resume`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">{t("resume")}</PageTransition>
+          <PageTransition href={`/${locale}/projects`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">{t("projects")}</PageTransition>
+          <PageTransition href={`/${locale}/contact`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">{t("contact")}</PageTransition>
 
           <div className="border-t border-white my-2"></div>
 
@@ -112,7 +115,7 @@ export default function Header() {
             className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]"
           >
             <FaGlobe />
-            Language
+            {t("language")}
           </button>
         </div>
       </motion.nav>
