@@ -1,8 +1,10 @@
 import BtnGoBack from "@/components/BtnGoBack";
 import { PageTransition } from "@/components/PageTransition";
 import Image from "next/image";
+import { useLocale } from 'next-intl';
 
 export default function ProjectsPage() {
+  const locale = useLocale();
   return (
 <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
@@ -56,7 +58,7 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projectdetails/cannabis"
+      href={`/${locale}/projectdetails/cannabis`}
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
@@ -79,7 +81,7 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projectdetails/tradeplanner"
+      href={`/${locale}/projectdetails/tradeplanner`}
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
@@ -99,7 +101,7 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[1000px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projectdetails/portfolio"
+      href={`/${locale}/projectdetails/portfolio`}
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
@@ -119,20 +121,13 @@ export default function ProjectsPage() {
       className="rounded-md object-cover w-[250px] h-full mb-5 mx-auto"
     />
     <PageTransition
-      href="/projectdetails/calculator"
+      href={`/${locale}/projectdetails/calculator`}
       className="inline-block bg-[#E6B821] hover:bg-[#B38C1A] text-white font-semibold px-5 py-2 rounded transition"
     >
       View Project
     </PageTransition>
   </div>
 </div>
-
-
-
-
-
-
-
 
     </div>
     </div>

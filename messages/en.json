@@ -1,0 +1,17 @@
+{
+  "footer": {
+    "contact": "Contact",
+    "navigation": "Navigation",
+    "connect": "Let's Connect",
+    "selectLanguage": "Select Language",
+    "english": "English",
+    "french": "Français",
+    "home": "Home",
+    "resume": "ResumeENNN",
+    "contactInfo": "Contact Info",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "revealText": "I am not a robot – reveal contact"
+  }
+}

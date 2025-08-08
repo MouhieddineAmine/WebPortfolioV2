@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
+import createNextIntlPlugin from "next-intl/plugin";
 
-const nextConfig = {
+const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
@@ -11,6 +12,7 @@ const nextConfig = {
       },
     ],
   },
+  turbopack: {},
 };
 
-export default nextConfig;
+export default createNextIntlPlugin('./src/i18n/request.ts')(nextConfig);

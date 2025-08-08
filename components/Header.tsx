@@ -4,10 +4,12 @@ import { FaGlobe } from 'react-icons/fa';
 import { useCallback, useState } from "react";
 import { PageTransition } from './PageTransition';
 import { motion } from "framer-motion";
+import { useLocale } from "next-intl";
 
 
 export default function Header() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const locale = useLocale();
 
   const handleLanguageClick = useCallback(() => {
     const target = document.getElementById("language");
@@ -44,7 +46,7 @@ export default function Header() {
     <header className="w-full py-2 bg-[#E6B821] z-[99] relative">
       <div className="max-w-[2000px] mx-auto flex items-center justify-between px-4 sm:px-6 md:px-12">
         {/* Logo */}
-        <PageTransition href="/" className="block w-[260px] h-auto">
+        <PageTransition href={`/${locale}/`} className="block w-[260px] h-auto">
             <img src="/LogoPortfolio.png"
             alt="Logo" className="w-full h-auto object-contain"/>
         </PageTransition>
@@ -65,9 +67,9 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <nav className="hidden lg:flex items-center text-white text-[18px] gap-2">
-          <PageTransition href="/resume" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Resume</PageTransition>
-          <PageTransition href="/projects" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</PageTransition>
-          <PageTransition href="/contact" className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</PageTransition>
+          <PageTransition href={`/${locale}/resume`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Resume</PageTransition>
+          <PageTransition href={`/${locale}/projects`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Projects</PageTransition>
+          <PageTransition href={`/${locale}/contact`} className="px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">Contact</PageTransition>
           <span className="h-[20px] w-[2px] bg-white opacity-50 mx-[30px]"></span>
           <button onClick={handleLanguageClick} className="flex items-center gap-2 px-4 py-2 rounded-md font-bold transition duration-200 hover:bg-[#B38C1A]">
             <FaGlobe />

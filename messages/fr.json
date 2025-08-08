@@ -1,0 +1,17 @@
+{
+  "footer": {
+    "contact": "Contact",
+    "navigation": "Navigation",
+    "connect": "Réseaux",
+    "selectLanguage": "Choisir la langue",
+    "english": "Anglais",
+    "french": "Français",
+    "home": "Accueil",
+    "resume": "ResumeFRRR",
+    "contactInfo": "Coordonnées",
+    "email": "Courriel",
+    "phone": "Téléphone",
+    "location": "Emplacement",
+    "revealText": "Je ne suis pas un robot – afficher les coordonnées"
+  }
+}

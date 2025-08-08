@@ -5,13 +5,15 @@ import TechCarousel from "@/components/TechCarousel";
 import { PageTransition } from "@/components/PageTransition";
 import { useState } from "react";
 import Image from "next/image";
+import { useLocale } from 'next-intl';
 
 
-const Map = dynamic(() => import("../components/MtlMap"), { ssr: false });
+const Map = dynamic(() => import("../../components/MtlMap"), { ssr: false });
 
 export default function Home() {
 
    const [paused, setPaused] = useState(false);
+   const locale = useLocale();
 
   return (
       <>
@@ -37,10 +39,10 @@ export default function Home() {
         </p>
       </section>
       <div className="flex flex-col sm:flex-row gap-6 mb-[120px]">
-      <PageTransition href="/resume" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
+      <PageTransition href={`/${locale}/resume`} className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
       Resume
       </PageTransition>
-      <PageTransition href="/contact" className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
+      <PageTransition href={`/${locale}/contact`} className="bg-[#E6B821] hover:bg-[#B38C1A] transition w-[200px] py-3 rounded text-white font-semibold shadow-md text-center">
       Contact
       </PageTransition>
       </div>
@@ -60,7 +62,7 @@ export default function Home() {
   <div className="text-center text-gray-300 mt-6 text-sm px-8 sm:px-4">
     <p>
       Interested in a deeper dive into the tools and technologies I work with?{" "}
-      <PageTransition href="/resume" className="underline hover:text-[#E6B821] font-semibold">
+      <PageTransition href={`/${locale}/resume`} className="underline hover:text-[#E6B821] font-semibold">
         Explore my full tech stack.
       </PageTransition>
     </p>
@@ -75,7 +77,7 @@ export default function Home() {
         <h2 className="typetext text-2xl font-semibold mb-4 text-white">Projects</h2>
         <p className="mb-10 max-w-[800px] mx-auto">
           Here&apos;s a quick look at some projects I have worked on. For more,{" "}
-          <PageTransition href="/projects" className="underline hover:text-[#E6B821] font-semibold">
+          <PageTransition href={`/${locale}/projects`} className="underline hover:text-[#E6B821] font-semibold">
             check out my full project portfolio.
           </PageTransition>
         </p>
@@ -94,7 +96,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projectdetails/cannabis" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href={`/${locale}/projectdetails/cannabis`} className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -110,7 +112,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projectdetails/tradeplanner" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href={`/${locale}/projectdetails/tradeplanner`} className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -126,7 +128,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projectdetails/portfolio" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href={`/${locale}/projectdetails/portfolio`} className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -142,7 +144,7 @@ export default function Home() {
             </div>
 
 
-            <PageTransition href="/projectdetails/calculator" className="text-[#E6B821] font-semibold hover:underline">
+            <PageTransition href={`/${locale}/projectdetails/calculator`} className="text-[#E6B821] font-semibold hover:underline">
             View project
             </PageTransition>
           </div>
@@ -154,7 +156,7 @@ export default function Home() {
 
        <p className="mb-10 mt-10 max-w-[800px] mx-auto">
           Want to see more?{" "}
-          <PageTransition href="/projects" className="underline hover:text-[#E6B821] font-semibold">
+          <PageTransition href={`/${locale}/projects`} className="underline hover:text-[#E6B821] font-semibold">
             Explore all projects
           </PageTransition>
         </p>

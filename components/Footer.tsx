@@ -4,9 +4,24 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import { PageTransition } from "@/components/PageTransition";
+import { useLocale } from "next-intl";
+import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
+
 
 export default function Footer() {
   const [isVerified, setIsVerified] = useState(false);
+  const locale = useLocale();
+  const pathname = usePathname();
+
+  const getLocalizedPath = (targetLocale: string) => {
+  const segments = pathname.split("/");
+  segments[1] = targetLocale; // replace current locale segment
+  return segments.join("/");};
+  
+  const t = useTranslations("footer");
+
+
   return (
     <footer id="footer" className="w-full bg-[#010812] text-gray-400 pt-10 mt-20 border-t border-gray-700 z-50">
       <div className="max-w-[1500px] mx-auto px-6 sm:px-8 grid grid-cols-1 md:grid-cols-4 gap-10 text-sm">
@@ -53,13 +68,13 @@ export default function Footer() {
             <h3 className="text-white text-[20px] font-bold mb-4 text-center md:text-left">Navigation</h3>
             <ul className="space-y-2 text-center md:text-left">
               <li>
-                <PageTransition href="/" className="hover:text-[#E6B821] font-bold">Home</PageTransition>
+                <PageTransition href={`/${locale}/`} className="hover:text-[#E6B821] font-bold">Home</PageTransition>
               </li>
               <li>
-                <PageTransition href="/resume" className="hover:text-[#E6B821] font-bold">Resume</PageTransition>
+                <PageTransition href={`/${locale}/resume`} className="hover:text-[#E6B821] font-bold">Resume{t("resume")}</PageTransition>
               </li>
               <li>
-                <PageTransition href="/contact" className="hover:text-[#E6B821] font-bold">Contact Info</PageTransition>
+                <PageTransition href={`/${locale}/contact`} className="hover:text-[#E6B821] font-bold">Contact Info</PageTransition>
               </li>
             </ul>
           </div>
@@ -103,11 +118,11 @@ export default function Footer() {
             <ul className="space-y-2 w-full">
               <li id="btnlanguage-en" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border-2 border-transparent">
                 <Image src="https://img.icons8.com/color/100/great-britain.png" alt="English" className="w-[35px] object-contain" width={1} height={1} sizes='100vw'/>
-                <button className="font-bold w-[70px]">English</button>
+                <Link href={getLocalizedPath("en")} className="font-bold w-[70px] ml-2">English</Link>
               </li>
               <li id="btnlanguage-fr" className="flex justify-center items-center bg-gray-800 text-white text-sm w-full h-[35px] rounded-md hover:bg-gray-700 transition border-2 border-transparent">
                 <Image src="https://img.icons8.com/color/100/france.png" alt="Français" className="w-[35px] object-contain" width={1} height={1} sizes='100vw'/>
-                <button className="font-bold w-[70px]">Français</button>
+                <Link href={getLocalizedPath("fr")} className="font-bold w-[70px] ml-2">Français</Link>
               </li>
             </ul>
           </div>

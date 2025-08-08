@@ -1,12 +1,15 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../globals.css";
 import 'leaflet/dist/leaflet.css';
-import PageLoaderWrapper from '../components/PageLoaderWrapper';
+import PageLoaderWrapper from '../../components/PageLoaderWrapper';
 
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import StarsCanvas from "@/components/StarBackground";
+
+import { NextIntlClientProvider } from "next-intl";
+import { notFound } from "next/navigation";
 
 
 export const metadata: Metadata = {
@@ -14,17 +17,34 @@ export const metadata: Metadata = {
   description: "Portfolio of Mouhieddine Amine",
 };
 
-export default function RootLayout({
+export function generateStaticParams() {
+  return [{ locale: "en" }, { locale: "fr" }];
+}
+
+export default async function RootLayout({
   children,
+  params
 }: {
   children: React.ReactNode;
+  params: Promise<{locale: string}>;
 }) {
+  const { locale } = await params;
+
+  let messages;
+  try{
+    messages = (await import(`../../messages/${locale}.json`)).default;
+  } catch {
+    notFound();
+  }
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body className="min-h-screen flex flex-col relative z-10">
         <StarsCanvas />
 
         <PageLoaderWrapper>
+
+          <NextIntlClientProvider locale={locale} messages={messages}>
 
         <div className="w-full min-h-screen flex-grow flex flex-col relative z-50">
         <Header />
@@ -33,6 +53,8 @@ export default function RootLayout({
         </div>
         <Footer/>
         </div>
+        
+        </NextIntlClientProvider>
 
       </PageLoaderWrapper>
 
