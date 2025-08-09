@@ -27,7 +27,7 @@
 
   "descriptionPT1": "Je suis un développeur Full-Stack passionné par la création d'applications robustes offrant une expérience utilisateur fluide.",
   "descriptionPT2": "J'aime relever des défis complexes grâce à un code propre et maintenable, en me concentrant sur la construction de solutions évolutives et fiables pour le front-end, le back-end et les bases de données.",
-  "resumeButton": "CV",
+  "resumeButton": "Mon CV",
   "contactButton": "Contact",
   "technologiesTitle": "Technologies que j'utilise",
   "technologiesExplore": "Envie d’en savoir plus sur les outils et technologies que j’utilise ?",
@@ -107,8 +107,46 @@
     "skill6": "Attention aux détails",
     "skill7": "...etc"
   }
-}
+},
 
+"contact": {
+
+  "title": "Contactez-moi",
+  "description": "Je suis ouvert à de nouvelles opportunités, des collaborations ou toute question que vous pourriez avoir.",
+  "contactInfoTitle": "Mes coordonnées",
+  "iAmNotARobot": "Je ne suis pas un robot – afficher les coordonnées",
+  "formTitle": "Envoyer un message",
+  "nameLabel": "Nom",
+  "emailLabel": "Courriel",
+  "subjectLabel": "Sujet",
+  "messageLabel": "Message",
+  "sendButton": "Envoyer le message",
+  "clearButton": "Vider le formulaire"
+},
+
+"projects": {
+    "title": "Projets",
+    "description": "Quelques projets que j'ai réalisés — cliquez sur l'un d'eux pour en savoir plus.",
+    "paginationPrevious": "Précédent",
+    "paginationNext": "Suivant",
+    "viewProject": "Voir le projet",
+    "cannabis": {
+      "title": "Culture et Inventaire de Cannabis",
+      "description": "Une application de bureau pour surveiller la santé des plants de cannabis, gérer les processus de culture et suivre l'inventaire tout au long des cycles de croissance."
+    },
+    "tradeplanner": {
+      "title": "Journal de Trading & Planificateur",
+      "description": "Un compagnon de bureau pour enregistrer les détails des trades, planifier des stratégies, prendre des notes et visualiser les analyses de performance dans un tableau de bord."
+    },
+    "portfolio": {
+      "title": "Portfolio de Développeur",
+      "description": "Un portfolio personnel construit avec Next.js pour présenter mes projets, mon CV et mes coordonnées dans une mise en page réactive et facile à utiliser."
+    },
+    "calculator": {
+      "title": "Calculatrice Intelligente",
+      "description": "Une calculatrice de bureau inspirée du design épuré de la calculatrice iOS. Elle effectue des opérations mathématiques basiques avec une interface claire et intuitive."
+    }
+  }
 
 
 }

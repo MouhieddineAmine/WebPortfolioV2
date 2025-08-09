@@ -109,5 +109,45 @@
   "skill6": "Attention to Detail",
   "skill7": "...etc"
     }
+  },
+
+  "contact": {
+
+    "title": "Get in Touch",
+    "description": "I'm open to new opportunities, collaborations, or any questions you may have.",
+    "contactInfoTitle": "Contact Info",
+    "iAmNotARobot": "I am not a robot – reveal contact",
+    "formTitle": "Send a Message",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "subjectLabel": "Subject",
+    "messageLabel": "Message",
+    "sendButton": "Send Message",
+    "clearButton": "Clear Form"
+  },
+
+  "projects": {
+    "title": "Projects",
+    "description": "A few projects I've built — click any one to learn more.",
+    "paginationPrevious": "Previous",
+    "paginationNext": "Next",
+    "viewProject": "View Project",
+    "cannabis": {
+      "title": "Cannabis Cultivation & Inventory",
+      "description": "A desktop application for monitoring cannabis plant health, managing cultivation processes, and tracking inventory across growth cycles."
+    },
+    "tradeplanner": {
+      "title": "Trading Journal & Planner",
+      "description": "A desktop trading companion for logging trade details, planning strategies, writing notes, and visualizing performance analytics in a dashboard."
+    },
+    "portfolio": {
+      "title": "Developer Portfolio",
+      "description": "A personal portfolio built with Next.js to showcase my projects, resume, and contact information in a responsive, user-friendly layout."
+    },
+    "calculator": {
+      "title": "Smart Calculator",
+      "description": "A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface."
+    }
   }
+
 }

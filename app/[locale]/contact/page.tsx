@@ -3,6 +3,7 @@ import BtnGoBack from "@/components/BtnGoBack";
 import { useState } from "react";
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from "react-icons/fa";
 import ReCAPTCHA from "react-google-recaptcha";
+import { useTranslations } from "next-intl";
 
 
 export default function ContactPage() {
@@ -15,6 +16,8 @@ export default function ContactPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   setForm({ ...form, [e.target.name]: e.target.value });
 };
+
+const t = useTranslations("contact");
 
   const handleClear = () => {
     setForm({
@@ -92,18 +95,18 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
       <div className="max-w-6xl mx-auto">
         <BtnGoBack />
 
-        <h1 className="typetext text-4xl font-bold mb-2 mt-10">Get in Touch</h1>
-        <p className="description text-gray-400 mb-10">I&apos;m open to new opportunities, collaborations, or any questions you may have.</p>
+        <h1 className="typetext text-4xl font-bold mb-2 mt-10">{t("title")}</h1>
+        <p className="description text-gray-400 mb-10">{t("description")}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Contact Info */}
           <div className="detail-bg space-y-6 bg-[#041224] p-6 rounded-xl shadow-lg">
-            <h2 className="text-2xl font-bold mb-4 text-[#E6B821]">Contact Info</h2>
+            <h2 className="text-2xl font-bold mb-4 text-[#E6B821]">{t("contactInfoTitle")}</h2>
 
             <div className="description mb-10 pt-2 text-sm text-gray-300 font-semibold">
               <input type="checkbox" id="recaptcha-check" className="mr-2 accent-[#E6B821]"
               onChange={(f) => setIsRVerified(f.target.checked)}/>
-              <label htmlFor="recaptcha-check" className="cursor-pointer hover:text-[#E6B821]">I am not a robot – reveal contact</label>
+              <label htmlFor="recaptcha-check" className="cursor-pointer hover:text-[#E6B821]">{t("iAmNotARobot")}</label>
               <hr className="light-border mt-5 border-t border-gray-700" />
             </div>
 
@@ -165,11 +168,11 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
             onSubmit={handleSubmit}
             className="detail-bg space-y-2 bg-[#041224] p-6 rounded-xl shadow-lg"
           >
-            <h2 className="text-2xl font-bold mb-6 text-[#E6B821]">Send a Message</h2>
+            <h2 className="text-2xl font-bold mb-6 text-[#E6B821]">{t("formTitle")}</h2>
 
             <div>
               <label htmlFor="name" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
-                Name
+                {t("nameLabel")}
               </label>
               <input
                 id="name"
@@ -185,7 +188,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
             <div>
               <label htmlFor="email" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
-                Email
+                {t("emailLabel")}
               </label>
               <input
                 id="email"
@@ -201,7 +204,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
             <div>
               <label htmlFor="subject" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
-                Subject
+                {t("subjectLabel")}
               </label>
               <input
               id="subject"
@@ -218,7 +221,7 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
 
             <div>
               <label htmlFor="message" className="typetext block text-[15px] mb-1 ml-1 font-semibold">
-                Message
+                {t("messageLabel")}
               </label>
               <textarea
                 id="message"
@@ -236,13 +239,13 @@ const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
               type="submit"
               className="bg-[#E6B821] text-white font-semibold px-6 py-2 rounded hover:bg-[#b38c1a] transition w-full"
             >
-              Send Message
+              {t("sendButton")}
             </button>
             <button
             type="button" onClick={handleClear}
             className="mt-2 w-full bg-gray-700 text-white font-semibold px-6 py-2 rounded hover:bg-gray-800 transition"
             >
-              Clear Form
+              {t("clearButton")}
             </button>
             
             <div className="w-full flex flex-col items-center mt-[20px] mb-[20px] relative">
