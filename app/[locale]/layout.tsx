@@ -10,7 +10,6 @@ import StarsCanvas from "@/components/StarBackground";
 
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
-import { promises } from "dns";
 
 
 export const metadata: Metadata = {

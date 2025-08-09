@@ -2,16 +2,13 @@
 import BtnGoBack from "@/components/BtnGoBackPRJ";
 import { PageTransition } from "@/components/PageTransition";
 import Image from "next/image";
-//import { useLocale } from 'next-intl';
 import { useTranslations } from "next-intl";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 export default function ProjectsPage() {
-  //const locale = useLocale();
   const [locale, setLocale] = useState<string | null>(null);
   const t = useTranslations("projectsPage");
-  console.log("Current locale:", locale);
 
   const handleLocale = (loc: string) => {
     setLocale(loc);
