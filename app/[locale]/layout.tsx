@@ -10,6 +10,7 @@ import StarsCanvas from "@/components/StarBackground";
 
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
+import { promises } from "dns";
 
 
 export const metadata: Metadata = {
@@ -23,10 +24,10 @@ export function generateStaticParams() {
 
 export default async function RootLayout({
   children,
-  params
+  params,
 }: {
   children: React.ReactNode;
-  params: Promise<{locale: string}>;
+  params: any;
 }) {
   const { locale } = await params;
 

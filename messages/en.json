@@ -126,7 +126,7 @@
     "clearButton": "Clear Form"
   },
 
-  "projects": {
+  "projectsPage": {
     "title": "Projects",
     "description": "A few projects I've built — click any one to learn more.",
     "paginationPrevious": "Previous",
@@ -148,6 +148,11 @@
       "title": "Smart Calculator",
       "description": "A desktop calculator inspired by the sleek design of the iOS calculator. It performs basic math operations with a clean and intuitive user interface."
     }
+  },
+
+  "btnBack": {
+    "home": "Back"
   }
+
 
 }

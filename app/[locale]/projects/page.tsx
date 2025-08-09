@@ -1,16 +1,26 @@
-import BtnGoBack from "@/components/BtnGoBack";
+"use client"
+import BtnGoBack from "@/components/BtnGoBackPRJ";
 import { PageTransition } from "@/components/PageTransition";
 import Image from "next/image";
-import { useLocale } from 'next-intl';
+//import { useLocale } from 'next-intl';
 import { useTranslations } from "next-intl";
 
+import React, { useState, useEffect } from "react";
+
 export default function ProjectsPage() {
-  const locale = useLocale();
-  const t = useTranslations("projects");
+  //const locale = useLocale();
+  const [locale, setLocale] = useState<string | null>(null);
+  const t = useTranslations("projectsPage");
+  console.log("Current locale:", locale);
+
+  const handleLocale = (loc: string) => {
+    setLocale(loc);
+  };
+
   return (
 <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
-        <BtnGoBack />
+        <BtnGoBack sendLocale={handleLocale}/>
         <h1 className="typetext text-4xl font-bold mb-2 mt-10">{t("title")}</h1>
         <p className="description text-gray-400 mb-[20px]">{t("description")}</p>
         

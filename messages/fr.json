@@ -124,7 +124,7 @@
   "clearButton": "Vider le formulaire"
 },
 
-"projects": {
+"projectsPage": {
     "title": "Projets",
     "description": "Quelques projets que j'ai réalisés — cliquez sur l'un d'eux pour en savoir plus.",
     "paginationPrevious": "Précédent",
@@ -146,7 +146,12 @@
       "title": "Calculatrice Intelligente",
       "description": "Une calculatrice de bureau inspirée du design épuré de la calculatrice iOS. Elle effectue des opérations mathématiques basiques avec une interface claire et intuitive."
     }
+  },
+
+  "btnBack": {
+    "home": "Retour"
   }
 
 
+  
 }

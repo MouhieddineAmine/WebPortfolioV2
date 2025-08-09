@@ -4,10 +4,21 @@ import { PageTransition } from "./PageTransition";
 import { IoReturnUpBack } from "react-icons/io5";
 import { useLocale } from 'next-intl';
 import { useTranslations } from "next-intl";
+import React from "react";
 
-const BtnGoBack = () => {
+
+interface BtnGoBackProps {
+  sendLocale: (locale: string) => void;  // callback to send locale up
+}
+
+const BtnGoBack = ({ sendLocale }: BtnGoBackProps) => {
   const locale = useLocale();
   const t = useTranslations("btnBack");
+
+  // Send locale back to parent once on mount
+  React.useEffect(() => {
+    sendLocale(locale);
+  }, [locale, sendLocale]);
   return (
     <PageTransition
       href={`/${locale}/`}
