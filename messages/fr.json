@@ -42,7 +42,7 @@
       "description": "Une application desktop pour surveiller la santé des plants de cannabis, gérer les processus de culture et suivre l’inventaire tout au long des cycles de croissance."
     },
     "tradeplanner": {
-      "title": "Journal et Planificateur de Trading",
+      "title": "Journal et Planificateur de Trades",
       "description": "Un compagnon desktop pour enregistrer les détails des transactions, planifier des stratégies, prendre des notes et visualiser les performances dans un tableau de bord."
     },
     "portfolio": {
@@ -64,7 +64,7 @@
 "resume": {
   
   "pageTitle": "Mon CV",
-  "pageDescription": "Voici un aperçu rapide de mon expérience et de ma formation. Vous pouvez également télécharger ou consulter la version PDF directement.",
+  "pageDescription": "Voici un aperçu rapide de mon expérience et de mes formations. Vous pouvez également télécharger ou consulter la version PDF directement.",
   "pdfDisplayNote": "Si le PDF ne s'affiche pas, essayez de désactiver le téléchargement automatique des PDF dans les paramètres de votre navigateur ou utilisez un autre navigateur.",
   "downloadPDF": "Télécharger le CV (.PDF)",
   "downloadDOCX": "Télécharger le CV (.DOCX)",
