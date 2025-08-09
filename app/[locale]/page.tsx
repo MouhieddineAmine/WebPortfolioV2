@@ -15,7 +15,7 @@ export default function Home() {
 
    const [paused, setPaused] = useState(false);
    const locale = useLocale();
-   const t = useTranslations("home")
+   const t = useTranslations("home");
 
   return (
       <>

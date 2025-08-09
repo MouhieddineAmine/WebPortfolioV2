@@ -1,7 +1,7 @@
 {
   "header": {
 
-    "resume": "CV",
+    "resume": "Mon CV",
     "projects": "Projets",
     "contact": "Contact",
     "language": "Langue"
@@ -136,7 +136,7 @@
     },
     "tradeplanner": {
       "title": "Journal de Trading & Planificateur",
-      "description": "Un compagnon de bureau pour enregistrer les détails des trades, planifier des stratégies, prendre des notes et visualiser les analyses de performance dans un tableau de bord."
+      "description": "Une application de bureau pour enregistrer les détails des trades, planifier des stratégies, prendre des notes et visualiser les analyses de performance dans un tableau de bord."
     },
     "portfolio": {
       "title": "Portfolio de Développeur",
@@ -150,8 +150,90 @@
 
   "btnBack": {
     "home": "Retour"
+  },
+
+  "cannabis": {
+
+  "title": "Culture et Gestion d’Inventaire du Cannabis",
+  "description": "Application de bureau conçue pour rationaliser et centraliser la gestion de la production de cannabis. Elle permet aux cultivateurs de suivre l’état de santé de chaque plante, de contrôler leur progression à toutes les étapes de croissance et de gérer l’inventaire avec précision. Chaque plante se voit attribuer un code QR unique, facilitant son identification et la mise à jour rapide de ses informations. L’application prend également en charge l’importation en masse de données depuis des fichiers Excel, ce qui simplifie l’intégration de lots importants et réduit la saisie manuelle. Avec des fonctionnalités adaptées aux flux de travail de culture — comme le suivi par lots, la mise à jour des statuts et les notes de santé — l’application permet aux cultivateurs de rester organisés, efficaces et conformes tout au long du cycle de culture.",
+  "techBreakdownTitle": "Aperçu Technique",
+  "tech": {
+    "ui": "pour l’interface utilisateur",
+    "database": "base de données",
+    "qr": "génération de codes QR",
+    "excel": "importation de données Excel",
+    "mvvm": "pour une architecture maintenable"
+  },
+  "coreFeaturesTitle": "Fonctionnalités Clés",
+  "features": {
+    "track": "Suivi des stades, de la santé et du cycle de vie des plantes",
+    "qrScan": "Attribution et lecture de code QR pour chaque plante",
+    "bulkImport": "Importation en masse de plantes depuis Excel",
+    "manageBatches": "Gestion des lots de culture et du flux d’inventaire",
+    "attachNotes": "Ajout de notes et mise à jour des statuts pour chaque unité"
   }
+},
 
+"tradeplanner": {
 
-  
+  "title": "Journal et Planificateur de Trades",
+  "description": "Une application de bureau conçue pour aider les traders à planifier, enregistrer et analyser leurs transactions plus efficacement. Les utilisateurs peuvent consigner des entrées détaillées pour chaque trade, y compris les notes de stratégie, les résultats et les indicateurs de performance. L’application propose également un tableau de bord qui visualise les résultats des trades dans le temps, permettant d’analyser les tendances et de prendre des décisions plus éclairées.",
+  "techBreakdownTitle": "Aperçu Technique",
+  "tech": {
+    "ui": "pour l’interface utilisateur",
+    "database": "base de données locale et légère",
+    "charts": "pour afficher des graphiques et analyses interactifs",
+    "mvvm": "pour une architecture maintenable"
+  },
+  "coreFeaturesTitle": "Fonctionnalités Clés",
+  "features": {
+    "logTrades": "Enregistrer les trades avec stratégie, points d’entrée/sortie et notes personnelles",
+    "planTrades": "Planifier les trades futurs et examiner les configurations en attente",
+    "dashboard": "Tableau de bord avec graphiques pour suivre la performance, le taux de réussite et l’évolution du capital",
+    "filterSearch": "Filtrer et rechercher les trades par date, stratégie ou résultat",
+    "cleanUI": "Interface claire pour un examen rapide et une navigation fluide"
+  }
+},
+
+"portfolio": {
+  "title": "Portfolio de Développeur",
+  "description": "Un portfolio personnel clair et réactif, conçu avec Next.js pour présenter mon travail de développement, mes compétences et mon expérience. Il comprend des pages dédiées aux projets, un CV téléchargeable, des options de contact et des animations fluides pour offrir une expérience utilisateur engageante. Conçu pour être à la fois rapide et accessible, ce site reflète mon souci du détail et mon engagement envers les meilleures pratiques du développement web moderne.",
+  "techBreakdownTitle": "Aperçu Technique",
+  "tech": {
+    "nextjs": "alimentation de l’architecture front-end",
+    "tailwind": "pour un design moderne et réactif",
+    "framer": "transitions de pages et micro-animations",
+    "sendgrid": "gestion de l’envoi d’e-mails depuis le formulaire de contact",
+    "recaptcha": "protection du formulaire de contact contre le spam",
+    "leaflet": "intégration d’une carte interactive",
+    "serverless": "backend léger"
+  },
+  "coreFeaturesTitle": "Fonctionnalités Clés",
+  "features": {
+    "landing": "Page d’accueil interactive et minimaliste avec appels à l’action",
+    "projects": "Présentation des projets avec galeries d’images et pages de détails dédiées",
+    "resume": "Visionneuse PDF intégrée pour le CV et prise en charge bilingue (FR/EN)",
+    "contact": "Fenêtre de contact dynamique avec protection Google reCAPTCHA",
+    "animations": "Animations fluides et design responsive adapté au mobile"
+  }
+},
+
+"calculator": {
+
+  "title": "Calculatrice Intelligente",
+  "description": "Cette Calculatrice Intelligente est une application  de bureau qui réplique la calculatrice de l’iPhone, enrichie de quelques fonctions supplémentaires comme la racine carrée et la factorielle. Elle conserve le même design épuré et familier pour une utilisation quotidienne simple.",
+  "techBreakdownTitle": "Aperçu Technique",
+  "tech": {
+    "csharp": "pour l’interface utilisateur",
+    "mvvm": "architecture propre et facile à maintenir"
+  },
+  "coreFeaturesTitle": "Fonctionnalités Clés",
+  "features": {
+    "design": "Design simple et familier de la calculatrice iPhone",
+    "basicOps": "Opérations mathématiques de base : addition, soustraction, multiplication, division",
+    "extraFuncs": "Fonctions supplémentaires : racine carrée, factorielle, etc.",
+    "focus": "Pas de mode scientifique ni d’historique — axée sur les calculs rapides"
+  }
+}
+
 }

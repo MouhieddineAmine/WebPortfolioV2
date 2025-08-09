@@ -2,6 +2,8 @@
 import { useState } from "react";
 import BtnGoBackProject from "@/components/BtnGoBackProject";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+
 
 const images = [
   "/cannabis/Screenshot 2025-06-22 111346.png",
@@ -14,6 +16,7 @@ const images = [
 
 export default function CannabisPage() {
       const [index, setIndex] = useState(0);
+      const t = useTranslations("cannabis");
 
   function prev() {
     setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
@@ -26,10 +29,8 @@ export default function CannabisPage() {
 <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBackProject />
-        <h1 className="typetext text-4xl font-bold mb-5 mt-10">Cannabis Cultivation & Inventory</h1>
-        <p className="description text-gray-400 mb-[20px]">Desktop application designed to streamline and centralize the management of cannabis production. It allows growers to monitor individual plant health, track progress through all growth stages, and manage inventory with precision.
-            Each plant is assigned a unique QR code, making it easy to identify and update records quickly. The app also supports bulk importing plant data from Excel files, which simplifies onboarding large batches and reduces manual entry.
-            With features tailored for cultivation workflows—like batch tracking, status updates, and health notes—the app ensures cultivators stay organized, efficient, and compliant throughout the entire grow cycle.</p>
+        <h1 className="typetext text-4xl font-bold mb-5 mt-10">{t("title")}</h1>
+        <p className="description text-gray-400 mb-[20px]">{t("description")}</p>
         
         <hr className="light-border border-t border-gray-400 mb-10"/>
 
@@ -72,25 +73,25 @@ export default function CannabisPage() {
 
 {/* Tech Stack Section */}
 <section className="detail-bg bg-[#0f1624] rounded-lg p-6 mt-16 mb-10 shadow-md">
-  <h2 className="typetext text-2xl font-semibold mb-4 text-white">Tech Breakdown</h2>
+  <h2 className="typetext text-2xl font-semibold mb-4 text-white">{t("techBreakdownTitle")}</h2>
   <ul className="description text-gray-300 list-disc list-inside space-y-2 pl-2">
-    <li><span className="typetext text-white font-medium">C# (.NET WPF)</span> — for the desktop UI</li>
-    <li><span className="typetext text-white font-medium">SQL</span> — database</li>
-    <li><span className="typetext text-white font-medium">ZXing.Net</span> — QR code generation</li>
-    <li><span className="typetext text-white font-medium">EPPlus</span> — Excel data import</li>
-    <li><span className="typetext text-white font-medium">MVVM Pattern</span> — for maintainable architecture</li>
+    <li><span className="typetext text-white font-medium">C# (.NET WPF)</span> — {t("tech.ui")}</li>
+    <li><span className="typetext text-white font-medium">SQL</span> — {t("tech.database")}</li>
+    <li><span className="typetext text-white font-medium">ZXing.Net</span> — {t("tech.qr")}</li>
+    <li><span className="typetext text-white font-medium">EPPlus</span> — {t("tech.excel")}</li>
+    <li><span className="typetext text-white font-medium">MVVM Pattern</span> — {t("tech.mvvm")}</li>
   </ul>
 </section>
 
 {/* Features Section */}
 <section className="detail-bg bg-[#0f1624] rounded-lg p-6 mb-10 shadow-md">
-  <h2 className="typetext text-2xl font-semibold mb-4 text-white">Core Features</h2>
+  <h2 className="typetext text-2xl font-semibold mb-4 text-white">{t("coreFeaturesTitle")}</h2>
   <ul className="description text-gray-300 list-disc list-inside space-y-2 pl-2">
-    <li>Track plant stages, health, and lifecycle</li>
-    <li>QR code assignment & scanning for each plant</li>
-    <li>Bulk import plants from Excel</li>
-    <li>Manage cultivation batches and inventory flow</li>
-    <li>Attach notes and set status updates for each unit</li>
+    <li>{t("features.track")}</li>
+    <li>{t("features.qrScan")}</li>
+    <li>{t("features.bulkImport")}</li>
+    <li>{t("features.manageBatches")}</li>
+    <li>{t("features.attachNotes")}</li>
   </ul>
 </section>
 

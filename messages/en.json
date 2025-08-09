@@ -152,7 +152,90 @@
 
   "btnBack": {
     "home": "Back"
-  }
+  },
 
+  "cannabis": {
+
+    "title": "Cannabis Cultivation & Inventory",
+    "description": "Desktop application designed to streamline and centralize the management of cannabis production. It allows growers to monitor individual plant health, track progress through all growth stages, and manage inventory with precision. Each plant is assigned a unique QR code, making it easy to identify and update records quickly. The app also supports bulk importing plant data from Excel files, which simplifies onboarding large batches and reduces manual entry. With features tailored for cultivation workflows—like batch tracking, status updates, and health notes—the app ensures cultivators stay organized, efficient, and compliant throughout the entire grow cycle.",
+    "techBreakdownTitle": "Tech Breakdown",
+    "tech": {
+      "ui": "for the desktop UI",
+      "database": "database",
+      "qr": "QR code generation",
+      "excel": "Excel data import",
+      "mvvm": "for maintainable architecture"
+    },
+    "coreFeaturesTitle": "Core Features",
+    "features": {
+      "track": "Track plant stages, health, and lifecycle",
+      "qrScan": "QR code assignment & scanning for each plant",
+      "bulkImport": "Bulk import plants from Excel",
+      "manageBatches": "Manage cultivation batches and inventory flow",
+      "attachNotes": "Attach notes and set status updates for each unit"
+    }
+  },
+
+  "tradeplanner": {
+
+  "title": "Trading Journal & Planner",
+  "description": "A desktop application built to help traders plan, log, and reflect on their trades more effectively. Users can record detailed entries for each trade, including strategy notes, outcomes, and performance metrics. The app also features a dashboard that visualizes trading results over time, helping users analyze patterns and make more informed decisions.",
+  "techBreakdownTitle": "Tech Breakdown",
+  "tech": {
+    "ui": "for the desktop UI",
+    "database": "lightweight local database",
+    "charts": "for rendering interactive charts and analytics",
+    "mvvm": "for maintainable architecture"
+  },
+  "coreFeaturesTitle": "Core Features",
+  "features": {
+    "logTrades": "Log trades with strategy, entry/exit points, and personal notes",
+    "planTrades": "Plan future trades and review pending setups",
+    "dashboard": "Dashboard with charts to track performance, win rate, and equity growth",
+    "filterSearch": "Filter and search trades by date, strategy, or result",
+    "cleanUI": "Clean UI for quick review and easy navigation"
+  }
+},
+
+"portfolio": {
+
+    "title": "Developer Portfolio",
+    "description": "A clean and responsive personal portfolio built with Next.js to showcase my development work, skills, and experience. It includes dedicated pages for projects, a downloadable resume, contact options, and smooth animations for an engaging user experience. Designed to be both fast and accessible, the site reflects my attention to detail and focus on modern web development best practices.",
+    "techBreakdownTitle": "Tech Breakdown",
+    "tech": {
+      "nextjs": "powering the frontend architecture",
+      "tailwind": "for modern and responsive UI design",
+      "framer": "page transitions and micro animations",
+      "sendgrid": "handles email delivery from the contact form",
+      "recaptcha": "protects the contact form from spam",
+      "leaflet": "interactive map integration",
+      "serverless": "lightweight backend"
+    },
+    "coreFeaturesTitle": "Core Features",
+    "features": {
+      "landing": "Interactive and minimal landing page with call-to-actions",
+      "projects": "Project showcase with image galleries and dedicated detail pages",
+      "resume": "Built-in PDF resume viewer and bilingual (EN/FR) support",
+      "contact": "Dynamic contact popup with Google reCAPTCHA protection",
+      "animations": "Smooth animations and mobile-first responsive design"
+    }
+},
+
+"calculator": {
+  "title": "Smart Calculator",
+  "description": "This Smart Calculator is a desktop replica of the iPhone calculator, enhanced with a few extra functions like square root and factorial. It keeps the same clean, familiar look for easy everyday use.",
+  "techBreakdownTitle": "Tech Breakdown",
+  "tech": {
+    "csharp": "for the desktop UI",
+    "mvvm": "clean and maintainable architecture"
+  },
+  "coreFeaturesTitle": "Core Features",
+  "features": {
+    "design": "Simple and familiar iPhone calculator design",
+    "basicOps": "Basic math operations: addition, subtraction, multiplication, division",
+    "extraFuncs": "Extra functions: square root, factorial, etc.",
+    "focus": "No scientific mode or history — focused on quick calculations"
+  }
+}
 
 }

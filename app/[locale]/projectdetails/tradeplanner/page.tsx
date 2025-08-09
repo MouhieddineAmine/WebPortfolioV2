@@ -2,6 +2,7 @@
 import { useState } from "react";
 import BtnGoBackProject from "@/components/BtnGoBackProject";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 const images = [
   "/tradetrack/homepage.png",
@@ -12,6 +13,7 @@ const images = [
 
 export default function CannabisPage() {
       const [index, setIndex] = useState(0);
+      const t = useTranslations("tradeplanner");
 
   function prev() {
     setIndex((i) => (i === 0 ? images.length - 1 : i - 1));
@@ -24,10 +26,8 @@ export default function CannabisPage() {
 <div className="card min-h-screen px-5 sm:px-12 bg-[#010812] text-white pt-[35px] mx-0 sm:mx-5 pb-[60px] rounded-xl">
       <div className="max-w-6xl mx-auto">
         <BtnGoBackProject />
-        <h1 className="typetext text-4xl font-bold mb-5 mt-10">Trading Journal & Planner</h1>
-        <p className="description text-gray-400 mb-[20px]">A desktop application built to help traders plan, log, and reflect on their trades more effectively. 
-          Users can record detailed entries for each trade, including strategy notes, outcomes, and performance metrics. 
-          The app also features a dashboard that visualizes trading results over time, helping users analyze patterns and make more informed decisions.</p>
+        <h1 className="typetext text-4xl font-bold mb-5 mt-10">{t("title")}</h1>
+        <p className="description text-gray-400 mb-[20px]">{t("description")}</p>
         
         <hr className="light-border border-t border-gray-400 mb-10"/>
 
@@ -70,32 +70,26 @@ export default function CannabisPage() {
 
 {/* Tech Stack Section */}
 <section className="detail-bg bg-[#0f1624] rounded-lg p-6 mt-16 mb-10 shadow-md">
-  <h2 className="typetext text-2xl font-semibold mb-4 text-white">Tech Breakdown</h2>
+  <h2 className="typetext text-2xl font-semibold mb-4 text-white">{t("techBreakdownTitle")}</h2>
   <ul className="description text-gray-300 list-disc list-inside space-y-2 pl-2">
-    <li><span className="typetext text-white font-medium">C# (.NET WPF)</span> — for the desktop UI</li>
-    <li><span className="typetext text-white font-medium">SQLite</span> — lightweight local database</li>
-    <li><span className="typetext text-white font-medium">LiveCharts</span> — for rendering interactive charts and analytics</li>
-    <li><span className="typetext text-white font-medium">MVVM Pattern</span> — for maintainable architecture</li>
+    <li><span className="typetext text-white font-medium">C# (.NET WPF)</span> — {t("tech.ui")}</li>
+    <li><span className="typetext text-white font-medium">SQLite</span> — {t("tech.database")}</li>
+    <li><span className="typetext text-white font-medium">LiveCharts</span> — {t("tech.charts")}</li>
+    <li><span className="typetext text-white font-medium">MVVM Pattern</span> — {t("tech.mvvm")}</li>
   </ul>
 </section>
 
 {/* Features Section */}
 <section className="detail-bg bg-[#0f1624] rounded-lg p-6 mb-10 shadow-md">
-  <h2 className="typetext text-2xl font-semibold mb-4 text-white">Core Features</h2>
+  <h2 className="typetext text-2xl font-semibold mb-4 text-white">{t("coreFeaturesTitle")}</h2>
   <ul className="description text-gray-300 list-disc list-inside space-y-2 pl-2">
-    <li>Log trades with strategy, entry/exit points, and personal notes</li>
-    <li>Plan future trades and review pending setups</li>
-    <li>Dashboard with charts to track performance, win rate, and equity growth</li>
-    <li>Filter and search trades by date, strategy, or result</li>
-    <li>Clean UI for quick review and easy navigation</li>
+    <li>{t("features.logTrades")}</li>
+    <li>{t("features.planTrades")}</li>
+    <li>{t("features.dashboard")}</li>
+    <li>{t("features.filterSearch")}</li>
+    <li>{t("features.cleanUI")}</li>
   </ul>
 </section>
-
-
-
-
-
-
 
     </div>
     </div>
