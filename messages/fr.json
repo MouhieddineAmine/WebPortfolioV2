@@ -25,8 +25,8 @@
 
 "home": {
 
-  "descriptionPT1": "Je suis un développeur Full-Stack passionné par la création d'applications robustes offrant une expérience utilisateur fluide.",
-  "descriptionPT2": "J'aime relever des défis complexes grâce à un code propre et maintenable, en me concentrant sur la construction de solutions évolutives et fiables pour le front-end, le back-end et les bases de données.",
+  "descriptionPT1": "Je suis un développeur Full-Stack passionné par la création d'applications robustes offrant une expérience utilisateur fluide. J'aime relever des défis complexes grâce à un code propre et maintenable,",
+  "descriptionPT2": "en me concentrant sur la construction de solutions évolutives et fiables pour le front-end, le back-end et les bases de données.",
   "resumeButton": "Mon CV",
   "contactButton": "Contact",
   "technologiesTitle": "Technologies que j'utilise",
